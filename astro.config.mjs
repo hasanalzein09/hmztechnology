@@ -4,14 +4,14 @@ import react from '@astrojs/react';
 import UnoCSS from 'unocss/astro';
 
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel';
+import cloudflare from '@astrojs/cloudflare';
 // For VM deployment, use: import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://hmz.technology',
   output: 'static',
-  adapter: vercel(),
+  adapter: cloudflare(),
   // For VM deployment, use: adapter: node({ mode: 'standalone' }),
   integrations: [
     react(),
