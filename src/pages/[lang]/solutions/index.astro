@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import TranslatedSolutions from '../../../components/react/TranslatedSolutions';
+import Footer from '../../../components/react/Footer';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'ar' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'hi' } },
+    { params: { lang: 'ms' } },
+  ];
+}
+
+const { lang } = Astro.params;
+
+// SEO Titles/Descriptions mapped by language
+const seo = {
+    ar: { title: "حلول أعمال مخصصة للصناعة | HMZ Technology", description: "استكشف أكثر من 300 حل لزيادة الإيرادات مصمم خصيصاً لصناعتك. ذكاء اصطناعي، أتمتة، روبوتات واتساب، والمزيد." },
+    de: { title: "Branchenspezifische Geschäftslösungen | HMZ Technology", description: "Entdecken Sie über 300 umsatzsteigernde Lösungen, die auf Ihre Branche zugeschnitten sind. KI, Automatisierung, WhatsApp-Boots und mehr." },
+    fr: { title: "Solutions Commerciales Spécifiques à l'Industrie | HMZ Technology", description: "Découvrez plus de 300 solutions génératrices de revenus adaptées à votre secteur. IA, Automatisation, Bots WhatsApp, et plus encore." },
+    it: { title: "Soluzioni Aziendali Specifiche per Settore | HMZ Technology", description: "Esplora oltre 300 soluzioni per generare entrate su misura per la tua industria. AI, Automazione, Bot WhatsApp e altro." },
+    hi: { title: "उद्योग विशिष्ट व्यापार समाधान | HMZ Technology", description: "अपने उद्योग के लिए तैयार 300+ राजस्व-उत्पादक समाधानों का अन्वेषण करें। एआई, ऑटोमेशन, व्हाट्सएप बॉट्स, और बहुत कुछ।" },
+    ms: { title: "Penyelesaian Perniagaan Khusus Industri | HMZ Technology", description: "Terokai 300+ penyelesaian menjana pendapatan yang disesuaikan untuk industri anda. AI, Automasi, Bot WhatsApp, dan banyak lagi." },
+};
+
+const currentSeo = seo[lang as keyof typeof seo] || seo.de; // Fallback to DE if acts weird, but getStaticPaths ensures validity
+---
+
+<Layout title={currentSeo.title} description={currentSeo.description} lang={lang}>
+    <TranslatedSolutions lang={lang as any} client:load />
+    <Footer lang={lang as any} client:visible />
+</Layout>

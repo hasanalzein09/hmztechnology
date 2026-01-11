@@ -1,0 +1,61 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/react/Header";
+import Footer from "../../../components/react/Footer";
+import ServiceDetail from "../../../components/react/ServiceDetail";
+import Testimonials from "../../../components/react/Testimonials";
+import LocalBusinessSchema from "../../../components/react/LocalBusinessSchema";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "ar" } },
+    { params: { lang: "de" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "it" } },
+    { params: { lang: "hi" } },
+    { params: { lang: "ms" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const isRtl = lang === "ar";
+
+const titles = {
+  ar: "أتمتة الأعمال بالذكاء الاصطناعي | HMZ Technology",
+  de: "KI-Geschäftsautomatisierung | HMZ Technology",
+  fr: "Automatisation IA des Affaires | HMZ Technology",
+  it: "Automazione Aziendale IA | HMZ Technology",
+  hi: "AI Business Automations | HMZ Technology",
+  ms: "Automasi Perniagaan AI | HMZ Technology",
+};
+
+const descriptions = {
+  ar: "بسط عمليات عملك مع حلول أتمتة الذكاء الاصطناعي المخصصة.",
+  de: "Optimieren Sie Ihre Geschäftsabläufe mit KI-Automatisierung.",
+  fr: "Rationalisez vos opérations commerciales avec l'automatisation IA.",
+  it: "Ottimizza le tue operazioni aziendali con l'automazione IA.",
+  hi: "एआई ऑटोमेशन के साथ अपने व्यावसायिक कार्यों को सुव्यवस्थित करें।",
+  ms: "Permudah operasi perniagaan anda dengan automasi AI.",
+};
+
+const title =
+  titles[lang as keyof typeof titles] ||
+  "AI Business Automations | HMZ Technology";
+const description =
+  descriptions[lang as keyof typeof descriptions] || "AI Business Automations.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  dir={isRtl ? "rtl" : "ltr"}
+>
+  <Header lang={lang} client:load />
+  <main>
+    <ServiceDetail lang={lang} serviceId="ai-automations" client:load />
+    <Testimonials lang={lang} client:load />
+  </main>
+  <Footer lang={lang} client:load />
+  <LocalBusinessSchema />
+</Layout>

@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/react/Header";
+import Footer from "../../components/react/Footer";
+import ServiceDetail from "../../components/react/ServiceDetail";
+import Testimonials from "../../components/react/Testimonials";
+import LocalBusinessSchema from "../../components/react/LocalBusinessSchema";
+
+const lang = "en";
+const title = "Instagram AI Chatbot | HMZ Technology";
+const description =
+    "Boost your Instagram engagement and sales with our intelligent AI Chatbot automation.";
+---
+
+<Layout title={title} description={description} lang={lang} dir="ltr">
+    <Header lang={lang} client:load />
+    <main>
+        <ServiceDetail
+            lang={lang}
+            serviceId="instagram-ai-chatbot"
+            client:load
+        />
+        <Testimonials lang={lang} client:load />
+    </main>
+    <Footer lang={lang} client:load />
+    <LocalBusinessSchema />
+</Layout>

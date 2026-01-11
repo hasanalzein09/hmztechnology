@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/react/Header";
+import Hero from "../components/react/Hero";
+import TrustBadges from "../components/react/TrustBadges";
+import CaseStudies from "../components/react/CaseStudies";
+import BentoShowcase from "../components/react/BentoShowcase";
+import ProcessWorkflow from "../components/react/ProcessWorkflow";
+import Testimonials from "../components/react/Testimonials";
+import Footer from "../components/react/Footer";
+import LocalBusinessSchema from "../components/react/LocalBusinessSchema";
+
+const lang = "en";
+---
+
+<Layout
+	title="HMZ Technology | AI Chatbots & Automation"
+	description="Leading AI chatbot development company. Automate WhatsApp, Instagram & Messenger with custom AI solutions. Serving USA, UAE, Europe & Worldwide."
+	lang={lang}
+	dir="ltr"
+>
+	<Header lang={lang} client:load />
+	<main>
+		<Hero lang={lang} client:load />
+		<TrustBadges lang={lang} client:load />
+		<CaseStudies lang={lang} client:load />
+		<BentoShowcase lang={lang} client:load />
+		<ProcessWorkflow lang={lang} client:visible />
+		<Testimonials lang={lang} client:load />
+	</main>
+	<Footer lang={lang} client:load />
+	<LocalBusinessSchema locale="lb" />
+</Layout>

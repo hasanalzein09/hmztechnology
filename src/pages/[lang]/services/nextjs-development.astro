@@ -1,0 +1,62 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/react/Header";
+import Footer from "../../../components/react/Footer";
+import ServiceDetail from "../../../components/react/ServiceDetail";
+import Testimonials from "../../../components/react/Testimonials";
+import LocalBusinessSchema from "../../../components/react/LocalBusinessSchema";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "ar" } },
+    { params: { lang: "de" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "it" } },
+    { params: { lang: "hi" } },
+    { params: { lang: "ms" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const isRtl = lang === "ar";
+
+const titles = {
+  ar: "تطوير مواقع Next.js | HMZ Technology",
+  de: "Next.js Webentwicklung | HMZ Technology",
+  fr: "Développement Web Next.js | HMZ Technology",
+  it: "Sviluppo Web Next.js | HMZ Technology",
+  hi: "Next.js Web Development | HMZ Technology",
+  ms: "Pembangunan Web Next.js | HMZ Technology",
+};
+
+const descriptions = {
+  ar: "تطوير مواقع وتطبيقات ويب سريعة باستخدام Next.js.",
+  de: "Professionelle Next.js Entwicklung für schnelle Websites.",
+  fr: "Développement professionnel Next.js pour des sites rapides.",
+  it: "Sviluppo professionale Next.js per siti web veloci.",
+  hi: "Next.js के साथ उच्च-प्रदर्शन वाली वेबसाइटें विकसित करें।",
+  ms: "Pembangunan Next.js profesional untuk laman web yang pantas.",
+};
+
+const title =
+  titles[lang as keyof typeof titles] ||
+  "Next.js Web Development | HMZ Technology";
+const description =
+  descriptions[lang as keyof typeof descriptions] ||
+  "Professional Next.js development.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  dir={isRtl ? "rtl" : "ltr"}
+>
+  <Header lang={lang} client:load />
+  <main>
+    <ServiceDetail lang={lang} serviceId="nextjs-development" client:load />
+    <Testimonials lang={lang} client:load />
+  </main>
+  <Footer lang={lang} client:load />
+  <LocalBusinessSchema />
+</Layout>

@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/react/Header';
+import Footer from '../../components/react/Footer';
+import AboutContent from '../../components/react/AboutContent';
+import TrustBadges from '../../components/react/TrustBadges';
+import LocalBusinessSchema from '../../components/react/LocalBusinessSchema';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'ar' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'hi' } },
+    { params: { lang: 'ms' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const isRtl = lang === 'ar';
+
+const titles = {
+    ar: "عن الشركة | HMZ Technology",
+    de: "Über uns | HMZ Technology",
+    fr: "À propos de nous | HMZ Technology",
+    it: "Chi Siamo | HMZ Technology",
+    hi: "हमारे बारे में | HMZ Technology",
+    ms: "Tentang Kami | HMZ Technology"
+};
+
+const descriptions = {
+    ar: "تعرف على HMZ Technology، الشركة الرائدة في تطوير روبوتات الدردشة بالذكاء الاصطناعي.",
+    de: "Erfahren Sie mehr über HMZ Technology, das führende Unternehmen für KI-Chatbot-Entwicklung.",
+    fr: "En savoir plus sur HMZ Technology, la société leader dans le développement de chatbots IA.",
+    it: "Scopri di più su HMZ Technology, l'azienda leader nello sviluppo di chatbot IA.",
+    hi: "AI चैटबॉट विकास में अग्रणी कंपनी HMZ Technology के बारे में और जानें।",
+    ms: "Ketahui lebih lanjut tentang HMZ Technology, syarikat terkemuka dalam pembangunan chatbot AI."
+};
+
+const title = titles[lang as keyof typeof titles] || "About HMZ Technology";
+const description = descriptions[lang as keyof typeof descriptions] || "About HMZ Technology - AI Chatbot Experts";
+---
+
+<Layout title={title} description={description} lang={lang} dir={isRtl ? 'rtl' : 'ltr'}>
+    <Header lang={lang} client:load />
+    <main>
+        <AboutContent lang={lang} client:load />
+        <TrustBadges lang={lang} client:load />
+    </main>
+    <Footer lang={lang} client:load />
+    <LocalBusinessSchema />
+</Layout>

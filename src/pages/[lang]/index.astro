@@ -1,0 +1,68 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/react/Header";
+import Hero from "../../components/react/Hero";
+import TrustBadges from "../../components/react/TrustBadges";
+import CaseStudies from "../../components/react/CaseStudies";
+import BentoShowcase from "../../components/react/BentoShowcase";
+import ProcessWorkflow from "../../components/react/ProcessWorkflow";
+import Testimonials from "../../components/react/Testimonials";
+import Footer from "../../components/react/Footer";
+import LocalBusinessSchema from "../../components/react/LocalBusinessSchema";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "ar" } },
+    { params: { lang: "de" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "it" } },
+    { params: { lang: "hi" } },
+    { params: { lang: "ms" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const isRtl = lang === "ar";
+
+const titles = {
+  ar: "HMZ Technology | روبوتات الذكاء الاصطناعي والأتمتة",
+  de: "HMZ Technology | KI-Chatbots & Automatisierung",
+  fr: "HMZ Technology | Chatbots IA & Automatisation",
+  it: "HMZ Technology | Chatbot IA e Automazione",
+  hi: "HMZ Technology | AI चैटबॉट्स और ऑटोमेशन",
+  ms: "HMZ Technology | Chatbot AI & Automasi",
+};
+
+const descriptions = {
+  ar: "الشركة الرائدة في تطوير روبوتات الدردشة بالذكاء الاصطناعي. أتمتة واتساب وانستغرام وماسنجر بحلول ذكية مخصصة. نخدم الشرق الأوسط والعالم.",
+  de: "Führendes Unternehmen für KI-Chatbot-Entwicklung. Automatisieren Sie WhatsApp, Instagram & Messenger mit benutzerdefinierten KI-Lösungen.",
+  fr: "Société leader dans le développement de chatbots IA. Automatisez WhatsApp, Instagram et Messenger avec des solutions IA personnalisées.",
+  it: "Azienda leader nello sviluppo di chatbot IA. Automatizza WhatsApp, Instagram e Messenger con soluzioni IA personalizzate.",
+  hi: "प्रमुख AI चैटबॉट विकास कंपनी। अनुकूलित AI समाधानों के साथ WhatsApp, Instagram और Messenger को स्वचालित करें।",
+  ms: "Syarikat pembangunan chatbot AI terkemuka. Automatisasikan WhatsApp, Instagram & Messenger dengan penyelesaian AI tersuai.",
+};
+
+const title = titles[lang as keyof typeof titles] || "HMZ Technology";
+const description =
+  descriptions[lang as keyof typeof descriptions] ||
+  "Leading AI chatbot development company.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  dir={isRtl ? "rtl" : "ltr"}
+>
+  <Header lang={lang} client:load />
+  <main class="bg-[#030014] min-h-screen">
+    <Hero lang={lang} client:load />
+    <TrustBadges lang={lang} client:visible />
+    <CaseStudies lang={lang} client:visible />
+    <BentoShowcase lang={lang} client:visible />
+    <ProcessWorkflow lang={lang} client:visible />
+    <Testimonials lang={lang} client:visible />
+  </main>
+  <Footer lang={lang} client:load />
+  <LocalBusinessSchema locale={lang === "ar" ? "sa" : lang} />
+</Layout>

@@ -1,0 +1,95 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/astro/Breadcrumbs.astro";
+import ServiceDetail from "../../components/react/ServiceDetail";
+import FAQSchema from "../../components/react/FAQSchema";
+import { servicesData } from "../../lib/servicesData";
+
+export function getStaticPaths() {
+    return Object.keys(servicesData).map((serviceId) => ({
+        params: { service: serviceId },
+    }));
+}
+
+const { service } = Astro.params;
+const lang = "en";
+
+const serviceData = servicesData[service]?.en;
+
+if (!serviceData) {
+    return Astro.redirect("/404");
+}
+---
+
+<Layout
+    title={`${serviceData.title} | HMZ Technology`}
+    description={serviceData.description}
+    lang={lang}
+    dir="ltr"
+>
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <Breadcrumbs
+            items={[
+                { name: "Services", item: "/services" },
+                { name: serviceData.title, item: `/services/${service}` },
+            ]}
+        />
+        <!-- Quick Answer Snippet for AEO/GEO -->
+        <section
+            class="bg-blue-50/50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-900/20 rounded-2xl p-6 mb-12"
+        >
+            <h2 class="text-xl font-bold mb-3 text-blue-900 dark:text-blue-100">
+                Quick Answer: What is {serviceData.title}?
+            </h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                {serviceData.description} HMZ Technology provides high-authority AI
+                solutions tailored for global markets, ensuring seamless integration
+                and ROI.
+            </p>
+        </section>
+
+        <ServiceDetail serviceId={service} lang={lang} client:load />
+
+        <!-- FAQ Section for Schema -->
+        <div class="mt-20">
+            <h2 class="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
+            <div class="grid gap-6">
+                {
+                    [
+                        {
+                            question: `How does ${serviceData.title} help my business?`,
+                            answer: `Our ${serviceData.title} solution automates complex workflows, reduces operational costs, and provides 24/7 engagement through advanced AI models. For a free consultation, contact us at +96170106083 or sales@hmz.technology.`,
+                        },
+                        {
+                            question: "Is it secure and compliant?",
+                            answer: "Yes, all our AI solutions are built with enterprise-grade security, ensuring data privacy and compliance with international standards. Contact our security team at +96170106083.",
+                        },
+                    ].map((faq) => (
+                        <div class="p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700">
+                            <h3 class="font-bold text-lg mb-2">
+                                {faq.question}
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                {faq.answer}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Structured Data for AEO -->
+    <FAQSchema
+        items={[
+            {
+                question: `How does ${serviceData.title} help my business?`,
+                answer: `Our ${serviceData.title} solution automates complex workflows, reduces operational costs, and provides 24/7 engagement through advanced AI models. For a free consultation, contact us at +96170106083 or sales@hmz.technology.`,
+            },
+            {
+                question: "Is it secure and compliant?",
+                answer: "Yes, all our AI solutions are built with enterprise-grade security, ensuring data privacy and compliance with international standards. Contact our security team at +96170106083.",
+            },
+        ]}
+    />
+</Layout>

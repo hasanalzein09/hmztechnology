@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/react/Header';
+import Footer from '../../components/react/Footer';
+import ServicesList from '../../components/react/ServicesList';
+import Testimonials from '../../components/react/Testimonials';
+import LocalBusinessSchema from '../../components/react/LocalBusinessSchema';
+
+const lang = "en";
+const title = "AI Services & Solutions | HMZ Technology";
+const description = "Explore our AI automation services: WhatsApp Chatbots, Instagram Bots, Web Development, and Custom AI Solutions.";
+---
+
+<Layout title={title} description={description} lang={lang} dir="ltr">
+    <Header lang={lang} client:load />
+    <main>
+        <ServicesList lang={lang} client:load />
+        <Testimonials lang={lang} client:load />
+    </main>
+    <Footer lang={lang} client:load />
+    <LocalBusinessSchema />
+</Layout>

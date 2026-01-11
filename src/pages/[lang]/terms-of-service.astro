@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TermsOfServiceComponent from '../../components/react/TermsOfService';
+
+export function getStaticPaths() {
+    return [
+        { params: { lang: 'ar' } },
+        { params: { lang: 'de' } },
+        { params: { lang: 'fr' } },
+        { params: { lang: 'it' } },
+        { params: { lang: 'hi' } },
+        { params: { lang: 'ms' } },
+    ];
+}
+
+const { lang } = Astro.params;
+const isRtl = lang === 'ar';
+---
+
+<Layout title="Terms of Service | HMZ Technology" description="Terms of Service for HMZ Technology" lang={lang} dir={isRtl ? 'rtl' : 'ltr'}>
+    <TermsOfServiceComponent />
+</Layout>

@@ -1,0 +1,53 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/react/Header';
+import Footer from '../../components/react/Footer';
+import ContactForm from '../../components/react/ContactForm';
+import Testimonials from '../../components/react/Testimonials';
+import LocalBusinessSchema from '../../components/react/LocalBusinessSchema';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'ar' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'it' } },
+    { params: { lang: 'hi' } },
+    { params: { lang: 'ms' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const isRtl = lang === 'ar';
+
+const titles = {
+    ar: "تواصل معنا | HMZ Technology",
+    de: "Kontaktieren Sie uns | HMZ Technology",
+    fr: "Contactez-nous | HMZ Technology",
+    it: "Contattaci | HMZ Technology",
+    hi: "संपर्क करें | HMZ Technology",
+    ms: "Hubungi Kami | HMZ Technology"
+};
+
+const descriptions = {
+    ar: "تواصل مع HMZ Technology لتطوير روبوتات الدردشة الذكية وأتمتة واتساب.",
+    de: "Kontaktieren Sie HMZ Technology für KI-Chatbot-Entwicklung und WhatsApp-Automatisierung.",
+    fr: "Contactez HMZ Technology pour le développement de chatbots IA et l'automatisation WhatsApp.",
+    it: "Contatta HMZ Technology per lo sviluppo di chatbot IA e automazione WhatsApp.",
+    hi: "AI चैटबॉट विकास और WhatsApp ऑटोमेशन के लिए HMZ Technology से संपर्क करें।",
+    ms: "Hubungi HMZ Technology untuk pembangunan chatbot AI dan automasi WhatsApp."
+};
+
+const title = titles[lang as keyof typeof titles] || "Contact HMZ Technology";
+const description = descriptions[lang as keyof typeof descriptions] || "Contact HMZ Technology for AI solutions.";
+---
+
+<Layout title={title} description={description} lang={lang} dir={isRtl ? 'rtl' : 'ltr'}>
+    <Header lang={lang} client:load />
+    <main>
+        <ContactForm lang={lang} client:load />
+        <Testimonials lang={lang} client:load />
+    </main>
+    <Footer lang={lang} client:load />
+    <LocalBusinessSchema />
+</Layout>

@@ -1,0 +1,61 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/react/Header";
+import Footer from "../../../components/react/Footer";
+import ServiceDetail from "../../../components/react/ServiceDetail";
+import Testimonials from "../../../components/react/Testimonials";
+import LocalBusinessSchema from "../../../components/react/LocalBusinessSchema";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "ar" } },
+    { params: { lang: "de" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "it" } },
+    { params: { lang: "hi" } },
+    { params: { lang: "ms" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const isRtl = lang === "ar";
+
+const titles = {
+  ar: "خدمات SEO المتقدمة | HMZ Technology",
+  de: "Erweiterte SEO-Dienstleistungen | HMZ Technology",
+  fr: "Services SEO Avancés | HMZ Technology",
+  it: "Servizi SEO Avanzati | HMZ Technology",
+  hi: "Advanced SEO Services | HMZ Technology",
+  ms: "Perkhidmatan SEO Lanjutan | HMZ Technology",
+};
+
+const descriptions = {
+  ar: "استراتيجيات SEO مبنية على البيانات لتصدر نتائج البحث.",
+  de: "Datengetriebene SEO-Strategien für bessere Rankings.",
+  fr: "Stratégies SEO basées sur les données pour dominer les recherches.",
+  it: "Strategie SEO basate sui dati per dominare le ricerche.",
+  hi: "डेटा-संचालित एसईओ रणनीतियों के साथ खोज परिणामों पर हावी हों।",
+  ms: "Strategi SEO berasaskan data untuk menguasai carian.",
+};
+
+const title =
+  titles[lang as keyof typeof titles] ||
+  "Advanced SEO Services | HMZ Technology";
+const description =
+  descriptions[lang as keyof typeof descriptions] || "Advanced SEO Services.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  dir={isRtl ? "rtl" : "ltr"}
+>
+  <Header lang={lang} client:load />
+  <main>
+    <ServiceDetail lang={lang} serviceId="advanced-seo" client:load />
+    <Testimonials lang={lang} client:load />
+  </main>
+  <Footer lang={lang} client:load />
+  <LocalBusinessSchema />
+</Layout>

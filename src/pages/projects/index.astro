@@ -1,0 +1,18 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/react/Header";
+import Footer from "../../components/react/Footer";
+import TranslatedProjects from "../../components/react/TranslatedProjects";
+
+const title = "Our Projects | Success Stories | HMZ Technology";
+const description =
+    "Discover our successful AI automation projects. Real results from real clients.";
+---
+
+<Layout title={title} description={description} lang="en">
+    <Header lang="en" client:load />
+    <main>
+        <TranslatedProjects lang="en" client:load />
+    </main>
+    <Footer lang="en" client:load />
+</Layout>

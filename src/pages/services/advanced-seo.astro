@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/react/Header";
+import Footer from "../../components/react/Footer";
+import ServiceDetail from "../../components/react/ServiceDetail";
+import Testimonials from "../../components/react/Testimonials";
+import LocalBusinessSchema from "../../components/react/LocalBusinessSchema";
+
+const lang = "en";
+const title = "Advanced SEO Services | HMZ Technology";
+const description =
+    "Data-driven SEO strategies to dominate search rankings and drive organic traffic.";
+---
+
+<Layout title={title} description={description} lang={lang} dir="ltr">
+    <Header lang={lang} client:load />
+    <main>
+        <ServiceDetail lang={lang} serviceId="advanced-seo" client:load />
+        <Testimonials lang={lang} client:load />
+    </main>
+    <Footer lang={lang} client:load />
+    <LocalBusinessSchema />
+</Layout>

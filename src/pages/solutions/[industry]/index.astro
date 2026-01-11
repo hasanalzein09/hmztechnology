@@ -1,0 +1,32 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import TranslatedIndustryPage from '../../../components/react/TranslatedIndustryPage';
+import Footer from '../../../components/react/Footer';
+import { getAllIndustries, getSolutionsByIndustry } from '../../../lib/solutionsData';
+
+export function getStaticPaths() {
+  const industries = getAllIndustries();
+  return industries.map(ind => ({
+    params: { industry: ind.slug }
+  }));
+}
+
+const { industry } = Astro.params;
+const solutions = getSolutionsByIndustry(industry);
+
+// Basic capitalization for title
+const industryName = industry.charAt(0).toUpperCase() + industry.slice(1);
+---
+
+<Layout 
+    title={`${industryName} Solutions | HMZ Technology`} 
+    description={`Explore our tailored solutions for the ${industryName} industry. Proven ROI and rapid implementation.`}
+>
+    <TranslatedIndustryPage 
+        industrySlug={industry} 
+        solutions={solutions} 
+        lang="en" 
+        client:load 
+    />
+    <Footer lang="en" client:visible />
+</Layout>

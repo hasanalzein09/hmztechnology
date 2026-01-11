@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PrivacyPolicyComponent from '../../components/react/PrivacyPolicy';
+
+export function getStaticPaths() {
+    return [
+        { params: { lang: 'ar' } },
+        { params: { lang: 'de' } },
+        { params: { lang: 'fr' } },
+        { params: { lang: 'it' } },
+        { params: { lang: 'hi' } },
+        { params: { lang: 'ms' } },
+    ];
+}
+
+const { lang } = Astro.params;
+const isRtl = lang === 'ar';
+---
+
+<Layout title="Privacy Policy | HMZ Technology" description="Privacy Policy for HMZ Technology" lang={lang} dir={isRtl ? 'rtl' : 'ltr'}>
+    <PrivacyPolicyComponent />
+</Layout>

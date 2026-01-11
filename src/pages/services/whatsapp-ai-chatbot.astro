@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/react/Header";
+import Footer from "../../components/react/Footer";
+import ServiceDetail from "../../components/react/ServiceDetail";
+import Testimonials from "../../components/react/Testimonials";
+import LocalBusinessSchema from "../../components/react/LocalBusinessSchema";
+
+const lang = "en";
+const title = "WhatsApp AI Chatbot | HMZ Technology";
+const description =
+    "Automate your customer support and sales with our advanced WhatsApp AI Chatbot solutions.";
+---
+
+<Layout title={title} description={description} lang={lang} dir="ltr">
+    <Header lang={lang} client:load />
+    <main>
+        <ServiceDetail
+            lang={lang}
+            serviceId="whatsapp-ai-chatbot"
+            client:load
+        />
+        <Testimonials lang={lang} client:load />
+    </main>
+    <Footer lang={lang} client:load />
+    <LocalBusinessSchema />
+</Layout>

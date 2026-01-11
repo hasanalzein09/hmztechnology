@@ -1,0 +1,121 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../components/astro/Breadcrumbs.astro";
+import TranslatedSolutionDetail from "../../../components/react/TranslatedSolutionDetail";
+import Footer from "../../../components/react/Footer";
+import {
+  getAllIndustries,
+  getSolutionsByIndustry,
+} from "../../../lib/solutionsData";
+
+export function getStaticPaths() {
+  const industries = getAllIndustries();
+  return industries.flatMap((ind) => {
+    const solutions = getSolutionsByIndustry(ind.slug);
+    return solutions.map((sol) => ({
+      params: { industry: ind.slug, solution: sol.slug },
+      props: { solution: sol },
+    }));
+  });
+}
+
+const { industry, solution: solutionSlug } = Astro.params;
+const { solution } = Astro.props;
+
+// Capitalize industry for breadcrumb
+const industryName = industry.charAt(0).toUpperCase() + industry.slice(1);
+
+// Schema Markup
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: solution.title,
+  description: solution.description,
+  brand: {
+    "@type": "Brand",
+    name: "HMZ Technology",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    url: `https://hmz.technology/solutions/${industry}/${solution.slug}`,
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "127",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: solution.faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.answer,
+    },
+  })),
+};
+---
+
+<Layout
+  title={`${solution.title} | HMZ Technology`}
+  description={solution.shortDescription}
+>
+  <div class="bg-[#030014] min-h-screen">
+    <!-- Breadcrumbs -->
+    <div class="max-w-7xl mx-auto px-4 pt-8">
+      <Breadcrumbs
+        items={[
+          { name: "Solutions", item: "/solutions" },
+          { name: industryName, item: `/solutions/${industry}` },
+          {
+            name: solution.title,
+            item: `/solutions/${industry}/${solution.slug}`,
+          },
+        ]}
+      />
+    </div>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <!-- Quick Answer Snippet for AEO/GEO -->
+    <div class="max-w-7xl mx-auto px-4 mt-6">
+      <section
+        class="bg-gradient-to-r from-cyan-500/10 to-purple-500/5 border border-cyan-500/20 rounded-2xl p-6 backdrop-blur-sm"
+      >
+        <div class="flex items-center gap-3 mb-3">
+          <div class="p-2 bg-cyan-500/20 rounded-lg">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h2 class="text-lg font-bold text-cyan-400">
+            AI Summary: {solution.title}
+          </h2>
+        </div>
+        <p class="text-slate-300 leading-relaxed">
+          {solution.shortDescription || solution.description} This industry-specific
+          solution by HMZ Technology leverages advanced AI to optimize workflows in
+          the {industryName} sector. For custom implementation or pricing, contact us
+          at +96170106083 or sales@hmz.technology.
+        </p>
+      </section>
+    </div>
+
+    <TranslatedSolutionDetail
+      solution={solution}
+      lang="en"
+      industrySlug={industry}
+      client:load
+    />
+    <Footer lang="en" client:visible />
+  </div>
+</Layout>

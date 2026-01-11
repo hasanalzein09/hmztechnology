@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/react/Header';
+import Footer from '../components/react/Footer';
+import ContactForm from '../components/react/ContactForm';
+import Testimonials from '../components/react/Testimonials';
+import LocalBusinessSchema from '../components/react/LocalBusinessSchema';
+
+const lang = "en";
+const title = "Contact HMZ Technology | Global AI & Automation Experts";
+const description = "Get in touch with HMZ Technology for AI chatbot development, WhatsApp automation, and custom AI solutions. Free consultation available.";
+---
+
+<Layout title={title} description={description} lang={lang} dir="ltr">
+    <Header lang={lang} client:load />
+    <main>
+        <ContactForm lang={lang} client:load />
+        <Testimonials lang={lang} client:load />
+    </main>
+    <Footer lang={lang} client:load />
+    <LocalBusinessSchema />
+</Layout>

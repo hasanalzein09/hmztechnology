@@ -1,0 +1,61 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/react/Header";
+import Footer from "../../../components/react/Footer";
+import ServicesList from "../../../components/react/ServicesList";
+import Testimonials from "../../../components/react/Testimonials";
+import LocalBusinessSchema from "../../../components/react/LocalBusinessSchema";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "ar" } },
+    { params: { lang: "de" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "it" } },
+    { params: { lang: "hi" } },
+    { params: { lang: "ms" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const isRtl = lang === "ar";
+
+const titles = {
+  ar: "خدمات وحلول الذكاء الاصطناعي | HMZ Technology",
+  de: "KI-Dienstleistungen & Lösungen | HMZ Technology",
+  fr: "Services et Solutions IA | HMZ Technology",
+  it: "Servizi e Soluzioni IA | HMZ Technology",
+  hi: "AI Services & Solutions | HMZ Technology",
+  ms: "Perkhidmatan & Penyelesaian AI | HMZ Technology",
+};
+
+const descriptions = {
+  ar: "استكشف خدماتنا: شات بوت واتساب، بوت انستغرام، تطوير المواقع، وحلول الذكاء الاصطناعي المخصصة.",
+  de: "Entdecken Sie unsere KI-Dienste: WhatsApp Chatbots, Instagram Bots, Webentwicklung und mehr.",
+  fr: "Découvrez nos services: Chatbots WhatsApp, Bots Instagram, Développement Web et Solutions IA.",
+  it: "Scopri i nostri servizi: Chatbot WhatsApp, Bot Instagram, Sviluppo Web e Soluzioni IA.",
+  hi: "हमारी एआई सेवाओं का अन्वेषण करें: व्हाट्सएप चैटबॉट्स, इंस्टाग्राम बॉट्स, वेब विकास और बहुत कुछ।",
+  ms: "Terokai perkhidmatan AI kami: Chatbot WhatsApp, Bot Instagram, pembangunan web dan banyak lagi.",
+};
+
+const title =
+  titles[lang as keyof typeof titles] ||
+  "AI Services & Solutions | HMZ Technology";
+const description =
+  descriptions[lang as keyof typeof descriptions] || "Explore our AI services.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  dir={isRtl ? "rtl" : "ltr"}
+>
+  <Header lang={lang} client:load />
+  <main>
+    <ServicesList lang={lang} client:load />
+    <Testimonials lang={lang} client:load />
+  </main>
+  <Footer lang={lang} client:load />
+  <LocalBusinessSchema />
+</Layout>

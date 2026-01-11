@@ -1,0 +1,53 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/react/Header";
+import Footer from "../../../components/react/Footer";
+import TranslatedProjectDetail from "../../../components/react/TranslatedProjectDetail";
+import { getAllProjects, projectsData } from "../../../lib/projectsData";
+
+type Language = "ar" | "de" | "fr" | "it" | "hi" | "ms";
+
+export function getStaticPaths() {
+    const paths: any[] = [];
+    const languages: Language[] = ["ar", "de", "fr", "it", "hi", "ms"];
+
+    // Get all project slugs from English (primary source)
+    const allProjects = projectsData.en.projects;
+
+    languages.forEach((lang) => {
+        allProjects.forEach((project) => {
+            paths.push({
+                params: { lang, project: project.slug },
+            });
+        });
+    });
+
+    return paths;
+}
+
+const { lang, project } = Astro.params;
+const isRtl = lang === "ar";
+
+const projectData = projectsData.en.projects.find((p) => p.slug === project);
+const title = projectData
+    ? `${projectData.title} | HMZ Technology`
+    : "Project | HMZ Technology";
+const description = projectData?.description || "View our project case study.";
+---
+
+<Layout
+    title={title}
+    description={description}
+    lang={lang}
+    dir={isRtl ? "rtl" : "ltr"}
+>
+    <Header lang={lang} client:load />
+    <main>
+        <TranslatedProjectDetail
+            projectSlug={project}
+            lang={lang}
+            client:load
+        />
+    </main>
+    <Footer lang={lang} client:load />
+</Layout>

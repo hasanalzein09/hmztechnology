@@ -1,0 +1,148 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../../components/astro/Breadcrumbs.astro";
+import TranslatedSolutionDetail from "../../../../components/react/TranslatedSolutionDetail";
+import Footer from "../../../../components/react/Footer";
+import {
+  getAllIndustries,
+  getSolutionsByIndustry,
+} from "../../../../lib/solutionsData";
+import { getTranslatedSolution } from "../../../../lib/translations";
+
+export function getStaticPaths() {
+  const languages = ["ar", "de", "fr", "it", "hi", "ms"];
+  const industries = getAllIndustries();
+
+  return languages.flatMap((lang) =>
+    industries.flatMap((ind) => {
+      const solutions = getSolutionsByIndustry(ind.slug);
+      return solutions.map((sol) => ({
+        params: { lang, industry: ind.slug, solution: sol.slug },
+        props: { solution: sol },
+      }));
+    }),
+  );
+}
+
+const { lang, industry, solution: solutionSlug } = Astro.params;
+const { solution } = Astro.props;
+
+// Get Translated SEO Data
+const translated = getTranslatedSolution(solution.id, lang);
+const title =
+  translated?.title ||
+  (lang === "ar" && solution.arabicTitle
+    ? solution.arabicTitle
+    : solution.title);
+const description =
+  translated?.description ||
+  (lang === "ar" && solution.arabicDescription
+    ? solution.arabicDescription
+    : solution.shortDescription);
+const faqs =
+  translated?.faqs ||
+  (lang === "ar" && solution.arabicFaqs ? solution.arabicFaqs : solution.faqs);
+
+// Schema Markup (Localized)
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: title,
+  description: description,
+  brand: {
+    "@type": "Brand",
+    name: "HMZ Technology",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    url: `https://hmz.technology/${lang}/solutions/${industry}/${solution.slug}`,
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "127",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.answer,
+    },
+  })),
+};
+---
+
+<Layout
+  title={`${title} | HMZ Technology`}
+  description={description}
+  lang={lang}
+>
+  <div class="bg-[#030014] min-h-screen">
+    <!-- Breadcrumbs -->
+    <div class="max-w-7xl mx-auto px-4 pt-8">
+      <Breadcrumbs
+        items={[
+          {
+            name: lang === "ar" ? "الحلول" : "Solutions",
+            item: `/${lang}/solutions`,
+          },
+          {
+            name: solution.title,
+            item: `/${lang}/solutions/${industry}/${solution.slug}`,
+          },
+        ]}
+      />
+    </div>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+    <!-- Quick Answer Snippet for AEO/GEO -->
+    <div class="max-w-7xl mx-auto px-4 mt-6">
+      <section
+        class="bg-gradient-to-r from-cyan-500/10 to-purple-500/5 border border-cyan-500/20 rounded-2xl p-6 backdrop-blur-sm"
+      >
+        <div class="flex items-center gap-3 mb-3">
+          <div class="p-2 bg-cyan-500/20 rounded-lg">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h2 class="text-lg font-bold text-cyan-400">
+            {
+              lang === "ar"
+                ? `ملخص الذكاء الاصطناعي: ${title}`
+                : `AI Summary: ${title}`
+            }
+          </h2>
+        </div>
+        <p class="text-slate-300 leading-relaxed" id="aeo-summary">
+          {description}
+          {
+            lang === "ar"
+              ? "هذا الحل المتخصص من HMZ Technology يستخدم الذكاء الاصطناعي المتقدم لتحسين سير العمل في قطاعك. للتنفيذ المخصص أو الأسعار، تواصل معنا على +96170106083 أو sales@hmz.technology."
+              : `This industry-specific solution by HMZ Technology leverages advanced AI to optimize workflows in your sector. For custom implementation or pricing, contact us at +96170106083 or sales@hmz.technology.`
+          }
+        </p>
+      </section>
+    </div>
+
+    <TranslatedSolutionDetail
+      solution={solution}
+      lang={lang as any}
+      industrySlug={industry}
+      client:load
+    />
+    <Footer lang={lang as any} client:visible />
+  </div>
+</Layout>

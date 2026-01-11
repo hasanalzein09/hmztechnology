@@ -1,0 +1,62 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/react/Header";
+import Footer from "../../../components/react/Footer";
+import ServiceDetail from "../../../components/react/ServiceDetail";
+import Testimonials from "../../../components/react/Testimonials";
+import LocalBusinessSchema from "../../../components/react/LocalBusinessSchema";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "ar" } },
+    { params: { lang: "de" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "it" } },
+    { params: { lang: "hi" } },
+    { params: { lang: "ms" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const isRtl = lang === "ar";
+
+const titles = {
+  ar: "بوت انستغرام الذكي | HMZ Technology",
+  de: "Instagram AI Chatbot | HMZ Technology",
+  fr: "Bot Instagram IA | HMZ Technology",
+  it: "Bot Instagram IA | HMZ Technology",
+  hi: "Instagram AI Chatbot | HMZ Technology",
+  ms: "Instagram AI Chatbot | HMZ Technology",
+};
+
+const descriptions = {
+  ar: "عزز تفاعل انستغرام ومبيعاتك مع أتمتة الشات بوت الذكية.",
+  de: "Steigern Sie Instagram-Engagement und Verkäufe mit unserer intelligenten Chatbot-Automatisierung.",
+  fr: "Boostez l'engagement et les ventes Instagram avec notre automatisation intelligente par Chatbot.",
+  it: "Aumenta il coinvolgimento e le vendite su Instagram con la nostra automazione intelligente Chatbot.",
+  hi: "इंस्टाग्राम पर सहभागिता और बिक्री बढ़ाएं।",
+  ms: "Tingkatkan penglibatan dan jualan Instagram dengan automasi pintar Chatbot kami.",
+};
+
+const title =
+  titles[lang as keyof typeof titles] ||
+  "Instagram AI Chatbot | HMZ Technology";
+const description =
+  descriptions[lang as keyof typeof descriptions] ||
+  "Boost Instagram engagement.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  dir={isRtl ? "rtl" : "ltr"}
+>
+  <Header lang={lang} client:load />
+  <main>
+    <ServiceDetail lang={lang} serviceId="instagram-ai-chatbot" client:load />
+    <Testimonials lang={lang} client:load />
+  </main>
+  <Footer lang={lang} client:load />
+  <LocalBusinessSchema />
+</Layout>

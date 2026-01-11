@@ -1,0 +1,62 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/react/Header";
+import Footer from "../../../components/react/Footer";
+import ServiceDetail from "../../../components/react/ServiceDetail";
+import Testimonials from "../../../components/react/Testimonials";
+import LocalBusinessSchema from "../../../components/react/LocalBusinessSchema";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "ar" } },
+    { params: { lang: "de" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "it" } },
+    { params: { lang: "hi" } },
+    { params: { lang: "ms" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const isRtl = lang === "ar";
+
+const titles = {
+  ar: "شات بوت ماسنجر | HMZ Technology",
+  de: "Messenger AI Chatbot | HMZ Technology",
+  fr: "Chatbot Messenger IA | HMZ Technology",
+  it: "Chatbot Messenger IA | HMZ Technology",
+  hi: "Messenger AI Chatbot | HMZ Technology",
+  ms: "Messenger AI Chatbot | HMZ Technology",
+};
+
+const descriptions = {
+  ar: "أتمتة ماسنجر فيسبوك مع شات بوت ذكي لزيادة المبيعات.",
+  de: "Automatisieren Sie Facebook Messenger mit KI-Chatbots.",
+  fr: "Automatisez Facebook Messenger avec des chatbots IA.",
+  it: "Automatizza Facebook Messenger con chatbot IA.",
+  hi: "मैसेंजर पर एआई चैटबॉट के साथ कार्यों को स्वचालित करें।",
+  ms: "Automasi Facebook Messenger dengan chatbot AI kami.",
+};
+
+const title =
+  titles[lang as keyof typeof titles] ||
+  "Messenger AI Chatbot | HMZ Technology";
+const description =
+  descriptions[lang as keyof typeof descriptions] ||
+  "Automate Facebook Messenger.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  dir={isRtl ? "rtl" : "ltr"}
+>
+  <Header lang={lang} client:load />
+  <main>
+    <ServiceDetail lang={lang} serviceId="messenger-ai-chatbot" client:load />
+    <Testimonials lang={lang} client:load />
+  </main>
+  <Footer lang={lang} client:load />
+  <LocalBusinessSchema />
+</Layout>

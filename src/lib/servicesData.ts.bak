@@ -1,0 +1,1027 @@
+
+import type { Language } from '../components/react/types';
+
+export interface Service {
+    id: string;
+    icon: string;
+    title: string;
+    description: string;
+    features: string[];
+    benefits: string[];
+    faq: { question: string; answer: string }[];
+    crisisSolved: string;
+    workflow: string[];
+    costOfInaction: string;
+    psychologicalHook: string;
+}
+
+export const servicesData: Record<string, Record<Language, Service>> = {
+    'whatsapp-ai-chatbot': {
+        en: {
+            id: 'whatsapp-ai-chatbot',
+            icon: '💬',
+            title: 'WhatsApp AI Chatbot',
+            description: 'Architecting high-conversion communication infrastructures on the world’s most dominant messaging platform. We deploy bespoke AI agents that handle complex enterprise workflows, from lead qualification to multi-step transactional flows, with zero-latency precision.',
+            features: [
+                'Official Meta Verified Cloud API',
+                'Custom NLP & Intent Recognition',
+                'Enterprise-Grade Security (End-to-End)',
+                'Human-in-the-Loop Hybrid Architecture'
+            ],
+            benefits: [
+                '99% Automation of Support Bandwidth',
+                'Instant Global Scalability for Sales',
+                'Hyper-Personalized Client Journeys',
+                'Verifiable ROI within 14 Days'
+            ],
+            faq: [
+                { question: 'Can the bot integrate with my CRM?', answer: 'Yes, we integrate with HubSpot, Salesforce, Zoho, and 50+ other CRMs.' },
+                { question: 'Is WhatsApp API official?', answer: 'Yes, we use the official WhatsApp Business API (Meta verified).' }
+            ],
+            crisisSolved: 'Businesses scaling globally often face the "Communication Chasm"—where lead response times exceed 5 minutes, causing a 400% drop in conversion. We kill this chaos by ensuring every prospect is engaged, qualified, and moved to the next stage in less than 3 seconds, regardless of volume.',
+            workflow: [
+                'Infrastructure Audit & Meta Verification',
+                'Custom NLP Training (Your Brand Voice)',
+                'Deep CRM & Transactional Integration',
+                'Zero-Downtime Live Rollout'
+            ],
+            costOfInaction: 'Staying with manual support means bleeding revenue through "Unanswered Lead Leakage". While you sleep, 67% of your prospects are moving to competitors who respond faster. Every day of delay is a day you pay for inefficiency.',
+            psychologicalHook: 'Own the most valuable real estate in the world: Your customer’s WhatsApp Inbox.'
+        },
+        ar: {
+            id: 'whatsapp-ai-chatbot',
+            icon: '💬',
+            title: 'روبوت واتساب الذكي',
+            description: 'أتمتة خدمة العملاء والمبيعات على تطبيق المراسلة الأكثر شعبية في العالم. تتعامل روبوتاتنا الذكية مع الاستفسارات وتعالج الطلبات وتجدول المواعيد على مدار الساعة.',
+            features: [
+                'ردود فورية 24/7',
+                'تكامل معالجة الطلبات',
+                'دعم متعدد اللغات',
+                'تحويل سلس للموظف البشري'
+            ],
+            benefits: [
+                'تقليل وقت الاستجابة بنسبة 99%',
+                'زيادة تحويل المبيعات بنسبة 25%',
+                'خفض تكاليف الدعم بنسبة 70%',
+                'متاح في أي وقت وفي أي مكان'
+            ],
+            faq: [
+                { question: 'هل يمكن للروبوت الاتصال بنظام CRM الخاص بي؟', answer: 'نعم، نتكامل مع HubSpot و Salesforce و Zoho وأكثر من 50 نظام آخر.' },
+                { question: 'هل WhatsApp API رسمي؟', answer: 'نعم، نستخدم واجهة برمجة تطبيقات WhatsApp Business الرسمية (موثقة من Meta).' }
+            ],
+            crisisSolved: 'تواجه الشركات التي تتوسع عالمياً "فجوة التواصل"—حيث تتجاوز أوقات الاستجابة 5 دقائق، مما يؤدي إلى انخفاض بنسبة 400% في التحويل. نحن نقضي على هذه الفوضى بضمان تفاعل كل عميل محتمل وتأهيله في أقل من 3 ثوانٍ.',
+            workflow: [
+                'تدقيق البنية التحتية وتوثيق Meta',
+                'تدريب الذكاء الاصطناعي (على نبرة علامتك التجارية)',
+                'التكامل العميق مع CRM والمعاملات',
+                'البث المباشر بدون وقت توقف'
+            ],
+            costOfInaction: 'البقاء مع الدعم اليدوي يعني نزيف الأرباح من خلال "تسريب العملاء المحتملين غير المستجاب لهم". 67% من عملائك ينتقلون للمنافسين الذين يردون بشكل أسرع. كل يوم تأخير هو يوم تدفع فيه ثمن عدم الكفاءة.',
+            psychologicalHook: 'امتلك أغلى العقارات في العالم: صندوق وارد واتساب الخاص بعميلك.'
+        },
+        de: {
+            id: 'whatsapp-ai-chatbot',
+            icon: '💬',
+            title: 'WhatsApp KI-Chatbot',
+            description: 'Automatisieren Sie Ihren Kundenservice und Vertrieb auf der beliebtesten Messaging-App der Welt. Unsere KI-Chatbots bearbeiten Anfragen, verarbeiten Bestellungen und vereinbaren Termine rund um die Uhr.',
+            features: [
+                'Sofortige Antworten 24/7',
+                'Bestellabwicklungs-Integration',
+                'Mehrsprachiger Support',
+                'Nahtlose Übergabe an Mitarbeiter'
+            ],
+            benefits: [
+                'Antwortzeit um 99% reduzieren',
+                'Verkaufskonversion um 25% steigern',
+                'Supportkosten um 70% senken',
+                'Jederzeit und überall verfügbar'
+            ],
+            faq: [
+                { question: 'Kann der Bot in mein CRM integriert werden?', answer: 'Ja, wir integrieren uns mit HubSpot, Salesforce, Zoho und 50+ anderen CRMs.' },
+                { question: 'Ist die WhatsApp API offiziell?', answer: 'Ja, wir nutzen die offizielle WhatsApp Business API (Meta verifiziert).' }
+            ]
+        },
+        fr: {
+            id: 'whatsapp-ai-chatbot',
+            icon: '💬',
+            title: 'Chatbot IA WhatsApp',
+            description: 'Automatisez votre service client et vos ventes sur l\'application de messagerie la plus populaire au monde. Nos chatbots IA gèrent les demandes, traitent les commandes et planifient les rendez-vous 24/7.',
+            features: [
+                'Réponses instantanées 24/7',
+                'Intégration du traitement des commandes',
+                'Support multilingue',
+                'Transfert humain transparent'
+            ],
+            benefits: [
+                'Réduire le temps de réponse de 99%',
+                'Augmenter la conversion des ventes de 25%',
+                'Réduire les coûts de support de 70%',
+                'Disponible à tout moment, n\'importe où'
+            ],
+            faq: [
+                { question: 'Le bot peut-il s\'intégrer à mon CRM?', answer: 'Oui, nous nous intégrons à HubSpot, Salesforce, Zoho et plus de 50 autres CRM.' },
+                { question: 'L\'API WhatsApp est-elle officielle?', answer: 'Oui, nous utilisons l\'API officielle WhatsApp Business (vérifiée par Meta).' }
+            ]
+        },
+        it: {
+            id: 'whatsapp-ai-chatbot',
+            icon: '💬',
+            title: 'Chatbot IA WhatsApp',
+            description: 'Automatizza il tuo servizio clienti e le vendite sull\'app di messaggistica più popolare al mondo. I nostri chatbot IA gestiscono richieste, elaborano ordini e pianificano appuntamenti 24/7.',
+            features: [
+                'Risposte istantanee 24/7',
+                'Integrazione elaborazione ordini',
+                'Supporto multilingue',
+                'Passaggio umano senza interruzioni'
+            ],
+            benefits: [
+                'Riduci i tempi di risposta del 99%',
+                'Aumenta la conversione delle vendite del 25%',
+                'Riduci i costi di supporto del 70%',
+                'Disponibile sempre e ovunque'
+            ],
+            faq: [
+                { question: 'Il bot può integrarsi con il mio CRM?', answer: 'Sì, ci integriamo con HubSpot, Salesforce, Zoho e oltre 50 altri CRM.' },
+                { question: 'L\'API WhatsApp è ufficiale?', answer: 'Sì, utilizziamo l\'API ufficiale WhatsApp Business (verificata da Meta).' }
+            ]
+        },
+        hi: {
+            id: 'whatsapp-ai-chatbot',
+            icon: '💬',
+            title: 'WhatsApp AI चैटबॉट',
+            description: 'दुनिया के सबसे लोकप्रिय मैसेजिंग ऐप पर अपनी ग्राहक सेवा और बिक्री को स्वचालित करें। हमारे AI चैटबॉट्स पूछताछ संभालते हैं, ऑर्डर प्रोसेस करते हैं और 24/7 नियुक्तियां शेड्यूल करते हैं।',
+            features: [
+                'तत्काल प्रतिक्रियाएँ 24/7',
+                'ऑर्डर प्रोसेसिंग एकीकरण',
+                'बहुभाषी समर्थन',
+                'निर्बाध मानव हैंडओवर'
+            ],
+            benefits: [
+                'प्रतिक्रिया समय को 99% कम करें',
+                'बिक्री रूपांतरण को 25% बढ़ाएं',
+                'समर्थन लागत को 70% कम करें',
+                'कभी भी, कहीं भी उपलब्ध'
+            ],
+            faq: [
+                { question: 'क्या बॉट मेरे CRM के साथ एकीकृत हो सकता है?', answer: 'हाँ, हम HubSpot, Salesforce, Zoho और 50+ अन्य CRM के साथ एकीकृत करते हैं।' },
+                { question: 'क्या WhatsApp API आधिकारिक है?', answer: 'हाँ, हम आधिकारिक WhatsApp Business API (Meta सत्यापित) का उपयोग करते हैं।' }
+            ]
+        },
+        ms: {
+            id: 'whatsapp-ai-chatbot',
+            icon: '💬',
+            title: 'Chatbot AI WhatsApp',
+            description: 'Automatisasikan perkhidmatan pelanggan dan jualan anda di aplikasi pemesejan paling popular di dunia. Chatbot AI kami mengendalikan pertanyaan, memproses pesanan, dan menjadualkan janji temu 24/7.',
+            features: [
+                'Respons Segera 24/7',
+                'Integrasi Pemprosesan Pesanan',
+                'Sokongan Pelbagai Bahasa',
+                'Penyerahan Manusia Lancar'
+            ],
+            benefits: [
+                'Kurangkan masa tindak balas sebanyak 99%',
+                'Tingkatkan penukaran jualan sebanyak 25%',
+                'Kurangkan kos sokongan sebanyak 70%',
+                'Tersedia bila-bila masa, di mana sahaja'
+            ],
+            faq: [
+                { question: 'Bolehkah bot berintegrasi dengan CRM saya?', answer: 'Ya, kami berintegrasi dengan HubSpot, Salesforce, Zoho, dan 50+ CRM lain.' },
+                { question: 'Adakah API WhatsApp rasmi?', answer: 'Ya, kami menggunakan API Perniagaan WhatsApp rasmi (disahkan Meta).' }
+            ]
+        }
+    },
+    'instagram-ai-chatbot': {
+        en: {
+            id: 'instagram-ai-chatbot',
+            icon: '📸',
+            title: 'Instagram Automation',
+            description: 'Convert social engagement into automated revenue streams. Our Instagram intelligence layers transform DMs, comments, and story interactions into a self-optimizing sales machine that identifies, qualifies, and converts followers into high-value leads.',
+            features: [
+                'Contextual Comment-to-Lead Automation',
+                'Dynamic Story Mention Funnels',
+                'AI-Driven DM Qualification Engines',
+                'Real-Time Attribution Tracking'
+            ],
+            benefits: [
+                '300% Surge in Engagement Velocity',
+                'Zero-Leakage Lead Capture',
+                'Exponential Direct-to-Consumer Growth',
+                'Autonomous 24/7 Sales Presence'
+            ],
+            faq: [
+                { question: 'Will this get me banned?', answer: 'No, we only use approved Meta automation tools that are 100% compliant.' },
+                { question: 'Can it reply to comments on ads?', answer: 'Yes, it works on organic posts, reels, and paid ads.' }
+            ],
+            crisisSolved: 'Social media "ghosting" is the silent killer of modern brands. 70% of followers who comment or DM expecting help never get a response, leading to permanent brand abandonment. We solve this by creating an interactive layer that never sleeps, ensuring every digital whisper is turned into a tangible sales opportunity.',
+            workflow: [
+                'Social Ecosystem Audit',
+                'Visual Branding & Response Tone Alignment',
+                'Advanced Intent-Based Funnel Construction',
+                'Automated KPI Integration'
+            ],
+            costOfInaction: 'If you aren’t automating your social sales, you’re essentially running a shop with the doors locked half the time. Your competitors are only one DM away, and they are faster. Don\'t let your audience\'s attention evaporate into the void.',
+            psychologicalHook: 'Transform your Instagram from a gallery into a 24/7 revenue engine.'
+        },
+        ar: {
+            id: 'instagram-ai-chatbot',
+            icon: '📸',
+            title: 'أتمتة انستغرام',
+            description: 'حوّل رسائل وتعليقات انستغرام إلى مبيعات تلقائياً. تفاعل مع المتابعين، أجب عن الأسئلة الشائعة، واجمع العملاء المحتملين أثناء نومك.',
+            features: [
+                'رد تلقائي على التعليقات',
+                'أتمتة إشارات القصص (Mentions)',
+                'مسارات مبيعات الرسائل',
+                'تأهيل العملاء'
+            ],
+            benefits: [
+                'زيادة التفاعل بنسبة 300%',
+                'لا تفوت أي استفسار',
+                'ننمي قائمة بريدك تلقائياً',
+                'بع وأنت نائم'
+            ],
+            faq: [
+                { question: 'هل سيتسبب هذا في حظري؟', answer: 'لا، نحن نستخدم فقط أدوات أتمتة Meta المعتمدة والمتوافقة بنسبة 100%.' },
+                { question: 'هل يمكنه الرد على تعليقات الإعلانات؟', answer: 'نعم، يعمل على المنشورات العادية والريلز والإعلانات المدفوعة.' }
+            ],
+            crisisSolved: 'تجاهل المتابعين هو القاتل الصامت للعلامات التجارية الحديثة. 70% من المتابعين الذين لا يتلقون رداً فورياً يغادرون للأبد. نحن نحل هذه المشكلة من خلال طبقة تفاعلية لا تنام أبداً، تضمن تحويل كل إشارة رقمية إلى فرصة بيع حقيقية.',
+            workflow: [
+                'تدقيق النظام البيئي الاجتماعي',
+                'محاذاة هوية العلامة التجارية في الردود',
+                'بناء مسارات مبيعات متقدمة بناءً على النية',
+                'تكامل مؤشرات الأداء الآلية'
+            ],
+            costOfInaction: 'إذا لم تكن تؤتمت مبيعاتك الاجتماعية، فأنت تغلق أبواب متجرك في نصف الوقت. منافسوك يبعدون رسالة واحدة فقط عن عملائك، وهم أسرع منك. لا تدع اهتمام جمهورك يتبخر في الفراغ.',
+            psychologicalHook: 'حوّل انستغرام الخاص بك من مجرد معرض صور إلى محرك أرباح يعمل على مدار الساعة.'
+        },
+        de: {
+            id: 'instagram-ai-chatbot',
+            icon: '📸',
+            title: 'Instagram Automatisierung',
+            description: 'Verwandeln Sie Ihre Instagram-DMs und Kommentare automatisch in Verkäufe. Interagieren Sie mit Followern, beantworten Sie FAQs und erfassen Sie Leads, während Sie schlafen.',
+            features: [
+                'Auto-Antwort auf Kommentare',
+                'Story-Erwähnungen Automatisierung',
+                'DM-Verkaufstrichter',
+                'Lead-Qualifizierung'
+            ],
+            benefits: [
+                'Engagement um 300% steigern',
+                'Nie wieder eine DM-Anfrage verpassen',
+                'E-Mail-Liste automatisch erweitern',
+                'Verkaufen während Sie schlafen'
+            ],
+            faq: [
+                { question: 'Werde ich dadurch gesperrt?', answer: 'Nein, wir verwenden nur genehmigte Meta-Automatisierungstools, die zu 100% konform sind.' },
+                { question: 'Kann es auf Kommentare bei Anzeigen antworten?', answer: 'Ja, es funktioniert bei organischen Beiträgen, Reels und bezahlten Anzeigen.' }
+            ]
+        },
+        fr: {
+            id: 'instagram-ai-chatbot',
+            icon: '📸',
+            title: 'Automatisation Instagram',
+            description: 'Transformez automatiquement vos DM et commentaires Instagram en ventes. Interagissez avec vos abonnés, répondez aux FAQ et capturez des leads pendant votre sommeil.',
+            features: [
+                'Réponse automatique aux commentaires',
+                'Automatisation des mentions Story',
+                'Tunnels de vente DM',
+                'Qualification des leads'
+            ],
+            benefits: [
+                'Booster l\'engagement de 300%',
+                'Ne manquez jamais une demande DM',
+                'Développez votre liste d\'emails automatiquement',
+                'Vendez en dormant'
+            ],
+            faq: [
+                { question: 'Est-ce que cela va me faire bannir?', answer: 'Non, nous utilisons uniquement des outils d\'automatisation Meta approuvés et 100% conformes.' },
+                { question: 'Peut-il répondre aux commentaires sur les publicités?', answer: 'Oui, cela fonctionne sur les posts organiques, les reels et les publicités payantes.' }
+            ]
+        },
+        it: {
+            id: 'instagram-ai-chatbot',
+            icon: '📸',
+            title: 'Automazione Instagram',
+            description: 'Trasforma automaticamente i tuoi DM e commenti di Instagram in vendite. Interagisci con i follower, rispondi alle FAQ e acquisisci lead mentre dormi.',
+            features: [
+                'Risposta automatica ai commenti',
+                'Automazione menzioni nelle storie',
+                'Funnel di vendita DM',
+                'Qualificazione dei lead'
+            ],
+            benefits: [
+                'Aumenta l\'engagement del 300%',
+                'Non perdere mai una richiesta DM',
+                'Fai crescere la tua lista email automaticamente',
+                'Vendi mentre dormi'
+            ],
+            faq: [
+                { question: 'Questo mi farà bannare?', answer: 'No, utilizziamo solo strumenti di automazione Meta approvati e conformi al 100%.' },
+                { question: 'Può rispondere ai commenti sugli annunci?', answer: 'Sì, funziona su post organici, reel e annunci a pagamento.' }
+            ]
+        },
+        hi: {
+            id: 'instagram-ai-chatbot',
+            icon: '📸',
+            title: 'Instagram ऑटोमेशन',
+            description: 'अपने Instagram DMs और टिप्पणियों को स्वचालित रूप से बिक्री में बदलें। फॉलोअर्स के साथ जुड़ें, FAQs का उत्तर दें, और सोते समय लीड कैप्चर करें।',
+            features: [
+                'टिप्पणियों पर ऑटो-रिप्लाई',
+                'स्टोरी मेंशन्स ऑटोमेशन',
+                'DM बिक्री फ़व्वारे',
+                'लीड योग्यता'
+            ],
+            benefits: [
+                'एंगेजमेंट को 300% बढ़ाएं',
+                'कभी भी DM पूछताछ न चूकें',
+                'अपनी ईमेल सूची स्वचालित रूप से बढ़ाएं',
+                'सोते समय बेचें'
+            ],
+            faq: [
+                { question: 'क्या इससे मैं प्रतिबंधित हो जाऊंगा?', answer: 'नहीं, हम केवल अनुमोदित Meta स्वचालन टूल का उपयोग करते हैं जो 100% अनुपालन करते हैं।' },
+                { question: 'क्या यह विज्ञापनों पर टिप्पणियों का उत्तर दे सकता है?', answer: 'हाँ, यह ऑर्गेनिक पोस्ट, रील्स और भुगतान किए गए विज्ञापनों पर काम करता है।' }
+            ]
+        },
+        ms: {
+            id: 'instagram-ai-chatbot',
+            icon: '📸',
+            title: 'Automasi Instagram',
+            description: 'Tukar DM dan komen Instagram anda menjadi jualan secara automatik. Berinteraksi dengan pengikut, jawab Soalan Lazim, dan tangkap lead semasa anda tidur.',
+            features: [
+                'Auto-Balas Komen',
+                'Automasi Sebutan Story',
+                'Corong Jualan DM',
+                'Kelayakan Lead'
+            ],
+            benefits: [
+                'Tingkatkan penglibatan sebanyak 300%',
+                'Jangan terlepas pertanyaan DM',
+                'Kembangkan senarai e-mel anda secara automatik',
+                'Jual semasa anda tidur'
+            ],
+            faq: [
+                { question: 'Adakah ini akan membuatkan saya disekat?', answer: 'Tidak, kami hanya menggunakan alat automasi Meta yang diluluskan dan 100% patuh.' },
+                { question: 'Bolehkah ia membalas komen pada iklan?', answer: 'Ya, ia berfungsi pada hantaran organik, reels, dan iklan berbayar.' }
+            ]
+        }
+    },
+    'messenger-ai-chatbot': {
+        en: {
+            id: 'messenger-ai-chatbot',
+            icon: '🔵',
+            title: 'Messenger AI Bot',
+            description: 'Scale your Facebook marketing with intelligent Messenger bots. Run click-to-messenger ads that convert 5x better than traditional landing pages.',
+            features: [
+                'Ad Campaign Integration',
+                'Broadcast Messages',
+                'Comment-to-Inbox Triggers',
+                'Customer Support Automation'
+            ],
+            benefits: [
+                'Lower Cost Per Lead by 40%',
+                '90% Open Rates',
+                'Instant Customer Qualification',
+                'Recover abandoned carts'
+            ],
+            faq: [
+                { question: 'Can I send broadcasts?', answer: 'Yes, compliant with Facebook\'s 24-hour rule and recurring notifications.' },
+                { question: 'Does it work for support?', answer: 'Absolutely, it can handle thousands of support tickets simultaneously.' }
+            ]
+        },
+        ar: {
+            id: 'messenger-ai-chatbot',
+            icon: '🔵',
+            title: 'روبوت ماسنجر الذكي',
+            description: 'وسّع نطاق تسويقك على فيسبوك باستخدام روبوتات ماسنجر الذكية. شغّل إعلانات "انقر للمراسلة" التي تحول أفضل بـ 5 مرات من صفحات الهبوط التقليدية.',
+            features: [
+                'تكامل الحملات الإعلانية',
+                'رسائل البث الجماعي',
+                'مشغلات التعليق إلى الصندوق الوارد',
+                'أتمتة دعم العملاء'
+            ],
+            benefits: [
+                'خفض تكلفة العميل المحتمل بنسبة 40%',
+                'معدلات فتح 90%',
+                'تأهيل فوري للعملاء',
+                'استعادة العربات المتروكة'
+            ],
+            faq: [
+                { question: 'هل يمكنني إرسال رسائل جماعية؟', answer: 'نعم، بما يتوافق مع قاعدة 24 ساعة لفيسبوك والإشعارات المتكررة.' },
+                { question: 'هل يعمل للدعم الفني؟', answer: 'بالتأكيد، يمكنه التعامل مع آلاف تذاكر الدعم في وقت واحد.' }
+            ]
+        },
+        de: {
+            id: 'messenger-ai-chatbot',
+            icon: '🔵',
+            title: 'Messenger KI-Bot',
+            description: 'Skalieren Sie Ihr Facebook-Marketing mit intelligenten Messenger-Bots. Schalten Sie Click-to-Messenger-Anzeigen, die 5x besser konvertieren als herkömmliche Landingpages.',
+            features: [
+                'Werbekampagnen-Integration',
+                'Broadcast-Nachrichten',
+                'Kommentar-zu-Postfach-Trigger',
+                'Kundensupport-Automatisierung'
+            ],
+            benefits: [
+                'Kosten pro Lead um 40% senken',
+                '90% Öffnungsraten',
+                'Sofortige Kundenqualifizierung',
+                'Warenkorbabbrecher zurückgewinnen'
+            ],
+            faq: [
+                { question: 'Kann ich Broadcasts senden?', answer: 'Ja, konform mit der 24-Stunden-Regel von Facebook und wiederkehrenden Benachrichtigungen.' },
+                { question: 'Funktioniert es für den Support?', answer: 'Absolut, es kann Tausende von Support-Tickets gleichzeitig bearbeiten.' }
+            ]
+        },
+        fr: {
+            id: 'messenger-ai-chatbot',
+            icon: '🔵',
+            title: 'Bot IA Messenger',
+            description: 'Faites évoluer votre marketing Facebook avec des bots Messenger intelligents. Diffusez des publicités click-to-messenger qui convertissent 5x mieux que les pages de destination traditionnelles.',
+            features: [
+                'Intégration de campagne publicitaire',
+                'Messages diffusés',
+                'Déclencheurs Commentaire-vers-Boîte de réception',
+                'Automatisation du support client'
+            ],
+            benefits: [
+                'Réduire le coût par lead de 40%',
+                'Taux d\'ouverture de 90%',
+                'Qualification client instantanée',
+                'Récupérer les paniers abandonnés'
+            ],
+            faq: [
+                { question: 'Puis-je envoyer des diffusions?', answer: 'Oui, conforme à la règle des 24 heures de Facebook et aux notifications récurrentes.' },
+                { question: 'Cela fonctionne-t-il pour le support?', answer: 'Absolument, il peut gérer des milliers de tickets de support simultanément.' }
+            ]
+        },
+        it: {
+            id: 'messenger-ai-chatbot',
+            icon: '🔵',
+            title: 'Bot IA Messenger',
+            description: 'Scala il tuo marketing su Facebook con bot Messenger intelligenti. Esegui annunci click-to-messenger che convertono 5 volte meglio delle landing page tradizionali.',
+            features: [
+                'Integrazione campagne pubblicitarie',
+                'Messaggi broadcast',
+                'Trigger Commento-a-Inbox',
+                'Automazione supporto clienti'
+            ],
+            benefits: [
+                'Riduci il costo per lead del 40%',
+                'Tassi di apertura del 90%',
+                'Qualificazione istantanea del cliente',
+                'Recupera carrelli abbandonati'
+            ],
+            faq: [
+                { question: 'Posso inviare broadcast?', answer: 'Sì, conforme alla regola delle 24 ore di Facebook e alle notifiche ricorrenti.' },
+                { question: 'Funziona per il supporto?', answer: 'Assolutamente, può gestire migliaia di ticket di supporto contemporaneamente.' }
+            ]
+        },
+        hi: {
+            id: 'messenger-ai-chatbot',
+            icon: '🔵',
+            title: 'Messenger AI बॉट',
+            description: 'बुद्धिमान Messenger बॉट्स के साथ अपने Facebook मार्केटिंग को स्केल करें। क्लिक-टू-मैसेंजर विज्ञापन चलाएं जो पारंपरिक लैंडिंग पेजों की तुलना में 5 गुना बेहतर रूपांतरित करते हैं।',
+            features: [
+                'विज्ञापन अभियान एकीकरण',
+                'ब्रॉडकास्ट संदेश',
+                'कमेंट-टू-इनबॉक्स ट्रिगर्स',
+                'ग्राहक सेवा स्वचालन'
+            ],
+            benefits: [
+                'प्रति लीड लागत 40% कम करें',
+                '90% ओपन रेट्स',
+                'तत्काल ग्राहक योग्यता',
+                'छोड़ी गई गाड़ियों को पुनर्प्राप्त करें'
+            ],
+            faq: [
+                { question: 'क्या मैं ब्रॉडकास्ट भेज सकता हूँ?', answer: 'हाँ, Facebook के 24-घंटे के नियम और आवर्ती सूचनाओं के अनुरूप।' },
+                { question: 'क्या यह समर्थन के लिए काम करता है?', answer: 'बिल्कुल, यह एक साथ हजारों समर्थन टिकटों को संभाल सकता है।' }
+            ]
+        },
+        ms: {
+            id: 'messenger-ai-chatbot',
+            icon: '🔵',
+            title: 'Bot AI Messenger',
+            description: 'Tingkatkan pemasaran Facebook anda dengan bot Messenger pintar. Jalankan iklan klik-ke-messenger yang menukar 5x lebih baik daripada halaman pendaratan tradisional.',
+            features: [
+                'Integrasi Kempen Iklan',
+                'Mesej Siaran',
+                'Pencetus Komen-ke-Inbox',
+                'Automasi Sokongan Pelanggan'
+            ],
+            benefits: [
+                'Kurangkan Kos Per Lead sebanyak 40%',
+                'Kadar Buka 90%',
+                'Kelayakan Pelanggan Segera',
+                'Pulihkan troli yang ditinggalkan'
+            ],
+            faq: [
+                { question: 'Bolehkah saya menghantar siaran?', answer: 'Ya, patuh dengan peraturan 24 jam Facebook dan pemberitahuan berulang.' },
+                { question: 'Adakah ia berfungsi untuk sokongan?', answer: 'Sudah tentu, ia boleh mengendalikan beribu-ribu tiket sokongan secara serentak.' }
+            ]
+        }
+    },
+    'nextjs-development': {
+        en: {
+            id: 'nextjs-development',
+            icon: '⚡',
+            title: 'Next.js Development',
+            description: 'Build lightning-fast, SEO-optimized web applications with Next.js. The same enterprise technology used by Netflix, TikTok, and Uber.',
+            features: [
+                'Server-Side Rendering (SSR)',
+                'Static Site Generation (SSG)',
+                'API Route Integration',
+                'Performant Image Optimization'
+            ],
+            benefits: [
+                'Google PageSpeed Score 95+',
+                'Rank higher on SEO',
+                'Load pages in milliseconds',
+                'Scalable infrastructure'
+            ],
+            faq: [
+                { question: 'Do you design the UI too?', answer: 'Yes, we provide full UI/UX design and development.' },
+                { question: 'Is it better than WordPress?', answer: 'For speed, security, and custom functionality, Next.js is vastly superior to WordPress.' }
+            ],
+            crisisSolved: 'The "Bounce Epidemic" is caused by slow, bulky legacy websites. 53% of mobile users leave a site that takes longer than 3 seconds to load. We cure this by deploying high-performance Next.js architectures that achieve 99+ PageSpeed scores, turning "wait time" into "buy time" and dominating search rankings through technical excellence.',
+            workflow: [
+                'Conversion-Focused UI/UX Prototyping',
+                'Atomic Component Development',
+                'Global CDN & Edge Optimization',
+                'SEO-First Content Architecture'
+            ],
+            costOfInaction: 'Running a slow website is like having a storefront with a broken door. You are effectively discouraging customers from entering. Every second of latency is a percentage of revenue lost to faster, more agile competitors.',
+            psychologicalHook: 'Speed isn’t just a metric. Speed is trust.'
+        },
+        ar: {
+            id: 'nextjs-development',
+            icon: '⚡',
+            title: 'تطوير Next.js',
+            description: 'ابنِ تطبيقات ويب فائقة السرعة ومحسّنة لمحركات البحث باستخدام Next.js. نفس تقنية المؤسسات التي تستخدمها Netflix و TikTok و Uber.',
+            features: [
+                'العرض من جانب الخادم (SSR)',
+                'توليد الموقع الثابت (SSG)',
+                'تكامل مسار API',
+                'تحسين الصور عالي الأداء'
+            ],
+            benefits: [
+                'نقاط Google PageSpeed +95',
+                'ترتيب أعلى في SEO',
+                'تحميل الصفحات في أجزاء من الثانية',
+                'بنية تحتية قابلة للتوسع'
+            ],
+            faq: [
+                { question: 'هل تصممون الواجهة أيضاً؟', answer: 'نعم، نقدم تصميم وتطوير UI/UX كامل.' },
+                { question: 'هل هو أفضل من ووردبريس؟', answer: 'بالنسبة للسرعة والأمان والوظائف المخصصة، Next.js يتفوق بمراحل على ووردبريس.' }
+            ],
+            crisisSolved: '"وباء الارتداد" ناتج عن مواقع الويب القديمة والبطيئة. 53% من مستخدمي الهاتف المحمول يغادرون الموقع الذي يستغرق أكثر من 3 ثوانٍ للتحميل. نحن نعالج هذا عن طريق نشر معماريات Next.js عالية الأداء التي تحقق نتائج 99+ في PageSpeed، مما يحول "وقت الانتظار" إلى "وقت شراء".',
+            workflow: [
+                'نماذج UI/UX تركز على التحويل',
+                'تطوير المكونات الذرية',
+                'تحسين شبكة CDN العالمية',
+                'هيكلة المحتوى للـ SEO أولاً'
+            ],
+            costOfInaction: 'تشغيل موقع ويب بطيء يشبه امتلاك متجر بباب مكسور. أنت تشجع العملاء على عدم الدخول. كل ثانية تأخير هي نسبة مئوية من الأرباح المفقودة لصالح المنافسين الأسرع والأكثر مرونة.',
+            psychologicalHook: 'السرعة ليست مجرد مقياس. السرعة هي الثقة.'
+        },
+        de: {
+            id: 'nextjs-development',
+            icon: '⚡',
+            title: 'Next.js Entwicklung',
+            description: 'Erstellen Sie blitzschnelle, SEO-optimierte Webanwendungen mit Next.js. Dieselbe Unternehmenstechnologie, die von Netflix, TikTok und Uber verwendet wird.',
+            features: [
+                'Server-Side Rendering (SSR)',
+                'Static Site Generation (SSG)',
+                'API-Routen-Integration',
+                'Leistungsstarke Bildoptimierung'
+            ],
+            benefits: [
+                'Google PageSpeed Score 95+',
+                'Besseres SEO-Ranking',
+                'Seiten laden in Millisekunden',
+                'Skalierbare Infrastruktur'
+            ],
+            faq: [
+                { question: 'Designen Sie auch die Benutzeroberfläche?', answer: 'Ja, wir bieten komplettes UI/UX-Design und -Entwicklung an.' },
+                { question: 'Ist es besser als WordPress?', answer: 'In Bezug auf Geschwindigkeit, Sicherheit und benutzerdefinierte Funktionalität ist Next.js WordPress weit überlegen.' }
+            ]
+        },
+        fr: {
+            id: 'nextjs-development',
+            icon: '⚡',
+            title: 'Développement Next.js',
+            description: 'Créez des applications web ultra-rapides et optimisées pour le SEO avec Next.js. La même technologie d\'entreprise utilisée par Netflix, TikTok et Uber.',
+            features: [
+                'Rendu côté serveur (SSR)',
+                'Génération de site statique (SSG)',
+                'Intégration des routes API',
+                'Optimisation d\'image performante'
+            ],
+            benefits: [
+                'Score Google PageSpeed 95+',
+                'Meilleur classement SEO',
+                'Chargement des pages en millisecondes',
+                'Infrastructure évolutive'
+            ],
+            faq: [
+                { question: 'Concevez-vous également l\'UI?', answer: 'Oui, nous fournissons une conception et un développement UI/UX complets.' },
+                { question: 'Est-ce mieux que WordPress?', answer: 'Pour la vitesse, la sécurité et les fonctionnalités personnalisées, Next.js est largement supérieur à WordPress.' }
+            ]
+        },
+        it: {
+            id: 'nextjs-development',
+            icon: '⚡',
+            title: 'Sviluppo Next.js',
+            description: 'Costruisci applicazioni web velocissime e ottimizzate SEO con Next.js. La stessa tecnologia enterprise usata da Netflix, TikTok e Uber.',
+            features: [
+                'Rendering lato server (SSR)',
+                'Generazione sito statico (SSG)',
+                'Integrazione route API',
+                'Ottimizzazione immagini performante'
+            ],
+            benefits: [
+                'Punteggio Google PageSpeed 95+',
+                'Rank più alto su SEO',
+                'Caricamento pagine in millisecondi',
+                'Infrastruttura scalabile'
+            ],
+            faq: [
+                { question: 'Progettate anche la UI?', answer: 'Sì, forniamo design e sviluppo UI/UX completi.' },
+                { question: 'È meglio di WordPress?', answer: 'Per velocità, sicurezza e funzionalità personalizzate, Next.js è nettamente superiore a WordPress.' }
+            ]
+        },
+        hi: {
+            id: 'nextjs-development',
+            icon: '⚡',
+            title: 'Next.js डेवलपमेंट',
+            description: 'Next.js के साथ बिजली की तेजी वाली, SEO-अनुकूलित वेब एप्लिकेशन बनाएं। वही उद्यम तकनीक जो Netflix, TikTok और Uber द्वारा उपयोग की जाती है।',
+            features: [
+                'सर्वर-साइड रेंडरिंग (SSR)',
+                'स्टेटिक साइट जनरेशन (SSG)',
+                'API रूट एकीकरण',
+                'प्रदर्शन छवि अनुकूलन'
+            ],
+            benefits: [
+                'Google PageSpeed स्कोर 95+',
+                'SEO पर उच्च रैंक',
+                'पृष्ठ मिलीसेकंड में लोड होते हैं',
+                'स्केलेबल इंफ्रास्ट्रक्चर'
+            ],
+            faq: [
+                { question: 'क्या आप UI भी डिज़ाइन करते हैं?', answer: 'हाँ, हम पूर्ण UI/UX डिज़ाइन और विकास प्रदान करते हैं।' },
+                { question: 'क्या यह WordPress से बेहतर है?', answer: 'गति, सुरक्षा और कस्टम कार्यक्षमता के लिए, Next.js WordPress से काफी बेहतर है।' }
+            ]
+        },
+        ms: {
+            id: 'nextjs-development',
+            icon: '⚡',
+            title: 'Pembangunan Next.js',
+            description: 'Bina aplikasi web pantas kilat dan dioptimumkan SEO dengan Next.js. Teknologi perusahaan yang sama digunakan oleh Netflix, TikTok, dan Uber.',
+            features: [
+                'Penyampaian Bahagian Pelayan (SSR)',
+                'Penjanaan Tapak Statik (SSG)',
+                'Integrasi Laluan API',
+                'Pengoptimuman Imej Berprestasi'
+            ],
+            benefits: [
+                'Skor Google PageSpeed 95+',
+                'Kedudukan lebih tinggi di SEO',
+                'Muat halaman dalam milisaat',
+                'Infrastruktur berskala'
+            ],
+            faq: [
+                { question: 'Adakah anda mereka bentuk UI juga?', answer: 'Ya, kami menyediakan reka bentuk dan pembangunan UI/UX penuh.' },
+                { question: 'Adakah ia lebih baik daripada WordPress?', answer: 'Untuk kelajuan, keselamatan, dan fungsi tersuai, Next.js jauh lebih baik daripada WordPress.' }
+            ]
+        }
+    },
+    'ai-automations': {
+        en: {
+            id: 'ai-automations',
+            icon: '🤖',
+            title: 'AI Automation',
+            description: 'Streamline your operations with custom AI workflows. We connect your apps (Zapier/Make) and build custom AI agents to replace repetitive manual tasks.',
+            features: [
+                'Workflow Automation',
+                'Custom AI Agents',
+                'Data Entry Automation',
+                'Content Generation Bots'
+            ],
+            benefits: [
+                'Save 40+ hours per week',
+                'Eliminate human error',
+                'Focus on strategy, not admin',
+                'Instant ROI'
+            ],
+            faq: [
+                { question: 'What tasks can be automated?', answer: 'Data entry, email processing, reporting, social media posting, and much more.' },
+                { question: 'Is it expensive?', answer: 'It actually saves money by reducing labor costs and manual errors.' }
+            ],
+            crisisSolved: 'The "Admin Trap" is the #1 reason why CEOs fail to scale. When your highest-paid talent is stuck doing $10/hour manual data tasks, your growth is mathematically capped. We dissolve this bottleneck by building custom autonomous agents that handle your operations while you focus on high-level strategy.',
+            workflow: [
+                'Operational Bottleneck Mapping',
+                'Custom Agent Architecture & Logic Flow',
+                'API Bridge Construction (Zapier/Make/Custom)',
+                'Performance Stress Testing'
+            ],
+            costOfInaction: 'Every day you delay automation is a day you choose to waste human potential and overhead capital. While your competitors are optimizing their margins with AI, you are overpaying for manual errors. Efficiency is no longer optional—it is survival.',
+            psychologicalHook: 'Stop working for your business. Let your business work for you.'
+        },
+        ar: {
+            id: 'ai-automations',
+            icon: '🤖',
+            title: 'أتمتة الذكاء الاصطناعي',
+            description: 'بسط عملياتك باستخدام مسارات عمل الذكاء الاصطناعي المخصصة. نربط تطبيقاتك (Zapier/Make) ونبني وكلاء ذكاء اصطناعي مخصصين لاستبدال المهام اليدوية المتكررة.',
+            features: [
+                'أتمتة مسارات العمل',
+                'وكلاء ذكاء اصطناعي مخصصون',
+                'أتمتة إدخال البيانات',
+                'روبوتات توليد المحتوى'
+            ],
+            benefits: [
+                'وفر أكثر من 40 ساعة أسبوعياً',
+                'تخلص من الأخطاء البشرية',
+                'ركز على الاستراتيجية، لا الإدارة',
+                'عائد استثمار فوري'
+            ],
+            faq: [
+                { question: 'ما المهام التي يمكن أتمتتها؟', answer: 'إدخال البيانات، معالجة البريد الإلكتروني، إعداد التقارير، النشر على وسائل التواصل، وأكثر من ذلك بكثير.' },
+                { question: 'هل هو مكلف؟', answer: 'في الواقع، إنه يوفر المال عن طريق تقليل تكاليف العمالة والأخطاء اليدوية.' }
+            ],
+            crisisSolved: '"فخ الإدارة" هو السبب الأول لفشل الرؤساء التنفيذيين في التوسع. عندما يقضي الموظفون ذوو الأجور المرتفعة وقتهم في مهام يدوية بسيطة، فإن نموك يتوقف برمجياً. نحن نذيب هذا العائق من خلال بناء وكلاء مستقلين مخصصين يتعاملون مع عملياتك بينما تركز أنت على الاستراتيجية العالية.',
+            workflow: [
+                'رسم خرائط اختناقات العمليات',
+                'هندسة الوكلاء المخصصين ومسار المنطق',
+                'بناء جسور API (Zapier/Make/Custom)',
+                'اختبار ضغط الأداء'
+            ],
+            costOfInaction: 'كل يوم تؤجل فيه الأتمتة هو يوم تختار فيه إهدار الإمكانات البشرية ورأس المال. بينما يقوم منافسوك بتحسين هوامش ربحهم باستخدام الذكاء الاصطناعي، أنت تدفع ثمن الأخطاء اليدوية. الكفاءة لم تعد خياراً—بل هي ضرورة للبقاء.',
+            psychologicalHook: 'توقف عن العمل من أجل عملك. اجعل عملك يعمل من أجلك.'
+        },
+        de: {
+            id: 'ai-automations',
+            icon: '🤖',
+            title: 'KI-Automatisierung',
+            description: 'Optimieren Sie Ihre Abläufe mit benutzerdefinierten KI-Workflows. Wir verbinden Ihre Apps (Zapier/Make) und erstellen benutzerdefinierte KI-Agenten, um wiederkehrende manuelle Aufgaben zu ersetzen.',
+            features: [
+                'Workflow-Automatisierung',
+                'Benutzerdefinierte KI-Agenten',
+                'Dateneingabe-Automatisierung',
+                'Content-Generierungs-Bots'
+            ],
+            benefits: [
+                'Sparen Sie 40+ Stunden pro Woche',
+                'Menschliche Fehler eliminieren',
+                'Fokus auf Strategie, nicht Verwaltung',
+                'Sofortiger ROI'
+            ],
+            faq: [
+                { question: 'Welche Aufgaben können automatisiert werden?', answer: 'Dateneingabe, E-Mail-Verarbeitung, Berichterstattung, Social Media Posting und vieles mehr.' },
+                { question: 'Ist es teuer?', answer: 'Es spart tatsächlich Geld, indem es Arbeitskosten und manuelle Fehler reduziert.' }
+            ]
+        },
+        fr: {
+            id: 'ai-automations',
+            icon: '🤖',
+            title: 'Automatisation IA',
+            description: 'Rationalisez vos opérations avec des flux de travail IA personnalisés. Nous connectons vos applications (Zapier/Make) et créons des agents IA personnalisés pour remplacer les tâches manuelles répétitives.',
+            features: [
+                'Automatisation des flux de travail',
+                'Agents IA personnalisés',
+                'Automatisation de la saisie de données',
+                'Bots de génération de contenu'
+            ],
+            benefits: [
+                'Économisez 40+ heures par semaine',
+                'Éliminez les erreurs humaines',
+                'Concentrez-vous sur la stratégie',
+                'ROI instantané'
+            ],
+            faq: [
+                { question: 'Quelles tâches peuvent être automatisées?', answer: 'Saisie de données, traitement des e-mails, rapports, publication sur les réseaux sociaux et bien plus encore.' },
+                { question: 'Est-ce cher?', answer: 'En fait, cela permet d\'économiser de l\'argent en réduisant les coûts de main-d\'œuvre et les erreurs manuelles.' }
+            ]
+        },
+        it: {
+            id: 'ai-automations',
+            icon: '🤖',
+            title: 'Automazione IA',
+            description: 'Snellisci le tue operazioni con flussi di lavoro IA personalizzati. Colleghiamo le tue app (Zapier/Make) e costruiamo agenti IA personalizzati per sostituire le attività manuali ripetitive.',
+            features: [
+                'Automazione workflow',
+                'Agenti IA personalizzati',
+                'Automazione inserimento dati',
+                'Bot generazione contenuti'
+            ],
+            benefits: [
+                'Risparmia 40+ ore a settimana',
+                'Elimina l\'errore umano',
+                'Concentrati sulla strategia',
+                'ROI istantaneo'
+            ],
+            faq: [
+                { question: 'Quali compiti possono essere automatizzati?', answer: 'Inserimento dati, elaborazione email, reporting, social media posting e molto altro.' },
+                { question: 'È costoso?', answer: 'In realtà fa risparmiare denaro riducendo i costi di manodopera e gli errori manuali.' }
+            ]
+        },
+        hi: {
+            id: 'ai-automations',
+            icon: '🤖',
+            title: 'AI ऑटोमेशन',
+            description: 'कस्टम AI वर्कफ़्लो के साथ अपने संचालन को सुव्यवस्थित करें। हम आपके ऐप्स (Zapier/Make) को जोड़ते हैं और दोहराए जाने वाले मैनुअल कार्यों को बदलने के लिए कस्टम AI एजेंट बनाते हैं।',
+            features: [
+                'वर्कफ़्लो ऑटोमेशन',
+                'कस्टम AI एजेंट',
+                'डेटा एंट्री ऑटोमेशन',
+                'सामग्री जनरेशन बॉट्स'
+            ],
+            benefits: [
+                'प्रति सप्ताह 40+ घंटे बचाएं',
+                'मानवीय त्रुटि को समाप्त करें',
+                'रणनीति पर ध्यान दें, प्रशासन पर नहीं',
+                'तत्काल ROI'
+            ],
+            faq: [
+                { question: 'किन कार्यों को स्वचालित किया जा सकता है?', answer: 'डेटा प्रविष्टि, ईमेल प्रसंस्करण, रिपोर्टिंग, सोशल मीडिया पोस्टिंग, और बहुत कुछ।' },
+                { question: 'क्या यह महंगा है?', answer: 'यह वास्तव में श्रम लागत और मैनुअल त्रुटियों को कम करके पैसा बचाता है।' }
+            ]
+        },
+        ms: {
+            id: 'ai-automations',
+            icon: '🤖',
+            title: 'Automasi AI',
+            description: 'Perkemaskan operasi anda dengan aliran kerja AI tersuai. Kami menyambungkan aplikasi anda (Zapier/Make) dan membina ejen AI tersuai untuk menggantikan tugas manual yang berulang.',
+            features: [
+                'Automasi Aliran Kerja',
+                'Ejen AI Tersuai',
+                'Automasi Kemasukan Data',
+                'Bot Penjanaan Kandungan'
+            ],
+            benefits: [
+                'Jimat 40+ jam seminggu',
+                'Hapuskan kesilapan manusia',
+                'Fokus pada strategi, bukan pentadbiran',
+                'ROI Segera'
+            ],
+            faq: [
+                { question: 'Apakah tugas yang boleh diautomasikan?', answer: 'Kemasukan data, pemprosesan e-mel, pelaporan, penyiaran media sosial, dan banyak lagi.' },
+                { question: 'Adakah ia mahal?', answer: 'Ia sebenarnya menjimatkan wang dengan mengurangkan kos buruh dan kesilapan manual.' }
+            ]
+        }
+    },
+    'advanced-seo': {
+        en: {
+            id: 'advanced-seo',
+            icon: '🔍',
+            title: 'Advanced SEO',
+            description: 'Dominating search results involves more than just keywords. We provide technical SEO, programmatic content strategies, and authority building to get you to #1.',
+            features: [
+                'Technical Site Audit',
+                'Programmatic SEO',
+                'Backlink Strategy',
+                'Local SEO Optimization'
+            ],
+            benefits: [
+                'Increase organic traffic',
+                'High-intent leads',
+                'Long-term results',
+                'Outrank competitors'
+            ],
+            faq: [
+                { question: 'How long does it take?', answer: 'SEO is a long-term game, but you can see technical improvements immediately and ranking changes in 3-6 months.' },
+                { question: 'Do you guarantee #1 ranking?', answer: 'No honest agency can guarantee #1, but we have a proven track record of getting clients there.' }
+            ]
+        },
+        ar: {
+            id: 'advanced-seo',
+            icon: '🔍',
+            title: 'تحسين محركات البحث المتقدم',
+            description: 'الهيمنة على نتائج البحث تتطلب أكثر من مجرد كلمات مفتاحية. نقدم SEO تقني، واستراتيجيات محتوى برمجية، وبناء سلطة الموقع لتصل إلى المركز #1.',
+            features: [
+                'تدقيق تقني للموقع',
+                'SEO برمجي',
+                'استراتيجية الروابط الخلفية',
+                'تحسين SEO المحلي'
+            ],
+            benefits: [
+                'زيادة الزيارات العضوية',
+                'عملاء محتملين ذوي نية عالية',
+                'نتائج طويلة الأمد',
+                'تفوّق على المنافسين'
+            ],
+            faq: [
+                { question: 'كم يستغرق من الوقت؟', answer: 'SEO لعبة طويلة الأمد، لكن يمكنك رؤية تحسينات تقنية فوراً وتغييرات في الترتيب خلال 3-6 أشهر.' },
+                { question: 'هل تضمنون المركز #1؟', answer: 'لا توجد وكالة صادقة تضمن المركز #1، لكن لدينا سجل حافل في إيصال العملاء إلى هناك.' }
+            ]
+        },
+        de: {
+            id: 'advanced-seo',
+            icon: '🔍',
+            title: 'Fortgeschrittenes SEO',
+            description: 'Die Dominanz in den Suchergebnissen erfordert mehr als nur Keywords. Wir bieten technisches SEO, programmatische Content-Strategien und den Aufbau von Autorität, um Sie auf Platz 1 zu bringen.',
+            features: [
+                'Technisches Site-Audit',
+                'Programmatisches SEO',
+                'Backlink-Strategie',
+                'Lokale SEO-Optimierung'
+            ],
+            benefits: [
+                'Organischen Traffic steigern',
+                'Leads mit hoher Absicht',
+                'Langfristige Ergebnisse',
+                'Wettbewerber übertreffen'
+            ],
+            faq: [
+                { question: 'Wie lange dauert es?', answer: 'SEO ist langfristig, aber Sie sehen technische Verbesserungen sofort und Ranking-Änderungen in 3-6 Monaten.' },
+                { question: 'Garantieren Sie Platz 1?', answer: 'Keine ehrliche Agentur kann Platz 1 garantieren, aber wir haben eine nachweisliche Erfolgsbilanz.' }
+            ]
+        },
+        fr: {
+            id: 'advanced-seo',
+            icon: '🔍',
+            title: 'SEO Avancé',
+            description: 'Dominer les résultats de recherche implique plus que de simples mots-clés. Nous fournissons un SEO technique, des stratégies de contenu programmatiques et un renforcement de l\'autorité pour vous amener au #1.',
+            features: [
+                'Audit technique du site',
+                'SEO programmatique',
+                'Stratégie de backlinks',
+                'Optimisation SEO locale'
+            ],
+            benefits: [
+                'Augmenter le trafic organique',
+                'Leads à haute intention',
+                'Résultats à long terme',
+                'Surclasser les concurrents'
+            ],
+            faq: [
+                { question: 'Combien de temps cela prend-il?', answer: 'Le SEO est un jeu à long terme, mais vous pouvez voir des améliorations techniques immédiatement et des changements de classement en 3-6 mois.' },
+                { question: 'Garantissez-vous le rang #1?', answer: 'Aucune agence honnête ne peut garantir le #1, mais nous avons fait nos preuves pour y amener nos clients.' }
+            ]
+        },
+        it: {
+            id: 'advanced-seo',
+            icon: '🔍',
+            title: 'SEO Avanzato',
+            description: 'Dominare i risultati di ricerca richiede più delle sole parole chiave. Forniamo SEO tecnico, strategie di contenuti programmatici e costruzione dell\'autorità per portarti al #1.',
+            features: [
+                'Audit tecnico del sito',
+                'SEO programmatico',
+                'Strategia di backlink',
+                'Ottimizzazione SEO locale'
+            ],
+            benefits: [
+                'Aumenta il traffico organico',
+                'Lead ad alta intenzione',
+                'Risultati a lungo termine',
+                'Supera i concorrenti'
+            ],
+            faq: [
+                { question: 'Quanto tempo ci vuole?', answer: 'La SEO è un gioco a lungo termine, ma puoi vedere miglioramenti tecnici immediatamente e cambiamenti nel ranking in 3-6 mesi.' },
+                { question: 'Garantite la posizione #1?', answer: 'Nessuna agenzia onesta può garantire la #1, ma abbiamo una comprovata esperienza nel portare i clienti lì.' }
+            ]
+        },
+        hi: {
+            id: 'advanced-seo',
+            icon: '🔍',
+            title: 'उन्नत SEO',
+            description: 'खोज परिणामों पर हावी होने में केवल कीवर्ड से अधिक शामिल है। हम आपको #1 पर लाने के लिए तकनीकी SEO, प्रोग्रामिंग सामग्री रणनीतियाँ और अधिकार निर्माण प्रदान करते हैं।',
+            features: [
+                'तकनीकी साइट ऑडिट',
+                'प्रोग्रामिंग SEO',
+                'बैकलिंक रणनीति',
+                'स्थानीय SEO अनुकूलन'
+            ],
+            benefits: [
+                'ऑर्गेनिक ट्रैफ़िक बढ़ाएं',
+                'उच्च-इरादे वाले लीड',
+                'दीर्घकालिक परिणाम',
+                'प्रतियोगियों को पछाड़ें'
+            ],
+            faq: [
+                { question: 'इसमें कितना समय लगता है?', answer: 'SEO एक दीर्घकालिक खेल है, लेकिन आप 3-6 महीनों में तकनीकी सुधार और रैंकिंग परिवर्तन देख सकते हैं।' },
+                { question: 'क्या आप #1 रैंकिंग की गारंटी देते हैं?', answer: 'कोई भी ईमानदार एजेंसी #1 की गारंटी नहीं दे सकती, लेकिन हमारे पास ग्राहकों को वहां पहुंचाने का एक सिद्ध ट्रैक रिकॉर्ड है।' }
+            ]
+        },
+        ms: {
+            id: 'advanced-seo',
+            icon: '🔍',
+            title: 'SEO Lanjutan',
+            description: 'Menguasai hasil carian melibatkan lebih daripada sekadar kata kunci. Kami menyediakan SEO teknikal, strategi kandungan programatik, dan pembinaan autoriti untuk membawa anda ke #1.',
+            features: [
+                'Audit Tapak Teknikal',
+                'SEO Programatik',
+                'Strategi Pautan Balik',
+                'Pengoptimuman SEO Tempatan'
+            ],
+            benefits: [
+                'Tingkatkan trafik organik',
+                'Lead berniat tinggi',
+                'Keputusan jangka panjang',
+                'Atasi pesaing'
+            ],
+            faq: [
+                { question: 'Berapa lama masa yang diambil?', answer: 'SEO adalah permainan jangka panjang, tetapi anda boleh melihat penambahbaikan teknikal serta-merta dan perubahan ranking dalam 3-6 bulan.' },
+                { question: 'Adakah anda menjamin ranking #1?', answer: 'Tiada agensi jujur yang boleh menjamin #1, tetapi kami mempunyai rekod prestasi yang terbukti membawa pelanggan ke sana.' }
+            ]
+        }
+    }
+}

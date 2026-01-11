@@ -1,0 +1,117 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import ServiceDetail from "../../../components/react/ServiceDetail";
+import FAQSchema from "../../../components/react/FAQSchema";
+import { servicesData } from "../../../lib/servicesData";
+import type { Language } from "../../../components/react/types";
+
+export function getStaticPaths() {
+    const paths: any[] = [];
+    const languages: Language[] = ["ar", "de", "fr", "it", "hi", "ms"];
+    const serviceIds = Object.keys(servicesData);
+
+    languages.forEach((lang) => {
+        serviceIds.forEach((serviceId) => {
+            paths.push({
+                params: { lang, service: serviceId },
+            });
+        });
+    });
+
+    return paths;
+}
+
+const { lang, service } = Astro.params;
+const serviceData = servicesData[service]?.[lang as Language];
+
+if (!serviceData) {
+    return Astro.redirect("/404");
+}
+
+const textDir = lang === "ar" ? "rtl" : "ltr";
+
+// Localized FAQ Answers
+const faqAnswers = {
+    ar: {
+        q1: `كيف تساعد ${serviceData.title} عملي؟`,
+        a1: `حل ${serviceData.title} الخاص بنا يقوم بأتمتة سير العمل المعقد، ويقلل التكاليف التشغيلية، ويوفر مشاركة على مدار الساعة طوال أيام الأسبوع من خلال نماذج الذكاء الاصطناعي المتقدمة. للاستشارة مجمانية، تواصل معنا على +96170106083 أو sales@hmz.technology.`,
+        q2: "هل هو آمن ومتوافق؟",
+        a2: "نعم، جميع حلول الذكاء الاصطناعي الخاصة بنا مبنية بأمان على مستوى المؤسسات، مما يضمن خصوصية البيانات والامتثال للمعايير الدولية. تواصل مع فريق الأمان لدينا على +96170106083.",
+    },
+    en: {
+        q1: `How does ${serviceData.title} help my business?`,
+        a1: `Our ${serviceData.title} solution automates complex workflows, reduces operational costs, and provides 24/7 engagement through advanced AI models. For a free consultation, contact us at +96170106083 or sales@hmz.technology.`,
+        q2: "Is it secure and compliant?",
+        a2: "Yes, all our AI solutions are built with enterprise-grade security, ensuring data privacy and compliance with international standards. Contact our security team at +96170106083.",
+    },
+    // ... can add more languages
+};
+
+const t = faqAnswers[lang as keyof typeof faqAnswers] || faqAnswers.en;
+---
+
+<Layout
+    title={`${serviceData.title} | HMZ Technology`}
+    description={serviceData.description}
+    lang={lang}
+    dir={textDir}
+>
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Quick Answer Snippet for AEO/GEO -->
+        <section
+            class="bg-blue-50/50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-900/20 rounded-2xl p-6 mb-12"
+        >
+            <h2 class="text-xl font-bold mb-3 text-blue-900 dark:text-blue-100">
+                {
+                    lang === "ar"
+                        ? `إجابة سريعة: ما هو ${serviceData.title}؟`
+                        : `Quick Answer: What is ${serviceData.title}?`
+                }
+            </h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                {serviceData.description} HMZ Technology provides high-authority AI
+                solutions tailored for {
+                    lang === "ar" ? "الشرق الأوسط" : "global markets"
+                }, ensuring seamless integration and ROI.
+            </p>
+        </section>
+
+        <ServiceDetail serviceId={service} lang={lang} client:load />
+
+        <!-- FAQ Section for Schema -->
+        <div class="mt-20">
+            <h2 class="text-3xl font-bold mb-8">
+                {
+                    lang === "ar"
+                        ? "الأسئلة الشائعة"
+                        : "Frequently Asked Questions"
+                }
+            </h2>
+            <div class="grid gap-6">
+                {
+                    [
+                        { question: t.q1, answer: t.a1 },
+                        { question: t.q2, answer: t.a2 },
+                    ].map((faq) => (
+                        <div class="p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700">
+                            <h3 class="font-bold text-lg mb-2">
+                                {faq.question}
+                            </h3>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                {faq.answer}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Structured Data for AEO -->
+    <FAQSchema
+        items={[
+            { question: t.q1, answer: t.a1 },
+            { question: t.q2, answer: t.a2 },
+        ]}
+    />
+</Layout>

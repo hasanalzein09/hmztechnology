@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/react/Header";
+import Footer from "../../components/react/Footer";
+import ServiceDetail from "../../components/react/ServiceDetail";
+import Testimonials from "../../components/react/Testimonials";
+import LocalBusinessSchema from "../../components/react/LocalBusinessSchema";
+
+const lang = "en";
+const title = "AI Business Automations | HMZ Technology";
+const description =
+    "Streamline your business operations with custom AI automation solutions.";
+---
+
+<Layout title={title} description={description} lang={lang} dir="ltr">
+    <Header lang={lang} client:load />
+    <main>
+        <ServiceDetail lang={lang} serviceId="ai-automations" client:load />
+        <Testimonials lang={lang} client:load />
+    </main>
+    <Footer lang={lang} client:load />
+    <LocalBusinessSchema />
+</Layout>

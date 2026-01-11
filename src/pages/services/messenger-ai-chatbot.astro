@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/react/Header";
+import Footer from "../../components/react/Footer";
+import ServiceDetail from "../../components/react/ServiceDetail";
+import Testimonials from "../../components/react/Testimonials";
+import LocalBusinessSchema from "../../components/react/LocalBusinessSchema";
+
+const lang = "en";
+const title = "Messenger AI Chatbot | HMZ Technology";
+const description =
+    "Automate Facebook Messenger with AI chatbots to capture leads and drive sales 24/7.";
+---
+
+<Layout title={title} description={description} lang={lang} dir="ltr">
+    <Header lang={lang} client:load />
+    <main>
+        <ServiceDetail
+            lang={lang}
+            serviceId="messenger-ai-chatbot"
+            client:load
+        />
+        <Testimonials lang={lang} client:load />
+    </main>
+    <Footer lang={lang} client:load />
+    <LocalBusinessSchema />
+</Layout>

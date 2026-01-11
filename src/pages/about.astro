@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/react/Header';
+import Footer from '../components/react/Footer';
+import AboutContent from '../components/react/AboutContent';
+import TrustBadges from '../components/react/TrustBadges';
+import LocalBusinessSchema from '../components/react/LocalBusinessSchema';
+
+const lang = "en";
+const title = "About Us - HMZ Technology | Leading AI Chatbot Development Company";
+const description = "Learn about HMZ Technology, the leading AI chatbot development company serving Middle East, USA, and Europe. Expert WhatsApp, Instagram, and Messenger automation solutions.";
+---
+
+<Layout title={title} description={description} lang={lang} dir="ltr">
+    <Header lang={lang} client:load />
+    <main>
+        <AboutContent lang={lang} client:load />
+        <TrustBadges lang={lang} client:load />
+    </main>
+    <Footer lang={lang} client:load />
+    <LocalBusinessSchema />
+</Layout>

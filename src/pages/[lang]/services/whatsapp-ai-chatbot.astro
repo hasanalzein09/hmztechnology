@@ -1,0 +1,61 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/react/Header";
+import Footer from "../../../components/react/Footer";
+import ServiceDetail from "../../../components/react/ServiceDetail";
+import Testimonials from "../../../components/react/Testimonials";
+import LocalBusinessSchema from "../../../components/react/LocalBusinessSchema";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "ar" } },
+    { params: { lang: "de" } },
+    { params: { lang: "fr" } },
+    { params: { lang: "it" } },
+    { params: { lang: "hi" } },
+    { params: { lang: "ms" } },
+  ];
+}
+
+const { lang } = Astro.params;
+const isRtl = lang === "ar";
+
+const titles = {
+  ar: "شات بوت واتساب | HMZ Technology",
+  de: "WhatsApp AI Chatbot | HMZ Technology",
+  fr: "Chatbot WhatsApp IA | HMZ Technology",
+  it: "Chatbot WhatsApp IA | HMZ Technology",
+  hi: "WhatsApp AI Chatbot | HMZ Technology",
+  ms: "WhatsApp AI Chatbot | HMZ Technology",
+};
+
+const descriptions = {
+  ar: "أتمتة خدمة العملاء والمبيعات مع حلول شات بوت واتساب المتقدمة.",
+  de: "Automatisieren Sie Ihren Kundensupport mit unseren fortschrittlichen WhatsApp KI-Lösungen.",
+  fr: "Automatisez votre support client avec nos solutions avancées de Chatbot WhatsApp IA.",
+  it: "Automatizza il tuo supporto clienti con le nostre soluzioni avanzate di Chatbot WhatsApp IA.",
+  hi: "व्हाट्सएप एआई चैटबॉट के साथ अपने व्यवसाय को स्वचालित करें।",
+  ms: "Automasi sokongan pelanggan anda dengan penyelesaian Chatbot WhatsApp AI kami.",
+};
+
+const title =
+  titles[lang as keyof typeof titles] || "WhatsApp AI Chatbot | HMZ Technology";
+const description =
+  descriptions[lang as keyof typeof descriptions] ||
+  "Automate your customer support.";
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  dir={isRtl ? "rtl" : "ltr"}
+>
+  <Header lang={lang} client:load />
+  <main>
+    <ServiceDetail lang={lang} serviceId="whatsapp-ai-chatbot" client:load />
+    <Testimonials lang={lang} client:load />
+  </main>
+  <Footer lang={lang} client:load />
+  <LocalBusinessSchema />
+</Layout>

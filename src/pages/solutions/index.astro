@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TranslatedSolutions from '../../components/react/TranslatedSolutions';
+import Footer from '../../components/react/Footer';
+
+---
+
+<Layout title="Industry Specific Business Solutions | HMZ Technology" description="Explore 300+ revenue-generating solutions tailored for your industry. AI, Automation, WhatsApp Bots, and more.">
+    <TranslatedSolutions lang="en" client:load />
+    <Footer lang="en" client:visible />
+</Layout>
