@@ -12,7 +12,6 @@ export default defineConfig({
   site: 'https://hmz.technology',
   output: 'static',
   adapter: cloudflare(),
-  // For VM deployment, use: adapter: node({ mode: 'standalone' }),
   integrations: [
     react(),
     sitemap({
