@@ -10,6 +10,7 @@ interface Props {
 
 import OrganizationSchema from "../components/react/OrganizationSchema";
 import LanguageDetector from "../components/react/LanguageDetector";
+import ConversionWidgets from "../components/react/ConversionWidgets";
 
 const {
   title = "HMZ Technology | Advanced AI Solutions",
@@ -81,5 +82,7 @@ const {
   <body class="bg-background text-foreground antialiased">
     <LanguageDetector client:load />
     <slot />
+    <!-- Conversion Optimization Widgets -->
+    <ConversionWidgets lang={lang} client:load />
   </body>
 </html>

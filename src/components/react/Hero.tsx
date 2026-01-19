@@ -18,116 +18,116 @@ interface HeroTranslation {
 
 const heroTranslations: Record<Language, HeroTranslation> = {
     en: {
-        badge: '⚡ Your Competitors Already Started',
-        titleLine1: 'Stop Losing',
-        titleLine2: 'Customers to',
-        titleLine3: 'Silence',
-        subtitle: 'Every unanswered message is money walking to your competitor. Our AI responds in 3 seconds, sells while you sleep, and never asks for a raise.',
-        cta1: 'Claim Your Free Audit',
-        cta2: 'See Live Results',
+        badge: '🎯 100% Custom AI Solutions - No Templates',
+        titleLine1: 'We Build AI',
+        titleLine2: 'That Fits',
+        titleLine3: 'YOUR Business',
+        subtitle: 'Not templates. Not one-size-fits-all. We design custom AI solutions specifically for YOUR unique challenges. Tell us your problem, we\'ll build the solution.',
+        cta1: 'Get My Custom Strategy',
+        cta2: 'See Custom Projects',
         stats: [
-            { value: '500+', label: 'Active Clients' },
-            { value: '3 sec', label: 'Response Time' },
-            { value: '24/7', label: 'Always Working' },
-            { value: '0', label: 'Missed Leads' }
+            { value: '100%', label: 'Custom Built' },
+            { value: '500+', label: 'Unique Solutions' },
+            { value: '3 sec', label: 'AI Response' },
+            { value: '0', label: 'Templates Used' }
         ],
-        scrollText: 'Discover the secret'
+        scrollText: 'See what we build'
     },
     ar: {
-        badge: '⚡ منافسوك بدأوا قبلك',
-        titleLine1: 'توقف عن خسارة',
-        titleLine2: 'عملائك بسبب',
-        titleLine3: 'الصمت',
-        subtitle: 'كل رسالة بدون رد = عميل ذهب لمنافسك. AI يرد بـ 3 ثواني، يبيع وأنت نايم، وما بيطلب علاوة.',
-        cta1: 'احصل على تحليل مجاني',
-        cta2: 'شوف النتائج الحية',
+        badge: '🎯 حلول AI مخصصة 100% - بدون قوالب',
+        titleLine1: 'نبني AI',
+        titleLine2: 'يناسب',
+        titleLine3: 'عملك أنت',
+        subtitle: 'مش قوالب. مش حل واحد للكل. نصمم حلول AI مخصصة خصيصاً لتحدياتك الفريدة. احكيلنا مشكلتك، رح نبني الحل.',
+        cta1: 'احصل على استراتيجيتي المخصصة',
+        cta2: 'شوف مشاريعنا المخصصة',
         stats: [
-            { value: '+٥٠٠', label: 'عميل نشط' },
-            { value: '٣ ث', label: 'وقت الرد' },
-            { value: '٢٤/٧', label: 'شغّال دائماً' },
-            { value: '٠', label: 'عملاء ضائعين' }
+            { value: '١٠٠٪', label: 'مخصص بالكامل' },
+            { value: '+٥٠٠', label: 'حل فريد' },
+            { value: '٣ ث', label: 'رد AI' },
+            { value: '٠', label: 'قوالب مستخدمة' }
         ],
-        scrollText: 'اكتشف السر'
+        scrollText: 'شوف شو منبني'
     },
     de: {
-        badge: '⚡ Ihre Konkurrenz hat schon begonnen',
-        titleLine1: 'Hören Sie auf',
-        titleLine2: 'Kunden durch',
-        titleLine3: 'Stille zu verlieren',
-        subtitle: 'Jede unbeantwortete Nachricht ist Geld, das zu Ihrem Konkurrenten geht. Unsere KI antwortet in 3 Sekunden, verkauft während Sie schlafen.',
-        cta1: 'Kostenloses Audit anfordern',
-        cta2: 'Live-Ergebnisse sehen',
+        badge: '🎯 100% Maßgeschneiderte KI-Lösungen',
+        titleLine1: 'Wir bauen KI',
+        titleLine2: 'die zu IHREM',
+        titleLine3: 'Geschäft passt',
+        subtitle: 'Keine Vorlagen. Keine Einheitslösungen. Wir entwickeln maßgeschneiderte KI-Lösungen speziell für IHRE einzigartigen Herausforderungen.',
+        cta1: 'Meine Strategie anfordern',
+        cta2: 'Projekte ansehen',
         stats: [
-            { value: '€2,3M', label: 'Generierter Umsatz' },
-            { value: '3 Sek', label: 'Antwortzeit' },
-            { value: '847%', label: 'ROI Durchschnitt' },
-            { value: '0', label: 'Verlorene Leads' }
+            { value: '100%', label: 'Maßgeschneidert' },
+            { value: '500+', label: 'Einzigartige Lösungen' },
+            { value: '3 Sek', label: 'KI-Antwort' },
+            { value: '0', label: 'Vorlagen' }
         ],
-        scrollText: 'Entdecken Sie das Geheimnis'
+        scrollText: 'Sehen Sie, was wir bauen'
     },
     fr: {
-        badge: '⚡ Vos concurrents ont déjà commencé',
-        titleLine1: 'Arrêtez de perdre',
-        titleLine2: 'des clients à cause',
-        titleLine3: 'du silence',
-        subtitle: "Chaque message sans réponse = de l'argent qui va chez votre concurrent. Notre IA répond en 3 secondes, vend pendant que vous dormez.",
-        cta1: 'Obtenez votre audit gratuit',
-        cta2: 'Voir les résultats en direct',
+        badge: '🎯 Solutions IA 100% Sur Mesure',
+        titleLine1: 'Nous créons l\'IA',
+        titleLine2: 'adaptée à',
+        titleLine3: 'VOTRE Entreprise',
+        subtitle: "Pas de modèles. Pas de solution unique. Nous concevons des solutions IA personnalisées spécifiquement pour VOS défis uniques.",
+        cta1: 'Obtenir ma stratégie',
+        cta2: 'Voir nos projets',
         stats: [
-            { value: '€2,3M', label: 'Revenus générés' },
-            { value: '3 sec', label: 'Temps de réponse' },
-            { value: '847%', label: 'ROI Moyen' },
-            { value: '0', label: 'Leads perdus' }
+            { value: '100%', label: 'Sur mesure' },
+            { value: '500+', label: 'Solutions uniques' },
+            { value: '3 sec', label: 'Réponse IA' },
+            { value: '0', label: 'Modèles' }
         ],
-        scrollText: 'Découvrez le secret'
+        scrollText: 'Découvrez nos créations'
     },
     it: {
-        badge: '⚡ I tuoi concorrenti hanno già iniziato',
-        titleLine1: 'Smetti di perdere',
-        titleLine2: 'clienti a causa',
-        titleLine3: 'del silenzio',
-        subtitle: 'Ogni messaggio senza risposta = soldi che vanno al tuo concorrente. La nostra IA risponde in 3 secondi, vende mentre dormi.',
-        cta1: 'Richiedi audit gratuito',
-        cta2: 'Vedi risultati dal vivo',
+        badge: '🎯 Soluzioni AI 100% Personalizzate',
+        titleLine1: 'Costruiamo AI',
+        titleLine2: 'su misura per',
+        titleLine3: 'la TUA Azienda',
+        subtitle: 'Niente modelli. Niente soluzioni standard. Progettiamo soluzioni AI personalizzate specificamente per le TUE sfide uniche.',
+        cta1: 'Ottieni la mia strategia',
+        cta2: 'Vedi i progetti',
         stats: [
-            { value: '€2,3M', label: 'Ricavi generati' },
-            { value: '3 sec', label: 'Tempo di risposta' },
-            { value: '847%', label: 'ROI Medio' },
-            { value: '0', label: 'Lead persi' }
+            { value: '100%', label: 'Personalizzato' },
+            { value: '500+', label: 'Soluzioni uniche' },
+            { value: '3 sec', label: 'Risposta AI' },
+            { value: '0', label: 'Modelli' }
         ],
-        scrollText: 'Scopri il segreto'
+        scrollText: 'Scopri cosa costruiamo'
     },
     hi: {
-        badge: '⚡ आपके प्रतिस्पर्धी पहले ही शुरू कर चुके हैं',
-        titleLine1: 'ग्राहकों को',
-        titleLine2: 'चुप्पी की वजह से',
-        titleLine3: 'खोना बंद करें',
-        subtitle: 'हर अनुत्तरित संदेश = पैसा जो आपके प्रतिस्पर्धी के पास जा रहा है। हमारा AI 3 सेकंड में जवाब देता है, आप सोते समय बेचता है।',
-        cta1: 'मुफ्त ऑडिट प्राप्त करें',
-        cta2: 'लाइव परिणाम देखें',
+        badge: '🎯 100% कस्टम AI समाधान',
+        titleLine1: 'हम AI बनाते हैं',
+        titleLine2: 'जो आपके',
+        titleLine3: 'बिज़नेस के लिए फिट हो',
+        subtitle: 'कोई टेम्पलेट नहीं। कोई एक-आकार-सबके-लिए नहीं। हम आपकी अनूठी चुनौतियों के लिए विशेष रूप से कस्टम AI समाधान डिज़ाइन करते हैं।',
+        cta1: 'मेरी रणनीति पाएं',
+        cta2: 'प्रोजेक्ट देखें',
         stats: [
-            { value: '$2.3M', label: 'उत्पन्न राजस्व' },
-            { value: '3 सेक', label: 'प्रतिक्रिया समय' },
-            { value: '847%', label: 'औसत ROI' },
-            { value: '0', label: 'खोए हुए लीड' }
+            { value: '100%', label: 'कस्टम निर्मित' },
+            { value: '500+', label: 'अद्वितीय समाधान' },
+            { value: '3 सेक', label: 'AI प्रतिक्रिया' },
+            { value: '0', label: 'टेम्पलेट' }
         ],
-        scrollText: 'रहस्य जानें'
+        scrollText: 'देखें हम क्या बनाते हैं'
     },
     ms: {
-        badge: '⚡ Pesaing anda sudah bermula',
-        titleLine1: 'Berhenti kehilangan',
-        titleLine2: 'pelanggan kerana',
-        titleLine3: 'kesunyian',
-        subtitle: 'Setiap mesej tanpa jawapan = wang yang pergi kepada pesaing anda. AI kami menjawab dalam 3 saat, menjual semasa anda tidur.',
-        cta1: 'Dapatkan audit percuma',
-        cta2: 'Lihat hasil langsung',
+        badge: '🎯 Penyelesaian AI 100% Tersuai',
+        titleLine1: 'Kami membina AI',
+        titleLine2: 'yang sesuai untuk',
+        titleLine3: 'Perniagaan ANDA',
+        subtitle: 'Tiada templat. Tiada penyelesaian satu-saiz-untuk-semua. Kami mereka penyelesaian AI tersuai khusus untuk cabaran unik ANDA.',
+        cta1: 'Dapatkan strategi saya',
+        cta2: 'Lihat projek',
         stats: [
-            { value: '$2.3M', label: 'Pendapatan dijana' },
-            { value: '3 saat', label: 'Masa respons' },
-            { value: '847%', label: 'ROI Purata' },
-            { value: '0', label: 'Leads hilang' }
+            { value: '100%', label: 'Dibina khas' },
+            { value: '500+', label: 'Penyelesaian unik' },
+            { value: '3 saat', label: 'Respons AI' },
+            { value: '0', label: 'Templat' }
         ],
-        scrollText: 'Temui rahsia'
+        scrollText: 'Lihat apa yang kami bina'
     }
 }
 

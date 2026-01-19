@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { MessageCircle, Mail, Phone, Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { MessageCircle, Mail, Phone, Send, CheckCircle, AlertCircle, Shield, Clock, Sparkles } from 'lucide-react'
 
 type Language = 'en' | 'ar' | 'de' | 'fr' | 'it' | 'hi' | 'ms'
 
@@ -11,9 +11,6 @@ const translations: Record<Language, {
     subtitle: string
     name: string
     email: string
-    phone: string
-    company: string
-    service: string
     message: string
     submit: string
     sending: string
@@ -24,161 +21,164 @@ const translations: Record<Language, {
     callCta: string
     orContact: string
     responseTime: string
-    services: string[]
+    trustBadge1: string
+    trustBadge2: string
+    trustBadge3: string
+    customNote: string
 }> = {
     en: {
-        badge: '⏰ Only 3 Spots Left This Month',
-        title: 'Stop Losing',
-        titleHighlight: 'Money Today',
-        subtitle: 'Every day you wait, competitors with AI are taking your customers. Book your free strategy call.',
+        badge: '🎯 100% Custom Solutions - No Templates',
+        title: 'Get Your',
+        titleHighlight: 'Custom AI Built',
+        subtitle: 'Tell us your challenge. We\'ll design a solution specifically for YOUR business - not a one-size-fits-all template.',
         name: 'Your Name',
         email: 'Best Email',
-        phone: 'WhatsApp (Fastest Response)',
-        company: 'Company Name',
-        service: 'What\'s Costing You Money?',
-        message: 'What problem is bleeding your business right now?',
-        submit: 'Claim My Free Audit →',
-        sending: 'Securing your spot...',
-        success: '✓ Spot secured! We\'ll call you within 2 hours.',
-        error: 'Failed to send. Call us directly: +961 70 106 083',
-        whatsappCta: 'Get Instant Response',
+        message: 'What challenge should your custom AI solve?',
+        submit: 'Get My Custom Strategy →',
+        sending: 'Creating your custom plan...',
+        success: '✓ Got it! We\'re designing your custom solution now.',
+        error: 'Failed to send. WhatsApp us: +961 70 106 083',
+        whatsappCta: 'WhatsApp (Instant)',
         emailCta: 'Email Us',
         callCta: 'Call Now',
-        orContact: 'Need answers faster?',
-        responseTime: '⚡ Average response: 47 minutes',
-        services: ['Losing leads on WhatsApp', 'Instagram DMs ignored', 'Website not converting', 'Manual tasks eating time', 'Competitors outranking me', 'Other']
+        orContact: 'Or reach us directly:',
+        responseTime: '⚡ Custom strategy delivered within 2 hours',
+        trustBadge1: 'No templates - 100% custom',
+        trustBadge2: 'Free consultation',
+        trustBadge3: 'No commitment required',
+        customNote: 'Every solution we build is unique to your business'
     },
     ar: {
-        badge: '⏰ باقي 3 أماكن فقط هالشهر',
-        title: 'وقّف خسارة',
-        titleHighlight: 'الفلوس اليوم',
-        subtitle: 'كل يوم تأخير، منافسوك بالـ AI ياخذون عملائك. احجز مكالمة استراتيجية مجانية.',
+        badge: '🎯 حلول مخصصة 100% - بدون قوالب',
+        title: 'احصل على',
+        titleHighlight: 'AI مخصص لك',
+        subtitle: 'احكيلنا عن تحديك. رح نصمم حل خصيصاً لعملك - مش قالب جاهز للكل.',
         name: 'اسمك',
         email: 'أفضل إيميل',
-        phone: 'واتساب (أسرع رد)',
-        company: 'اسم الشركة',
-        service: 'شو عم يكلفك فلوس؟',
-        message: 'شو المشكلة اللي عم تنزف من عملك الحين؟',
-        submit: 'احجز تحليلي المجاني ←',
-        sending: 'عم نحجز مكانك...',
-        success: '✓ تم الحجز! رح نتصل فيك خلال ساعتين.',
-        error: 'فشل الإرسال. اتصل فينا مباشرة: +961 70 106 083',
-        whatsappCta: 'رد فوري',
+        message: 'شو التحدي اللي بدك AI المخصص يحله؟',
+        submit: '← احصل على استراتيجيتي المخصصة',
+        sending: 'عم نحضر خطتك المخصصة...',
+        success: '✓ تم! عم نصمم حلك المخصص هلأ.',
+        error: 'فشل الإرسال. واتساب: +961 70 106 083',
+        whatsappCta: 'واتساب (فوري)',
         emailCta: 'إيميل',
         callCta: 'اتصل الحين',
-        orContact: 'بدك جواب أسرع؟',
-        responseTime: '⚡ متوسط الرد: 47 دقيقة',
-        services: ['عم خسر عملاء ع واتساب', 'رسائل انستغرام متجاهلة', 'الموقع ما بيحوّل', 'مهام يدوية تاكل وقتي', 'المنافسين متصدرين علي', 'غير']
+        orContact: 'أو تواصل معنا مباشرة:',
+        responseTime: '⚡ استراتيجية مخصصة خلال ساعتين',
+        trustBadge1: 'بدون قوالب - مخصص 100%',
+        trustBadge2: 'استشارة مجانية',
+        trustBadge3: 'بدون أي التزام',
+        customNote: 'كل حل نبنيه فريد لعملك'
     },
     de: {
-        badge: '📬 Kontakt',
-        title: 'Lassen Sie uns',
-        titleHighlight: 'etwas Großartiges bauen',
-        subtitle: 'Erzählen Sie uns von Ihrem Projekt und wir melden uns innerhalb von 24 Stunden',
+        badge: '🎯 100% Maßgeschneiderte Lösungen',
+        title: 'Holen Sie sich Ihre',
+        titleHighlight: 'Maßgeschneiderte KI',
+        subtitle: 'Erzählen Sie uns von Ihrer Herausforderung. Wir entwickeln eine Lösung speziell für IHR Unternehmen.',
         name: 'Ihr Name',
         email: 'E-Mail-Adresse',
-        phone: 'Telefon / WhatsApp',
-        company: 'Firmenname',
-        service: 'Gewünschte Dienstleistung',
-        message: 'Erzählen Sie uns von Ihrem Projekt...',
-        submit: 'Nachricht senden',
-        sending: 'Wird gesendet...',
-        success: 'Nachricht gesendet! Wir melden uns innerhalb von 24 Stunden.',
-        error: 'Senden fehlgeschlagen. Versuchen Sie es erneut oder kontaktieren Sie uns direkt.',
-        whatsappCta: 'Per WhatsApp kontaktieren',
+        message: 'Welche Herausforderung soll Ihre KI lösen?',
+        submit: 'Meine Strategie anfordern →',
+        sending: 'Erstelle Ihren Plan...',
+        success: '✓ Erhalten! Wir arbeiten an Ihrer Lösung.',
+        error: 'Fehler. WhatsApp: +961 70 106 083',
+        whatsappCta: 'WhatsApp (Sofort)',
         emailCta: 'E-Mail senden',
         callCta: 'Jetzt anrufen',
-        orContact: 'Oder kontaktieren Sie uns direkt',
-        responseTime: 'Durchschnittliche Antwortzeit: 2 Stunden',
-        services: ['WhatsApp KI-Bot', 'Instagram KI-Bot', 'Messenger Bot', 'KI-Automatisierung', 'Webentwicklung', 'SEO-Dienste']
+        orContact: 'Oder direkt kontaktieren:',
+        responseTime: '⚡ Strategie innerhalb von 2 Stunden',
+        trustBadge1: 'Keine Vorlagen - 100% individuell',
+        trustBadge2: 'Kostenlose Beratung',
+        trustBadge3: 'Keine Verpflichtung',
+        customNote: 'Jede Lösung ist einzigartig für Ihr Unternehmen'
     },
     fr: {
-        badge: '📬 Contactez-nous',
-        title: 'Construisons',
-        titleHighlight: 'quelque chose d\'incroyable',
-        subtitle: 'Parlez-nous de votre projet et nous vous répondrons sous 24 heures',
+        badge: '🎯 Solutions 100% Sur Mesure',
+        title: 'Obtenez votre',
+        titleHighlight: 'IA Personnalisée',
+        subtitle: 'Décrivez votre défi. Nous concevrons une solution spécifiquement pour VOTRE entreprise.',
         name: 'Votre nom',
         email: 'Adresse e-mail',
-        phone: 'Téléphone / WhatsApp',
-        company: 'Nom de l\'entreprise',
-        service: 'Service souhaité',
-        message: 'Parlez-nous de votre projet...',
-        submit: 'Envoyer le message',
-        sending: 'Envoi en cours...',
-        success: 'Message envoyé! Nous vous contacterons sous 24 heures.',
-        error: 'Échec de l\'envoi. Réessayez ou contactez-nous directement.',
-        whatsappCta: 'Contacter par WhatsApp',
+        message: 'Quel défi votre IA personnalisée doit-elle résoudre?',
+        submit: 'Obtenir ma stratégie →',
+        sending: 'Création de votre plan...',
+        success: '✓ Reçu! Nous travaillons sur votre solution.',
+        error: 'Échec. WhatsApp: +961 70 106 083',
+        whatsappCta: 'WhatsApp (Instant)',
         emailCta: 'Envoyer un e-mail',
-        callCta: 'Appeler maintenant',
-        orContact: 'Ou contactez-nous directement',
-        responseTime: 'Temps de réponse moyen: 2 heures',
-        services: ['Bot IA WhatsApp', 'Bot IA Instagram', 'Bot Messenger', 'Automatisation IA', 'Développement Web', 'Services SEO']
+        callCta: 'Appeler',
+        orContact: 'Ou contactez-nous directement:',
+        responseTime: '⚡ Stratégie livrée sous 2 heures',
+        trustBadge1: 'Pas de modèles - 100% sur mesure',
+        trustBadge2: 'Consultation gratuite',
+        trustBadge3: 'Sans engagement',
+        customNote: 'Chaque solution est unique à votre entreprise'
     },
     it: {
-        badge: '📬 Contattaci',
-        title: 'Costruiamo',
-        titleHighlight: 'qualcosa di straordinario',
-        subtitle: 'Raccontaci del tuo progetto e ti risponderemo entro 24 ore',
+        badge: '🎯 Soluzioni 100% Personalizzate',
+        title: 'Ottieni la tua',
+        titleHighlight: 'AI Personalizzata',
+        subtitle: 'Descrivi la tua sfida. Progetteremo una soluzione specificamente per la TUA azienda.',
         name: 'Il tuo nome',
         email: 'Indirizzo email',
-        phone: 'Telefono / WhatsApp',
-        company: 'Nome azienda',
-        service: 'Servizio desiderato',
-        message: 'Raccontaci del tuo progetto...',
-        submit: 'Invia messaggio',
-        sending: 'Invio in corso...',
-        success: 'Messaggio inviato! Ti contatteremo entro 24 ore.',
-        error: 'Invio fallito. Riprova o contattaci direttamente.',
-        whatsappCta: 'Contatta su WhatsApp',
+        message: 'Quale sfida deve risolvere la tua AI personalizzata?',
+        submit: 'Ottieni la mia strategia →',
+        sending: 'Creazione del tuo piano...',
+        success: '✓ Ricevuto! Stiamo lavorando alla tua soluzione.',
+        error: 'Fallito. WhatsApp: +961 70 106 083',
+        whatsappCta: 'WhatsApp (Istantaneo)',
         emailCta: 'Invia email',
         callCta: 'Chiama ora',
-        orContact: 'Oppure contattaci direttamente',
-        responseTime: 'Tempo di risposta medio: 2 ore',
-        services: ['Bot IA WhatsApp', 'Bot IA Instagram', 'Bot Messenger', 'Automazione IA', 'Sviluppo Web', 'Servizi SEO']
+        orContact: 'O contattaci direttamente:',
+        responseTime: '⚡ Strategia consegnata entro 2 ore',
+        trustBadge1: 'Niente modelli - 100% personalizzato',
+        trustBadge2: 'Consulenza gratuita',
+        trustBadge3: 'Nessun impegno',
+        customNote: 'Ogni soluzione è unica per la tua azienda'
     },
     hi: {
-        badge: '📬 संपर्क करें',
-        title: 'आइए बनाएं',
-        titleHighlight: 'कुछ अद्भुत',
-        subtitle: 'हमें अपने प्रोजेक्ट के बारे में बताएं और हम 24 घंटों के भीतर आपसे संपर्क करेंगे',
+        badge: '🎯 100% कस्टम समाधान',
+        title: 'अपना',
+        titleHighlight: 'कस्टम AI पाएं',
+        subtitle: 'हमें अपनी चुनौती बताएं। हम आपके व्यवसाय के लिए विशेष समाधान डिज़ाइन करेंगे।',
         name: 'आपका नाम',
         email: 'ईमेल पता',
-        phone: 'फ़ोन / WhatsApp',
-        company: 'कंपनी का नाम',
-        service: 'इच्छित सेवा',
-        message: 'हमें अपने प्रोजेक्ट के बारे में बताएं...',
-        submit: 'संदेश भेजें',
-        sending: 'भेजा जा रहा है...',
-        success: 'संदेश भेजा गया! हम 24 घंटों के भीतर आपसे संपर्क करेंगे।',
-        error: 'भेजने में विफल। कृपया पुन: प्रयास करें या हमसे सीधे संपर्क करें।',
-        whatsappCta: 'WhatsApp पर चैट करें',
+        message: 'आपके कस्टम AI को कौन सी चुनौती हल करनी चाहिए?',
+        submit: 'मेरी रणनीति पाएं →',
+        sending: 'आपकी योजना बना रहे हैं...',
+        success: '✓ मिल गया! हम आपके समाधान पर काम कर रहे हैं।',
+        error: 'विफल। WhatsApp: +961 70 106 083',
+        whatsappCta: 'WhatsApp (तुरंत)',
         emailCta: 'ईमेल भेजें',
         callCta: 'अभी कॉल करें',
-        orContact: 'या हमसे सीधे संपर्क करें',
-        responseTime: 'औसत प्रतिक्रिया समय: 2 घंटे',
-        services: ['WhatsApp AI बॉट', 'Instagram AI बॉट', 'Messenger बॉट', 'AI ऑटोमेशन', 'वेब डेवलपमेंट', 'SEO सेवाएं']
+        orContact: 'या सीधे संपर्क करें:',
+        responseTime: '⚡ 2 घंटे में कस्टम रणनीति',
+        trustBadge1: 'कोई टेम्पलेट नहीं - 100% कस्टम',
+        trustBadge2: 'मुफ्त परामर्श',
+        trustBadge3: 'कोई प्रतिबद्धता नहीं',
+        customNote: 'हर समाधान आपके व्यवसाय के लिए अद्वितीय है'
     },
     ms: {
-        badge: '📬 Hubungi Kami',
-        title: 'Mari Bina',
-        titleHighlight: 'Sesuatu yang Menakjubkan',
-        subtitle: 'Beritahu kami tentang projek anda dan kami akan menghubungi anda dalam masa 24 jam',
+        badge: '🎯 Penyelesaian 100% Tersuai',
+        title: 'Dapatkan',
+        titleHighlight: 'AI Tersuai Anda',
+        subtitle: 'Beritahu kami cabaran anda. Kami akan mereka penyelesaian khusus untuk perniagaan ANDA.',
         name: 'Nama Anda',
         email: 'Alamat E-mel',
-        phone: 'Telefon / WhatsApp',
-        company: 'Nama Syarikat',
-        service: 'Perkhidmatan Dikehendaki',
-        message: 'Beritahu kami tentang projek anda...',
-        submit: 'Hantar Mesej',
-        sending: 'Sedang menghantar...',
-        success: 'Mesej dihantar! Kami akan menghubungi anda dalam masa 24 jam.',
-        error: 'Gagal menghantar. Sila cuba lagi atau hubungi kami secara langsung.',
-        whatsappCta: 'Sembang di WhatsApp',
+        message: 'Apakah cabaran yang perlu AI tersuai anda selesaikan?',
+        submit: 'Dapatkan strategi saya →',
+        sending: 'Mencipta pelan anda...',
+        success: '✓ Diterima! Kami sedang mengusahakan penyelesaian anda.',
+        error: 'Gagal. WhatsApp: +961 70 106 083',
+        whatsappCta: 'WhatsApp (Segera)',
         emailCta: 'Hantar E-mel',
         callCta: 'Hubungi Sekarang',
-        orContact: 'Atau hubungi kami secara langsung',
-        responseTime: 'Purata masa respons: 2 jam',
-        services: ['Bot AI WhatsApp', 'Bot AI Instagram', 'Bot Messenger', 'Automasi AI', 'Pembangunan Web', 'Perkhidmatan SEO']
+        orContact: 'Atau hubungi kami terus:',
+        responseTime: '⚡ Strategi tersuai dalam 2 jam',
+        trustBadge1: 'Tiada templat - 100% tersuai',
+        trustBadge2: 'Perundingan percuma',
+        trustBadge3: 'Tiada komitmen',
+        customNote: 'Setiap penyelesaian unik untuk perniagaan anda'
     }
 }
 
@@ -191,13 +191,11 @@ const ContactForm = ({ lang }: ContactFormProps) => {
     const t = translations[currentLang]
     const isRtl = currentLang === 'ar'
 
-    const [formData, setFormData] = useState({ 
-        name: '', 
-        email: '', 
-        phone: '', 
-        company: '', 
-        service: '',
-        message: '' 
+    // SIMPLIFIED: Only 3 fields now
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
     })
     const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
 
@@ -211,7 +209,8 @@ const ContactForm = ({ lang }: ContactFormProps) => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     ...formData,
-                    _subject: `New Lead - ${formData.name} - ${formData.service}`,
+                    service: 'Custom AI Solution',
+                    _subject: `Custom AI Request - ${formData.name}`,
                     language: lang,
                     page: typeof window !== 'undefined' ? window.location.pathname : ''
                 })
@@ -219,7 +218,7 @@ const ContactForm = ({ lang }: ContactFormProps) => {
 
             if (response.ok) {
                 setStatus('success')
-                setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' })
+                setFormData({ name: '', email: '', message: '' })
             } else {
                 setStatus('error')
             }
@@ -237,7 +236,7 @@ const ContactForm = ({ lang }: ContactFormProps) => {
             </div>
 
             {/* Grid Pattern */}
-            <div 
+            <div
                 className="absolute inset-0 opacity-20"
                 style={{
                     backgroundImage: `linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px)`,
@@ -253,6 +252,7 @@ const ContactForm = ({ lang }: ContactFormProps) => {
                     className="text-center mb-16"
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/5 backdrop-blur-sm mb-8">
+                        <Sparkles className="w-4 h-4 text-cyan-400" />
                         <span className="text-sm font-medium text-cyan-300">{t.badge}</span>
                     </div>
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
@@ -265,7 +265,7 @@ const ContactForm = ({ lang }: ContactFormProps) => {
                 </motion.div>
 
                 <div className="grid lg:grid-cols-5 gap-12">
-                    {/* Contact Form */}
+                    {/* Contact Form - SIMPLIFIED to 3 fields */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -273,6 +273,23 @@ const ContactForm = ({ lang }: ContactFormProps) => {
                         className="lg:col-span-3"
                     >
                         <form onSubmit={handleSubmit} className="glass-card-ai p-8 space-y-6">
+                            {/* Trust Badges Above Form */}
+                            <div className="flex flex-wrap justify-center gap-4 mb-6 pb-6 border-b border-white/10">
+                                <div className="flex items-center gap-2 text-sm text-white/60">
+                                    <Shield className="w-4 h-4 text-cyan-400" />
+                                    {t.trustBadge1}
+                                </div>
+                                <div className="flex items-center gap-2 text-sm text-white/60">
+                                    <CheckCircle className="w-4 h-4 text-green-400" />
+                                    {t.trustBadge2}
+                                </div>
+                                <div className="flex items-center gap-2 text-sm text-white/60">
+                                    <Clock className="w-4 h-4 text-purple-400" />
+                                    {t.trustBadge3}
+                                </div>
+                            </div>
+
+                            {/* SIMPLIFIED: Just 3 fields */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <input
@@ -296,44 +313,10 @@ const ContactForm = ({ lang }: ContactFormProps) => {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <input
-                                        type="tel"
-                                        placeholder={t.phone}
-                                        value={formData.phone}
-                                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:border-cyan-500/50 transition-colors"
-                                    />
-                                </div>
-                                <div>
-                                    <input
-                                        type="text"
-                                        placeholder={t.company}
-                                        value={formData.company}
-                                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white placeholder-white/30 focus:outline-none focus:border-cyan-500/50 transition-colors"
-                                    />
-                                </div>
-                            </div>
-
-                            <div>
-                                <select
-                                    value={formData.service}
-                                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-cyan-500/50 transition-colors appearance-none cursor-pointer"
-                                >
-                                    <option value="" className="bg-[#030014]">{t.service}</option>
-                                    {t.services.map((service, i) => (
-                                        <option key={i} value={service} className="bg-[#030014]">{service}</option>
-                                    ))}
-                                </select>
-                            </div>
-
                             <div>
                                 <textarea
                                     required
-                                    rows={5}
+                                    rows={4}
                                     placeholder={t.message}
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -364,6 +347,11 @@ const ContactForm = ({ lang }: ContactFormProps) => {
                             </button>
 
                             <p className="text-center text-white/40 text-sm">{t.responseTime}</p>
+
+                            {/* Custom Note */}
+                            <p className="text-center text-cyan-400/60 text-xs italic">
+                                {t.customNote}
+                            </p>
                         </form>
                     </motion.div>
 
