@@ -11,11 +11,11 @@ import { readFileSync } from "node:fs";
 const HOST = "www.hmz.technology";
 const KEY = readFileSync(new URL("../.indexnow-key", import.meta.url), "utf8").trim();
 
-const sitemap = readFileSync(new URL("../dist/sitemap-0.xml", import.meta.url), "utf8");
+const sitemap = readFileSync(new URL("../nextjs/out/sitemap.xml", import.meta.url), "utf8");
 const urls = [...sitemap.matchAll(/<loc>(https:\/\/www\.hmz\.technology[^<]*)<\/loc>/g)].map((m) => m[1]);
 
 if (!urls.length) {
-  console.error("No URLs found in dist/sitemap-0.xml — run `npm run build` first.");
+  console.error("No URLs found in nextjs/out/sitemap.xml — run `npm run build` in nextjs/ first.");
   process.exit(1);
 }
 
