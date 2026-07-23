@@ -4,7 +4,7 @@ import { servicesData, type Service } from './servicesData';
 
 // ---------------------------------------------------------------------------
 // HMZ Technology — 2026+ Future-Demand Services
-// 10 new services, full content in EN + AR (fallback to EN for other languages)
+// 10 new services, full content in EN, AR, DE, FR, IT, HI and MS
 // ---------------------------------------------------------------------------
 
 export const servicesData2026: Record<string, Record<string, Service>> = {

@@ -4,6 +4,7 @@ import { organizationGraph } from "@/lib/seo";
 import LanguageDetector from "@/components/react/LanguageDetector";
 import ConversionWidgets from "@/components/react/ConversionWidgets";
 import "@/app/globals.css";
+import "@/app/uno.css";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
