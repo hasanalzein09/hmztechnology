@@ -8,7 +8,7 @@
  */
 import { readFileSync } from "node:fs";
 
-const HOST = "hmz.technology";
+const HOST = "www.hmz.technology";
 const KEY = readFileSync(new URL("../.indexnow-key", import.meta.url), "utf8").trim();
 
 const sitemap = readFileSync(new URL("../dist/sitemap-0.xml", import.meta.url), "utf8");

@@ -9,7 +9,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://hmz.technology',
+  site: 'https://www.hmz.technology',
   output: 'static',
   adapter: cloudflare(),
   integrations: [

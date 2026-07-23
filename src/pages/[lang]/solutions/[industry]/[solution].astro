@@ -47,17 +47,17 @@ const faqs =
 const schema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "@id": `https://hmz.technology/${lang}/solutions/${industry}/${solution.slug}#service`,
+  "@id": `https://www.hmz.technology/${lang}/solutions/${industry}/${solution.slug}#service`,
   name: title,
   serviceType: solution.serviceType,
   description: description,
-  provider: { "@id": "https://hmz.technology/#organization" },
+  provider: { "@id": "https://www.hmz.technology/#organization" },
   areaServed: [
     { "@type": "Country", name: "Lebanon" },
     { "@type": "AdministrativeArea", name: "Middle East" },
   ],
   inLanguage: lang,
-  url: `https://hmz.technology/${lang}/solutions/${industry}/${solution.slug}`,
+  url: `https://www.hmz.technology/${lang}/solutions/${industry}/${solution.slug}`,
 };
 
 const faqSchema = {

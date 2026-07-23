@@ -89,4 +89,4 @@ Disallow: /*?fbclid
 Disallow: /*?gclid
 
 # Sitemaps
-Sitemap: https://hmz.technology/sitemap-index.xml
+Sitemap: https://www.hmz.technology/sitemap-index.xml

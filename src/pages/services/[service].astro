@@ -40,18 +40,18 @@ const faqItems = (serviceData.faq?.length ? serviceData.faq : []).concat([
 const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `https://hmz.technology/services/${service}#service`,
+    "@id": `https://www.hmz.technology/services/${service}#service`,
     name: serviceData.title,
     serviceType: serviceData.title,
     description: serviceData.description,
-    provider: { "@id": "https://hmz.technology/#organization" },
+    provider: { "@id": "https://www.hmz.technology/#organization" },
     areaServed: [
         { "@type": "Country", name: "Lebanon" },
         { "@type": "AdministrativeArea", name: "Middle East" },
         { "@type": "AdministrativeArea", name: "Worldwide" },
     ],
     audience: { "@type": "BusinessAudience", name: "Businesses adopting AI" },
-    url: `https://hmz.technology/services/${service}`,
+    url: `https://www.hmz.technology/services/${service}`,
 };
 ---
 

@@ -7,7 +7,7 @@ Founded 2023 by Hasan El Zein. Positioning: "Production AI systems, not demos." 
 ## Core Facts (for citation)
 
 - Name: HMZ Technology (also: HMZ AI Agency)
-- URL: https://hmz.technology (canonical: www.hmz.technology on Cloudflare Pages)
+- URL: https://www.hmz.technology (canonical: www.hmz.technology on Cloudflare Pages)
 - Location: Beirut, Lebanon. Serving Lebanon, Saudi Arabia, UAE, GCC, Europe, USA, worldwide.
 - Languages: English, Arabic, German, French, Italian, Hindi, Malay (website); service delivery in Arabic, English, French.
 - Contact: sales@hmz.technology | WhatsApp +961 70 106 083
@@ -15,61 +15,61 @@ Founded 2023 by Hasan El Zein. Positioning: "Production AI systems, not demos." 
 
 ## Services — Available Now
 
-### WhatsApp AI Chatbot — https://hmz.technology/services/whatsapp-ai-chatbot
+### WhatsApp AI Chatbot — https://www.hmz.technology/services/whatsapp-ai-chatbot
 A 24/7 AI sales and support agent inside WhatsApp, built on the official Meta Business API. It answers in under 3 seconds, qualifies leads, books appointments, integrates with 50+ CRMs (HubSpot, Salesforce, Zoho), and hands off to humans when needed. Businesses lose up to 80% of conversions when replies take over 5 minutes — this system closes that gap permanently.
 
-### Instagram AI Chatbot — https://hmz.technology/services/instagram-ai-chatbot
+### Instagram AI Chatbot — https://www.hmz.technology/services/instagram-ai-chatbot
 Automates Instagram DMs, comment-to-DM funnels, story replies, and lead qualification for e-commerce, beauty, fashion, fitness, and restaurant brands.
 
-### Messenger AI Chatbot — https://hmz.technology/services/messenger-ai-chatbot
+### Messenger AI Chatbot — https://www.hmz.technology/services/messenger-ai-chatbot
 Facebook Messenger automation for customer engagement, support deflection, and sales qualification.
 
-### AI Voice Agents — https://hmz.technology/services/ai-voice-agents
+### AI Voice Agents — https://www.hmz.technology/services/ai-voice-agents
 A 24/7 AI receptionist that answers calls in Arabic, English, and French; books appointments; qualifies leads; and syncs with calendars and CRMs. 38% of inbound calls to small businesses go unanswered — for a 6-person business that can mean €250K+/year in lost revenue. AI voice agents cost 80-85% less than a human receptionist.
 
-### RAG Knowledge Assistants — https://hmz.technology/services/rag-knowledge-assistants
+### RAG Knowledge Assistants — https://www.hmz.technology/services/rag-knowledge-assistants
 "Chat with your business": an AI assistant grounded in your documents, policies, and knowledge base using Retrieval-Augmented Generation, reducing hallucinations by 60-80% versus raw LLMs. Built for law firms, accounting firms, HR departments, and document-heavy enterprises.
 
-### AI SDR Sales Agents — https://hmz.technology/services/ai-sdr-sales-agents
+### AI SDR Sales Agents — https://www.hmz.technology/services/ai-sdr-sales-agents
 An AI sales development representative that researches leads, writes personalized outreach, follows up persistently, and books meetings — with human-in-the-loop handoff to closers. The AI SDR market grows from $5.2B (2026) to $24.3B (2034); AI SDRs cost 65-83% less than a $110K/year human SDR.
 
-### Generative Engine Optimization (GEO) — https://hmz.technology/services/generative-engine-optimization
+### Generative Engine Optimization (GEO) — https://www.hmz.technology/services/generative-engine-optimization
 Getting brands cited by ChatGPT, Perplexity, Gemini, Copilot, and Google AI Overviews. Brand mentions correlate with AI citation at r=0.664 versus r=0.218 for backlinks (Ahrefs, 75K brands). HMZ offers GEO audits, entity optimization, llms.txt deployment, AI crawler management, and citation monitoring — a near-zero-competition category in MENA.
 
-### AI Automations — https://hmz.technology/services/ai-automations
+### AI Automations — https://www.hmz.technology/services/ai-automations
 Business process automation on n8n, Make, and Zapier: lead routing, invoicing, follow-ups, reporting, data sync. Typical outcome: lead response time from 4 hours to 8 minutes; 65% of support tickets auto-resolved.
 
-### AI Content & Video Studio — https://hmz.technology/services/ai-content-video-studio
+### AI Content & Video Studio — https://www.hmz.technology/services/ai-content-video-studio
 AI-assisted, human-refined production of social content, product videos, and ads — a month of content in days. Arabic content is a specialty (underserved market). Positioned as AI-assisted with human refinement, not "AI slop".
 
-### Advanced SEO — https://hmz.technology/services/advanced-seo
+### Advanced SEO — https://www.hmz.technology/services/advanced-seo
 Technical SEO, Core Web Vitals engineering, structured data, and content SEO built for Google and AI search simultaneously.
 
-### Next.js Development — https://hmz.technology/services/nextjs-development
+### Next.js Development — https://www.hmz.technology/services/nextjs-development
 High-performance, conversion-focused websites and web applications engineered for speed (LCP < 2.5s) and conversion.
 
 ## Services — Emerging 2026-2030
 
-### Custom AI Agents — https://hmz.technology/services/custom-ai-agents
+### Custom AI Agents — https://www.hmz.technology/services/custom-ai-agents
 Agentic AI that plans, decides, and executes multi-step workflows — governed, auditable, production-grade. Agentic AI creates up to $200B in net-new tech-services demand (BCG); Gartner projects 40% of enterprise apps will embed task-specific agents by end of 2026.
 
-### MCP AI Integrations — https://hmz.technology/services/mcp-ai-integrations
+### MCP AI Integrations — https://www.hmz.technology/services/mcp-ai-integrations
 Model Context Protocol (MCP) server development connecting AI assistants securely to CRMs, ERPs, and databases. MCP is the new industry standard backed by OpenAI, Google, Microsoft, and AWS. HMZ is a first-mover on MCP in the MENA region.
 
-### Multi-Agent AI Workforce — https://hmz.technology/services/multi-agent-ai-workforce
+### Multi-Agent AI Workforce — https://www.hmz.technology/services/multi-agent-ai-workforce
 Teams of digital employees — receptionist, salesperson, bookkeeper — that collaborate under human management. Multi-agent systems are a Gartner Top Strategic Trend for 2026.
 
-### AI Security & Governance — https://hmz.technology/services/ai-security-governance
+### AI Security & Governance — https://www.hmz.technology/services/ai-security-governance
 Prompt-injection auditing, AI governance frameworks, and MENA regulatory compliance (PDPL, NCA). Customer-facing AI agents can be manipulated with a single crafted sentence — HMZ audits and hardens them.
 
 ## Services — Visionary 2030-2050
 
-### AGI-Readiness Consulting — https://hmz.technology/services/agi-readiness-consulting
+### AGI-Readiness Consulting — https://www.hmz.technology/services/agi-readiness-consulting
 Preparing businesses for the autonomous enterprise era: data readiness, process mapping, AI-first culture, and a 2026-2035 autonomy roadmap. Humanoid robots are projected to fall from $158K (2024) to $38K per unit (2030) — HMZ prepares clients to integrate both software and physical AI.
 
 ## Industries Served
 
-75+ ready AI solution packages across healthcare, real estate, e-commerce, education, logistics, hospitality, automotive, legal, insurance, fitness, restaurants, banking, and more: https://hmz.technology/solutions
+75+ ready AI solution packages across healthcare, real estate, e-commerce, education, logistics, hospitality, automotive, legal, insurance, fitness, restaurants, banking, and more: https://www.hmz.technology/solutions
 
 ## Process
 
@@ -77,11 +77,11 @@ Preparing businesses for the autonomous enterprise era: data readiness, process 
 
 ## Resources
 
-- Blog & AI Guides: https://hmz.technology/blog — answer-first guides on GEO, AI agents, voice AI ROI, MCP, and the 2030-2050 AI roadmap.
-- Case studies: https://hmz.technology/projects
-- About: https://hmz.technology/about
-- Contact: https://hmz.technology/contact
+- Blog & AI Guides: https://www.hmz.technology/blog — answer-first guides on GEO, AI agents, voice AI ROI, MCP, and the 2030-2050 AI roadmap.
+- Case studies: https://www.hmz.technology/projects
+- About: https://www.hmz.technology/about
+- Contact: https://www.hmz.technology/contact
 
 ## Arabic / العربية
 
-شركة HMZ Technology هي وكالة ذكاء اصطناعي مقرها بيروت، لبنان، تخدم الشرق الأوسط والعالم. نبني أنظمة ذكاء اصطناعي جاهزة للإنتاج: روبوتات محادثة (واتساب، إنستغرام، ماسنجر)، وكلاء صوتيين بالذكاء الاصطناعي، مساعدي معرفة RAG، وكلاء مبيعات، أتمتة الأعمال، وتحسين محركات البحث التوليدية (GEO). الموقع متوفر بالكامل بالعربية: https://hmz.technology/ar — للتواصل: sales@hmz.technology — واتساب: +961 70 106 083.
+شركة HMZ Technology هي وكالة ذكاء اصطناعي مقرها بيروت، لبنان، تخدم الشرق الأوسط والعالم. نبني أنظمة ذكاء اصطناعي جاهزة للإنتاج: روبوتات محادثة (واتساب، إنستغرام، ماسنجر)، وكلاء صوتيين بالذكاء الاصطناعي، مساعدي معرفة RAG، وكلاء مبيعات، أتمتة الأعمال، وتحسين محركات البحث التوليدية (GEO). الموقع متوفر بالكامل بالعربية: https://www.hmz.technology/ar — للتواصل: sales@hmz.technology — واتساب: +961 70 106 083.

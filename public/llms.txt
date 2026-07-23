@@ -6,53 +6,53 @@ HMZ Technology helps companies move from AI pilots to production: strategy, buil
 
 ## Services — Available Now
 
-- [WhatsApp AI Chatbot](https://hmz.technology/services/whatsapp-ai-chatbot): 24/7 AI sales & support agent inside WhatsApp; replies in under 3 seconds; official Meta Business API.
-- [Instagram AI Chatbot](https://hmz.technology/services/instagram-ai-chatbot): Automated Instagram DM sales and support agent.
-- [Messenger AI Chatbot](https://hmz.technology/services/messenger-ai-chatbot): Facebook Messenger AI automation for customer engagement.
-- [AI Automations](https://hmz.technology/services/ai-automations): Business process automation (n8n/Make/Zapier) — lead routing, invoicing, follow-ups, reporting.
-- [AI Voice Agents](https://hmz.technology/services/ai-voice-agents): 24/7 AI receptionist answering calls in Arabic, English, and French; books appointments and qualifies leads.
-- [RAG Knowledge Assistants](https://hmz.technology/services/rag-knowledge-assistants): "Chat with your business" — AI grounded in your documents, reducing hallucinations 60-80%.
-- [AI SDR Sales Agents](https://hmz.technology/services/ai-sdr-sales-agents): AI that researches leads, writes outreach, follows up, and books meetings with human-in-the-loop handoff.
-- [Generative Engine Optimization (GEO)](https://hmz.technology/services/generative-engine-optimization): Get cited by ChatGPT, Perplexity, Gemini, and Google AI Overviews.
-- [AI Content & Video Studio](https://hmz.technology/services/ai-content-video-studio): AI-assisted, human-refined content and video production at scale, including Arabic content.
-- [Advanced SEO](https://hmz.technology/services/advanced-seo): Technical and content SEO engineered for Google and AI search.
-- [Next.js Development](https://hmz.technology/services/nextjs-development): High-performance conversion-focused websites and web apps.
+- [WhatsApp AI Chatbot](https://www.hmz.technology/services/whatsapp-ai-chatbot): 24/7 AI sales & support agent inside WhatsApp; replies in under 3 seconds; official Meta Business API.
+- [Instagram AI Chatbot](https://www.hmz.technology/services/instagram-ai-chatbot): Automated Instagram DM sales and support agent.
+- [Messenger AI Chatbot](https://www.hmz.technology/services/messenger-ai-chatbot): Facebook Messenger AI automation for customer engagement.
+- [AI Automations](https://www.hmz.technology/services/ai-automations): Business process automation (n8n/Make/Zapier) — lead routing, invoicing, follow-ups, reporting.
+- [AI Voice Agents](https://www.hmz.technology/services/ai-voice-agents): 24/7 AI receptionist answering calls in Arabic, English, and French; books appointments and qualifies leads.
+- [RAG Knowledge Assistants](https://www.hmz.technology/services/rag-knowledge-assistants): "Chat with your business" — AI grounded in your documents, reducing hallucinations 60-80%.
+- [AI SDR Sales Agents](https://www.hmz.technology/services/ai-sdr-sales-agents): AI that researches leads, writes outreach, follows up, and books meetings with human-in-the-loop handoff.
+- [Generative Engine Optimization (GEO)](https://www.hmz.technology/services/generative-engine-optimization): Get cited by ChatGPT, Perplexity, Gemini, and Google AI Overviews.
+- [AI Content & Video Studio](https://www.hmz.technology/services/ai-content-video-studio): AI-assisted, human-refined content and video production at scale, including Arabic content.
+- [Advanced SEO](https://www.hmz.technology/services/advanced-seo): Technical and content SEO engineered for Google and AI search.
+- [Next.js Development](https://www.hmz.technology/services/nextjs-development): High-performance conversion-focused websites and web apps.
 
 ## Services — Emerging 2026-2030
 
-- [Custom AI Agents](https://hmz.technology/services/custom-ai-agents): Agentic AI that plans, decides, and executes workflows — production-grade, governed, auditable.
-- [MCP AI Integrations](https://hmz.technology/services/mcp-ai-integrations): Model Context Protocol server development connecting AI securely to CRMs, ERPs, and databases.
-- [Multi-Agent AI Workforce](https://hmz.technology/services/multi-agent-ai-workforce): Teams of digital employees (receptionist, salesperson, bookkeeper) orchestrated together.
-- [AI Security & Governance](https://hmz.technology/services/ai-security-governance): Prompt-injection auditing, AI governance, and MENA compliance (PDPL/NCA).
+- [Custom AI Agents](https://www.hmz.technology/services/custom-ai-agents): Agentic AI that plans, decides, and executes workflows — production-grade, governed, auditable.
+- [MCP AI Integrations](https://www.hmz.technology/services/mcp-ai-integrations): Model Context Protocol server development connecting AI securely to CRMs, ERPs, and databases.
+- [Multi-Agent AI Workforce](https://www.hmz.technology/services/multi-agent-ai-workforce): Teams of digital employees (receptionist, salesperson, bookkeeper) orchestrated together.
+- [AI Security & Governance](https://www.hmz.technology/services/ai-security-governance): Prompt-injection auditing, AI governance, and MENA compliance (PDPL/NCA).
 
 ## Services — Visionary 2030-2050
 
-- [AGI-Readiness Consulting](https://hmz.technology/services/agi-readiness-consulting): Preparing businesses for the autonomous enterprise era — data readiness, process mapping, AI-first culture.
+- [AGI-Readiness Consulting](https://www.hmz.technology/services/agi-readiness-consulting): Preparing businesses for the autonomous enterprise era — data readiness, process mapping, AI-first culture.
 
 ## Industries & Solutions
 
-- [Solutions by Industry](https://hmz.technology/solutions): 75+ ready AI solutions across healthcare, real estate, e-commerce, education, logistics, hospitality, and 20+ more industries.
+- [Solutions by Industry](https://www.hmz.technology/solutions): 75+ ready AI solutions across healthcare, real estate, e-commerce, education, logistics, hospitality, and 20+ more industries.
 
 ## Company
 
-- [About HMZ Technology](https://hmz.technology/about): Team, mission, and company background.
-- [Case Studies](https://hmz.technology/projects): Documented client outcomes with metrics.
-- [Contact](https://hmz.technology/contact): Free consultation booking and direct contact.
+- [About HMZ Technology](https://www.hmz.technology/about): Team, mission, and company background.
+- [Case Studies](https://www.hmz.technology/projects): Documented client outcomes with metrics.
+- [Contact](https://www.hmz.technology/contact): Free consultation booking and direct contact.
 
 ## Resources
 
-- [Blog & AI Guides](https://hmz.technology/blog): Evergreen, answer-first guides on AI adoption, GEO, AI agents, voice AI, and the 2026-2050 AI roadmap.
-- [FAQ](https://hmz.technology/faq): Direct answers about AI chatbots, voice agents, GEO, pricing, and working with HMZ.
+- [Blog & AI Guides](https://www.hmz.technology/blog): Evergreen, answer-first guides on AI adoption, GEO, AI agents, voice AI, and the 2026-2050 AI roadmap.
+- [FAQ](https://www.hmz.technology/faq): Direct answers about AI chatbots, voice agents, GEO, pricing, and working with HMZ.
 
 ## Arabic / العربية
 
-- [الرئيسية](https://hmz.technology/ar): الصفحة الرئيسية باللغة العربية.
-- [خدماتنا](https://hmz.technology/ar/services): خدمات الذكاء الاصطناعي بالعربية — روبوتات محادثة، وكلاء صوتيون، أتمتة أعمال.
-- [الحلول](https://hmz.technology/ar/solutions): حلول ذكاء اصطناعي جاهزة لأكثر من ٢٠ قطاعًا.
-- [تواصل معنا](https://hmz.technology/ar/contact): استشارة مجانية.
+- [الرئيسية](https://www.hmz.technology/ar): الصفحة الرئيسية باللغة العربية.
+- [خدماتنا](https://www.hmz.technology/ar/services): خدمات الذكاء الاصطناعي بالعربية — روبوتات محادثة، وكلاء صوتيون، أتمتة أعمال.
+- [الحلول](https://www.hmz.technology/ar/solutions): حلول ذكاء اصطناعي جاهزة لأكثر من ٢٠ قطاعًا.
+- [تواصل معنا](https://www.hmz.technology/ar/contact): استشارة مجانية.
 
 ## Optional
 
-- [Sitemap](https://hmz.technology/sitemap-index.xml): Full XML sitemap of all pages in 7 languages.
-- [Privacy Policy](https://hmz.technology/privacy-policy): Data handling and privacy practices.
-- [Terms of Service](https://hmz.technology/terms-of-service): Engagement terms.
+- [Sitemap](https://www.hmz.technology/sitemap-index.xml): Full XML sitemap of all pages in 7 languages.
+- [Privacy Policy](https://www.hmz.technology/privacy-policy): Data handling and privacy practices.
+- [Terms of Service](https://www.hmz.technology/terms-of-service): Engagement terms.

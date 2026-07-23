@@ -29,16 +29,16 @@ const industryName = industry.charAt(0).toUpperCase() + industry.slice(1);
 const schema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "@id": `https://hmz.technology/solutions/${industry}/${solution.slug}#service`,
+  "@id": `https://www.hmz.technology/solutions/${industry}/${solution.slug}#service`,
   name: solution.title,
   serviceType: solution.serviceType,
   description: solution.description,
-  provider: { "@id": "https://hmz.technology/#organization" },
+  provider: { "@id": "https://www.hmz.technology/#organization" },
   areaServed: [
     { "@type": "Country", name: "Lebanon" },
     { "@type": "AdministrativeArea", name: "Middle East" },
   ],
-  url: `https://hmz.technology/solutions/${industry}/${solution.slug}`,
+  url: `https://www.hmz.technology/solutions/${industry}/${solution.slug}`,
 };
 
 const faqSchema = {

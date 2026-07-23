@@ -105,11 +105,11 @@ A minimal llms.txt looks like this:
 > AI agency specializing in chatbots, voice agents, and business process automation for MENA and European markets.
 
 ## Services
-- [WhatsApp AI Chatbots](https://hmz.technology/services/whatsapp-ai-chatbot): 24/7 automated customer service
-- [AI Automations](https://hmz.technology/services/ai-automations): end-to-end workflow automation
+- [WhatsApp AI Chatbots](https://www.hmz.technology/services/whatsapp-ai-chatbot): 24/7 automated customer service
+- [AI Automations](https://www.hmz.technology/services/ai-automations): end-to-end workflow automation
 
 ## Blog
-- [What Is GEO](https://hmz.technology/blog/what-is-geo-generative-engine-optimization-2026): definitive GEO guide
+- [What Is GEO](https://www.hmz.technology/blog/what-is-geo-generative-engine-optimization-2026): definitive GEO guide
 ```
 
 Treat it as a curated map, not a sitemap dump: 10-30 of your most important, most factual pages. Even if only some engines consume it today, the discipline of maintaining it forces you to keep your canonical facts — what you do, where, for whom — consistent everywhere an AI might look.

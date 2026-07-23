@@ -11,21 +11,21 @@ const OrganizationSchema: FC = () => {
         '@graph': [
             {
                 '@type': ['Organization', 'ProfessionalService'],
-                '@id': 'https://hmz.technology/#organization',
+                '@id': 'https://www.hmz.technology/#organization',
                 name: 'HMZ Technology',
                 alternateName: 'HMZ AI Agency',
-                url: 'https://hmz.technology',
+                url: 'https://www.hmz.technology',
                 logo: {
                     '@type': 'ImageObject',
-                    url: 'https://hmz.technology/og-image.png',
+                    url: 'https://www.hmz.technology/og-image.png',
                     width: 1200,
                     height: 630,
                 },
-                image: 'https://hmz.technology/og-image.png',
+                image: 'https://www.hmz.technology/og-image.png',
                 description:
                     'AI agency building production-grade AI systems: WhatsApp/Instagram AI chatbots, AI voice agents, RAG knowledge assistants, AI sales agents, custom AI agents, MCP integrations, business process automation, and Generative Engine Optimization (GEO). Serving Lebanon, the Middle East, and worldwide in 7 languages.',
                 foundingDate: '2023',
-                founder: { '@id': 'https://hmz.technology/#founder' },
+                founder: { '@id': 'https://www.hmz.technology/#founder' },
                 address: {
                     '@type': 'PostalAddress',
                     addressLocality: 'Beirut',
@@ -79,10 +79,10 @@ const OrganizationSchema: FC = () => {
             },
             {
                 '@type': 'Person',
-                '@id': 'https://hmz.technology/#founder',
+                '@id': 'https://www.hmz.technology/#founder',
                 name: 'Hasan El Zein',
                 jobTitle: 'Founder & AI Engineer',
-                worksFor: { '@id': 'https://hmz.technology/#organization' },
+                worksFor: { '@id': 'https://www.hmz.technology/#organization' },
                 knowsAbout: [
                     'Artificial Intelligence',
                     'AI Chatbots',
@@ -94,11 +94,11 @@ const OrganizationSchema: FC = () => {
             },
             {
                 '@type': 'WebSite',
-                '@id': 'https://hmz.technology/#website',
-                url: 'https://hmz.technology',
+                '@id': 'https://www.hmz.technology/#website',
+                url: 'https://www.hmz.technology',
                 name: 'HMZ Technology',
                 description: 'AI agency for chatbots, voice agents, AI automation, and Generative Engine Optimization.',
-                publisher: { '@id': 'https://hmz.technology/#organization' },
+                publisher: { '@id': 'https://www.hmz.technology/#organization' },
                 inLanguage: ['en', 'ar', 'de', 'fr', 'it', 'hi', 'ms'],
             },
         ],
