@@ -1,0 +1,38 @@
+{
+  "name": "hmz-technology-nextjs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.26",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^0.562.0",
+    "next": "16.2.11",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "resend": "^6.7.0",
+    "tailwind-merge": "^3.4.0",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.185.0",
+    "@unocss/postcss": "^66.5.10",
+    "@unocss/preset-attributify": "^66.5.10",
+    "@unocss/preset-icons": "^66.5.10",
+    "@unocss/preset-uno": "^66.5.10",
+    "typescript": "^5.9.0",
+    "unocss": "^66.5.10",
+    "wrangler": "^4.113.0"
+  }
+}

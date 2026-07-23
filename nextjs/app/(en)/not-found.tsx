@@ -1,0 +1,50 @@
+export default function NotFound() {
+  return (
+    <main className="min-h-screen flex items-center justify-center bg-[#030014] text-white px-4">
+      <div className="text-center max-w-2xl">
+        <p className="text-8xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+          404
+        </p>
+        <h1 className="mt-6 text-3xl font-bold">
+          This page doesn&apos;t exist — but your AI transformation does.
+        </h1>
+        <p className="mt-4 text-gray-400 text-lg">
+          The link you followed may be broken or the page may have moved.
+          Let&apos;s get you back on track.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-4 justify-center">
+          <a
+            href="/"
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold hover:opacity-90 transition"
+          >
+            Home
+          </a>
+          <a
+            href="/services"
+            className="px-6 py-3 rounded-full border border-cyan-400/40 font-semibold hover:bg-cyan-400/10 transition"
+          >
+            AI Services
+          </a>
+          <a
+            href="/solutions"
+            className="px-6 py-3 rounded-full border border-purple-400/40 font-semibold hover:bg-purple-400/10 transition"
+          >
+            Industry Solutions
+          </a>
+          <a
+            href="/blog"
+            className="px-6 py-3 rounded-full border border-white/20 font-semibold hover:bg-white/10 transition"
+          >
+            AI Blog
+          </a>
+          <a
+            href="/contact"
+            className="px-6 py-3 rounded-full border border-white/20 font-semibold hover:bg-white/10 transition"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </main>
+  );
+}
