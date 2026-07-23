@@ -12,28 +12,40 @@ const HOST = "www.hmz.technology";
 const KEY = readFileSync(new URL("../.indexnow-key", import.meta.url), "utf8").trim();
 
 const sitemap = readFileSync(new URL("../dist/sitemap-0.xml", import.meta.url), "utf8");
-const urls = [...sitemap.matchAll(/<loc>(https:\/\/hmz\.technology[^<]*)<\/loc>/g)].map((m) => m[1]);
+const urls = [...sitemap.matchAll(/<loc>(https:\/\/www\.hmz\.technology[^<]*)<\/loc>/g)].map((m) => m[1]);
 
 if (!urls.length) {
   console.error("No URLs found in dist/sitemap-0.xml — run `npm run build` first.");
   process.exit(1);
 }
 
-console.log(`Submitting ${urls.length} URLs to IndexNow...`);
+console.log(`Submitting ${urls.length} URLs to IndexNow in batches of 100...`);
 
-// IndexNow accepts up to 10,000 URLs per request
-const res = await fetch("https://api.indexnow.org/indexnow", {
-  method: "POST",
-  headers: { "Content-Type": "application/json; charset=utf-8" },
-  body: JSON.stringify({
-    host: HOST,
-    key: KEY,
-    keyLocation: `https://${HOST}/${KEY}.txt`,
-    urlList: urls,
-  }),
-});
+// Batch in chunks of 100 — large single batches can be rejected (403)
+let ok = 0, fail = 0;
+for (let i = 0; i < urls.length; i += 100) {
+  const batch = urls.slice(i, i + 100);
+  const res = await fetch("https://api.indexnow.org/indexnow", {
+    method: "POST",
+    headers: { "Content-Type": "application/json; charset=utf-8" },
+    body: JSON.stringify({
+      host: HOST,
+      key: KEY,
+      keyLocation: `https://${HOST}/${KEY}.txt`,
+      urlList: batch,
+    }),
+  });
+  const tag = `[${i + 1}-${i + batch.length}]`;
+  if ([200, 202].includes(res.status)) {
+    ok += batch.length;
+    console.log(`${tag} ✅ ${res.status}`);
+  } else {
+    fail += batch.length;
+    console.log(`${tag} ❌ ${res.status}`);
+  }
+  await new Promise((r) => setTimeout(r, 500));
+}
 
-console.log(`IndexNow response: ${res.status} ${res.statusText}`);
-// 200 = OK, 202 = accepted for processing
-if (![200, 202].includes(res.status)) process.exit(1);
-console.log("✅ Done — Bing/ChatGPT/Copilot will recrawl shortly.");
+console.log(`Done: ${ok} submitted, ${fail} failed.`);
+if (fail > 0 && ok === 0) process.exit(1);
+console.log("✅ Bing/ChatGPT/Copilot will recrawl shortly.");
