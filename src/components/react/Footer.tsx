@@ -25,6 +25,8 @@ interface FooterTranslation {
     newsletter: string
     emailPlaceholder: string
     subscribe: string
+    blog: string
+    faq: string
 }
 
 const translations: Record<Language, FooterTranslation> = {
@@ -50,7 +52,9 @@ const translations: Record<Language, FooterTranslation> = {
         copyright: '© 2025 HMZ Technology. Your competitors are already clients.',
         newsletter: 'Get Revenue Tips (No Spam)',
         emailPlaceholder: 'Your best email',
-        subscribe: 'Send Me Tips'
+        subscribe: 'Send Me Tips',
+        blog: 'AI Blog',
+        faq: 'FAQ'
     },
     ar: {
         tagline: 'وقّف خسارة الفلوس للردود البطيئة',
@@ -74,7 +78,9 @@ const translations: Record<Language, FooterTranslation> = {
         copyright: '© 2025 HMZ Technology. منافسوك صاروا عملائنا.',
         newsletter: 'نصائح إيرادات (بدون سبام)',
         emailPlaceholder: 'أفضل إيميل لك',
-        subscribe: 'أرسلي النصائح'
+        subscribe: 'أرسلي النصائح',
+        blog: 'مدونة الذكاء الاصطناعي',
+        faq: 'الأسئلة الشائعة'
     },
     de: {
         tagline: 'Die Zukunft der KI gestalten',
@@ -98,7 +104,9 @@ const translations: Record<Language, FooterTranslation> = {
         copyright: '© 2025 HMZ Technology. Alle Rechte vorbehalten.',
         newsletter: 'Bleiben Sie informiert',
         emailPlaceholder: 'E-Mail eingeben',
-        subscribe: 'Abonnieren'
+        subscribe: 'Abonnieren',
+        blog: 'KI-Blog',
+        faq: 'FAQ'
     },
     fr: {
         tagline: "Construire l'avenir de l'IA",
@@ -122,7 +130,9 @@ const translations: Record<Language, FooterTranslation> = {
         copyright: '© 2025 HMZ Technology. Tous droits réservés.',
         newsletter: 'Restez informé',
         emailPlaceholder: 'Entrez votre email',
-        subscribe: "S'abonner"
+        subscribe: "S'abonner",
+        blog: 'Blog IA',
+        faq: 'FAQ'
     },
     it: {
         tagline: "Costruire il futuro dell'IA",
@@ -146,7 +156,9 @@ const translations: Record<Language, FooterTranslation> = {
         copyright: '© 2025 HMZ Technology. Tutti i diritti riservati.',
         newsletter: 'Rimani aggiornato',
         emailPlaceholder: 'Inserisci la tua email',
-        subscribe: 'Iscriviti'
+        subscribe: 'Iscriviti',
+        blog: 'Blog AI',
+        faq: 'FAQ'
     },
     hi: {
         tagline: 'AI का भविष्य बनाना',
@@ -170,7 +182,9 @@ const translations: Record<Language, FooterTranslation> = {
         copyright: '© 2025 HMZ Technology. सर्वाधिकार सुरक्षित।',
         newsletter: 'अपडेट रहें',
         emailPlaceholder: 'अपना ईमेल दर्ज करें',
-        subscribe: 'सब्सक्राइब करें'
+        subscribe: 'सब्सक्राइब करें',
+        blog: 'AI ब्लॉग',
+        faq: 'FAQ'
     },
     ms: {
         tagline: 'Membina Masa Depan AI',
@@ -194,7 +208,9 @@ const translations: Record<Language, FooterTranslation> = {
         copyright: '© 2025 HMZ Technology. Hak cipta terpelihara.',
         newsletter: 'Kekal Dikemas Kini',
         emailPlaceholder: 'Masukkan e-mel anda',
-        subscribe: 'Langgan'
+        subscribe: 'Langgan',
+        blog: 'Blog AI',
+        faq: 'FAQ'
     }
 }
 
@@ -214,6 +230,8 @@ const Footer = ({ lang }: FooterProps) => {
         { name: t.servicesLink, href: getLink('/services') },
         { name: t.solutions, href: getLink('/solutions') },
         { name: t.about, href: getLink('/about') },
+        { name: t.blog, href: '/blog' }, // blog is EN-only for now
+        { name: t.faq, href: getLink('/faq') },
         { name: t.contactLink, href: getLink('/contact') },
     ]
 
