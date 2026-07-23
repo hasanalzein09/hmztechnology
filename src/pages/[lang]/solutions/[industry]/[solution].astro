@@ -43,28 +43,21 @@ const faqs =
   translated?.faqs ||
   (lang === "ar" && solution.arabicFaqs ? solution.arabicFaqs : solution.faqs);
 
-// Schema Markup (Localized)
+// Schema Markup (Localized) — Service, no fabricated ratings
 const schema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
+  "@id": `https://hmz.technology/${lang}/solutions/${industry}/${solution.slug}#service`,
   name: title,
+  serviceType: solution.serviceType,
   description: description,
-  brand: {
-    "@type": "Brand",
-    name: "HMZ Technology",
-  },
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-    availability: "https://schema.org/InStock",
-    url: `https://hmz.technology/${lang}/solutions/${industry}/${solution.slug}`,
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "127",
-  },
+  provider: { "@id": "https://hmz.technology/#organization" },
+  areaServed: [
+    { "@type": "Country", name: "Lebanon" },
+    { "@type": "AdministrativeArea", name: "Middle East" },
+  ],
+  inLanguage: lang,
+  url: `https://hmz.technology/${lang}/solutions/${industry}/${solution.slug}`,
 };
 
 const faqSchema = {

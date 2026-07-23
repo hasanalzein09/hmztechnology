@@ -3,12 +3,14 @@ import Layout from "../../../layouts/Layout.astro";
 import ServiceDetail from "../../../components/react/ServiceDetail";
 import FAQSchema from "../../../components/react/FAQSchema";
 import { servicesData } from "../../../lib/servicesData";
+import { servicesData2026 } from "../../../lib/servicesData2026";
 import type { Language } from "../../../components/react/types";
 
 export function getStaticPaths() {
+    const allServices = { ...servicesData, ...servicesData2026 };
     const paths: any[] = [];
     const languages: Language[] = ["ar", "de", "fr", "it", "hi", "ms"];
-    const serviceIds = Object.keys(servicesData);
+    const serviceIds = Object.keys(allServices);
 
     languages.forEach((lang) => {
         serviceIds.forEach((serviceId) => {
@@ -21,8 +23,10 @@ export function getStaticPaths() {
     return paths;
 }
 
+const allServices = { ...servicesData, ...servicesData2026 };
+
 const { lang, service } = Astro.params;
-const serviceData = servicesData[service]?.[lang as Language];
+const serviceData = allServices[service]?.[lang as Language] ?? allServices[service]?.en;
 
 if (!serviceData) {
     return Astro.redirect("/404");
@@ -48,6 +52,30 @@ const faqAnswers = {
 };
 
 const t = faqAnswers[lang as keyof typeof faqAnswers] || faqAnswers.en;
+
+// Rich per-service FAQs (localized where available, EN fallback) + generic pair
+const faqItems = (serviceData.faq?.length ? serviceData.faq : []).concat([
+    { question: t.q1, answer: t.a1 },
+    { question: t.q2, answer: t.a2 },
+]);
+
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `https://hmz.technology/${lang}/services/${service}#service`,
+    name: serviceData.title,
+    serviceType: serviceData.title,
+    description: serviceData.description,
+    provider: { "@id": "https://hmz.technology/#organization" },
+    areaServed: [
+        { "@type": "Country", name: "Lebanon" },
+        { "@type": "AdministrativeArea", name: "Middle East" },
+        { "@type": "AdministrativeArea", name: "Worldwide" },
+    ],
+    audience: { "@type": "BusinessAudience", name: "Businesses adopting AI" },
+    inLanguage: lang,
+    url: `https://hmz.technology/${lang}/services/${service}`,
+};
 ---
 
 <Layout
@@ -89,10 +117,7 @@ const t = faqAnswers[lang as keyof typeof faqAnswers] || faqAnswers.en;
             </h2>
             <div class="grid gap-6">
                 {
-                    [
-                        { question: t.q1, answer: t.a1 },
-                        { question: t.q2, answer: t.a2 },
-                    ].map((faq) => (
+                    faqItems.map((faq) => (
                         <div class="p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700">
                             <h3 class="font-bold text-lg mb-2">
                                 {faq.question}
@@ -108,10 +133,6 @@ const t = faqAnswers[lang as keyof typeof faqAnswers] || faqAnswers.en;
     </div>
 
     <!-- Structured Data for AEO -->
-    <FAQSchema
-        items={[
-            { question: t.q1, answer: t.a1 },
-            { question: t.q2, answer: t.a2 },
-        ]}
-    />
+    <FAQSchema items={faqItems} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 </Layout>

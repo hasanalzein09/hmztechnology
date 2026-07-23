@@ -18,6 +18,47 @@ const {
   lang = "en",
   dir = "ltr",
 } = Astro.props;
+
+// ─── Page-aware hreflang (2026 multilingual SEO) ───
+// Computes the locale-neutral base path, then emits a correct,
+// self-referencing, reciprocal hreflang cluster for EVERY page.
+const LOCALES = ["en", "ar", "de", "fr", "it", "hi", "ms"] as const;
+const OG_LOCALE: Record<string, string> = {
+  en: "en_US", ar: "ar_AR", de: "de_DE", fr: "fr_FR",
+  it: "it_IT", hi: "hi_IN", ms: "ms_MY",
+};
+
+const segments = Astro.url.pathname.split("/").filter(Boolean);
+const isPrefixed = (LOCALES as readonly string[]).slice(1).includes(segments[0]);
+const basePath = isPrefixed ? "/" + segments.slice(1).join("/") : Astro.url.pathname;
+const normalizedBase = basePath === "/" ? "/" : basePath.replace(/\/$/, "");
+
+const localeUrl = (l: string) =>
+  new URL(
+    l === "en" ? normalizedBase : `/${l}${normalizedBase === "/" ? "" : normalizedBase}`,
+    Astro.site
+  ).href;
+
+const canonicalUrl = new URL(
+  lang === "en" ? normalizedBase : `/${lang}${normalizedBase === "/" ? "" : normalizedBase}`,
+  Astro.site
+);
+
+const ogImage = new URL("/og-image.png", Astro.site).href;
+
+// WebPage schema — freshness signals (dateModified) + entity linking
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${canonicalUrl}#webpage`,
+  url: canonicalUrl,
+  name: title,
+  description: description,
+  isPartOf: { "@id": "https://hmz.technology/#website" },
+  about: { "@id": "https://hmz.technology/#organization" },
+  inLanguage: lang,
+  dateModified: new Date().toISOString().split("T")[0],
+};
 ---
 
 <!doctype html>
@@ -27,41 +68,60 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 
-    <!-- Hreflang Tags -->
-    <link
-      rel="alternate"
-      hreflang="x-default"
-      href={new URL("/", Astro.site)}
-    />
-    <link rel="alternate" hreflang="en" href={new URL("/", Astro.site)} />
-    <link rel="alternate" hreflang="ar" href={new URL("/ar", Astro.site)} />
-    <link rel="alternate" hreflang="de" href={new URL("/de", Astro.site)} />
-    <link rel="alternate" hreflang="fr" href={new URL("/fr", Astro.site)} />
-    <link rel="alternate" hreflang="it" href={new URL("/it", Astro.site)} />
-    <link rel="alternate" hreflang="hi" href={new URL("/hi", Astro.site)} />
-    <link rel="alternate" hreflang="ms" href={new URL("/ms", Astro.site)} />
+    <!-- Primary SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="HMZ Technology" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Hreflang: self-referencing + reciprocal cluster + x-default -->
+    {LOCALES.map((l) => <link rel="alternate" hreflang={l} href={localeUrl(l)} />)}
+    <link rel="alternate" hreflang="x-default" href={localeUrl("en")} />
 
     <OrganizationSchema />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL("/og-image.jpg", Astro.site)} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="HMZ Technology" />
+    <meta property="og:locale" content={OG_LOCALE[lang] ?? "en_US"} />
+    {LOCALES.filter((l) => l !== lang).map((l) => (
+      <meta property="og:locale:alternate" content={OG_LOCALE[l]} />
+    ))}
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta
-      property="twitter:image"
-      content={new URL("/og-image.jpg", Astro.site)}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- GEO: discovery for AI agents -->
+    <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Index" />
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" title="HMZ Technology AI Blog" />
+
+    <!-- Fonts: preconnect + async load (zero render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&display=swap"
+      />
+    </noscript>
 
     <!-- Microsoft Clarity -->
     <script type="text/javascript">
@@ -80,9 +140,10 @@ const {
     </script>
   </head>
   <body class="bg-background text-foreground antialiased">
-    <LanguageDetector client:load />
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+    <LanguageDetector client:idle />
     <slot />
-    <!-- Conversion Optimization Widgets -->
-    <ConversionWidgets lang={lang} client:load />
+    <!-- Conversion Optimization Widgets (deferred: INP/LCP protection) -->
+    <ConversionWidgets lang={lang} client:idle />
   </body>
 </html>

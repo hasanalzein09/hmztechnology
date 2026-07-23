@@ -29,3 +29,4 @@ key/
 *.json.key
 deploy_*/
 *.zip
+.indexnow-key

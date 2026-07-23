@@ -27,8 +27,8 @@ export default defineConfig({
           ms: 'ms'
         }
       },
-      changefreq: 'weekly',
-      priority: 0.7,
+      // changefreq/priority omitted — ignored by Google (2026 best practice).
+      // lastmod reflects build time: truthful for a static site redeployed on content change.
       lastmod: new Date(),
     }),
     UnoCSS({

@@ -8,6 +8,7 @@ interface NavTranslation {
     services: string
     solutions: string
     about: string
+    blog: string
     contact: string
     getStarted: string
 }
@@ -18,6 +19,7 @@ const headerTranslations: Record<Language, NavTranslation> = {
         services: 'Services', 
         solutions: 'Solutions', 
         about: 'About', 
+        blog: 'Blog',
         contact: 'Contact', 
         getStarted: 'Get Free Consultation' 
     },
@@ -26,6 +28,7 @@ const headerTranslations: Record<Language, NavTranslation> = {
         services: 'الخدمات', 
         solutions: 'الحلول', 
         about: 'من نحن', 
+        blog: 'المدونة',
         contact: 'تواصل معنا', 
         getStarted: 'استشارة مجانية' 
     },
@@ -34,6 +37,7 @@ const headerTranslations: Record<Language, NavTranslation> = {
         services: 'Leistungen', 
         solutions: 'Lösungen', 
         about: 'Über uns', 
+        blog: 'Blog',
         contact: 'Kontakt', 
         getStarted: 'Kostenlose Beratung' 
     },
@@ -42,6 +46,7 @@ const headerTranslations: Record<Language, NavTranslation> = {
         services: 'Services', 
         solutions: 'Solutions', 
         about: 'À propos', 
+        blog: 'Blog',
         contact: 'Contact', 
         getStarted: 'Consultation gratuite' 
     },
@@ -50,6 +55,7 @@ const headerTranslations: Record<Language, NavTranslation> = {
         services: 'Servizi', 
         solutions: 'Soluzioni', 
         about: 'Chi siamo', 
+        blog: 'Blog',
         contact: 'Contatti', 
         getStarted: 'Consulenza gratuita' 
     },
@@ -58,6 +64,7 @@ const headerTranslations: Record<Language, NavTranslation> = {
         services: 'सेवाएं', 
         solutions: 'समाधान', 
         about: 'हमारे बारे में', 
+        blog: 'ब्लॉग',
         contact: 'संपर्क', 
         getStarted: 'मुफ्त परामर्श' 
     },
@@ -66,6 +73,7 @@ const headerTranslations: Record<Language, NavTranslation> = {
         services: 'Perkhidmatan', 
         solutions: 'Penyelesaian', 
         about: 'Tentang Kami', 
+        blog: 'Blog',
         contact: 'Hubungi', 
         getStarted: 'Perundingan Percuma' 
     }
@@ -109,6 +117,7 @@ const Header = ({ lang }: HeaderProps) => {
         { name: t.services, href: getLink('/services') },
         { name: t.solutions, href: getLink('/solutions') },
         { name: t.about, href: getLink('/about') },
+        { name: t.blog, href: '/blog' },
         { name: t.contact, href: getLink('/contact') },
     ]
 

@@ -1,6 +1,9 @@
 import { ArrowLeft, ArrowRight, CheckCircle2, MessageCircle, Shield, Star, Zap } from 'lucide-react'
 import type { Language } from './types'
 import { servicesData } from '../../lib/servicesData'
+import { servicesData2026 } from '../../lib/servicesData2026'
+
+const allServices = { ...servicesData, ...servicesData2026 }
 
 // Reuse translations from TranslatedSolutionDetail or define similar ones
 const translations: Record<Language, {
@@ -131,7 +134,7 @@ export default function ServiceDetail({ serviceId, lang }: ServiceDetailProps) {
     const isRtl = currentLang === 'ar';
 
     // Get service data
-    const service = servicesData[serviceId]?.[currentLang];
+    const service = allServices[serviceId]?.[currentLang] ?? allServices[serviceId]?.en;
 
     if (!service) {
         return <div className="text-white text-center py-20">Service not found</div>;

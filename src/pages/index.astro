@@ -1,7 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/react/Header";
-import Hero from "../components/react/Hero";
+import Hero3D from "../components/react/Hero3D";
+import FutureTimeline from "../components/react/FutureTimeline";
+import AIAdvantageTable from "../components/react/AIAdvantageTable";
 import TrustBadges from "../components/react/TrustBadges";
 import CaseStudies from "../components/react/CaseStudies";
 import BentoShowcase from "../components/react/BentoShowcase";
@@ -21,10 +23,12 @@ const lang = "en";
 >
 	<Header lang={lang} client:load />
 	<main>
-		<Hero lang={lang} client:load />
+		<Hero3D lang={lang} client:load />
 		<TrustBadges lang={lang} client:load />
 		<CaseStudies lang={lang} client:load />
 		<BentoShowcase lang={lang} client:load />
+		<FutureTimeline lang={lang} client:visible />
+		<AIAdvantageTable lang={lang} client:visible />
 		<ProcessWorkflow lang={lang} client:visible />
 		<Testimonials lang={lang} client:load />
 	</main>

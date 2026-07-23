@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle2, Zap, TrendingUp, Clock } from 'lucide-react'
 import type { Language } from './types'
+import { servicesData2026, serviceTier } from '../../lib/servicesData2026'
 
 interface ServiceItem {
     id: string;
@@ -457,6 +458,19 @@ const translations: Record<Language, {
     }
 }
 
+type ServiceTier = 'now' | 'emerging' | 'visionary';
+
+const tierLabels: Record<string, Record<ServiceTier, string>> = {
+    en: { now: 'Available Now', emerging: 'Emerging 2026-2030', visionary: 'Visionary 2030-2050' },
+    ar: { now: 'متاح الآن', emerging: 'ناشئ 2026-2030', visionary: 'مستقبلي 2030-2050' }
+};
+
+const tierStyles: Record<ServiceTier, string> = {
+    now: 'bg-cyan-500/10 border border-cyan-500/30 text-cyan-400',
+    emerging: 'bg-purple-500/10 border border-purple-500/30 text-purple-400',
+    visionary: 'bg-amber-500/10 border border-amber-500/30 text-amber-400'
+};
+
 interface ServicesListProps {
     lang: string;
 }
@@ -465,6 +479,21 @@ const ServicesList = ({ lang }: ServicesListProps) => {
     const currentLang = (translations[lang as Language] ? lang : 'en') as Language;
     const t = translations[currentLang];
     const isRtl = currentLang === 'ar';
+
+    // Merge in the 2026+ future-demand services (fallback to English copy)
+    const newServices: ServiceItem[] = Object.keys(servicesData2026).map((id) => {
+        const data = servicesData2026[id]?.[currentLang] ?? servicesData2026[id]?.en;
+        return {
+            id,
+            title: data.title,
+            description: data.description.split('. ')[0] + '.',
+            icon: data.icon,
+            link: `/services/${id}`,
+            features: data.features.slice(0, 3)
+        };
+    });
+    const allServices = [...t.services, ...newServices];
+    const tLabels = tierLabels[currentLang] ?? tierLabels.en;
 
     const getLink = (path: string) => lang === 'en' ? path : `/${lang}${path}`;
 
@@ -543,7 +572,7 @@ const ServicesList = ({ lang }: ServicesListProps) => {
             {/* SERVICES GRID */}
             <section className="max-w-7xl mx-auto px-6 py-20 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {t.services.map((service, i) => (
+                    {allServices.map((service, i) => (
                         <motion.a
                             href={getLink(service.link)}
                             key={service.id}
@@ -556,6 +585,11 @@ const ServicesList = ({ lang }: ServicesListProps) => {
                             <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
                                 {service.icon}
                             </div>
+                            {serviceTier[service.id] && (
+                                <span className={`inline-block px-2 py-1 mb-3 rounded-full text-[10px] font-bold uppercase tracking-wider ${tierStyles[serviceTier[service.id] as ServiceTier]}`}>
+                                    {tLabels[serviceTier[service.id] as ServiceTier]}
+                                </span>
+                            )}
                             <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
                                 {service.title}
                             </h3>
