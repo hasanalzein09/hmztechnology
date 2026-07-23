@@ -16,35 +16,60 @@ export function localePath(path: string, locale: string): string {
   return locale === "en" ? p || "/" : `/${locale}${p}` || `/${locale}`;
 }
 
+/** Trim a description to ≤155 chars at a word boundary (SERP-safe). */
+function trimDescription(s: string): string {
+  if (s.length <= 155) return s;
+  const cut = s.slice(0, 155);
+  const lastSpace = cut.lastIndexOf(" ");
+  return `${cut.slice(0, lastSpace > 80 ? lastSpace : 155).replace(/[.,;:!?،؛]$/, "")}…`;
+}
+
 /** Build full Metadata with canonical + hreflang cluster + OG for any page. */
 export function buildMetadata(opts: {
   title: string;
   description: string;
   path: string; // locale-neutral, e.g. "/services/ai-voice-agents" or "/"
   locale: string;
+  /** true (default) = emit 7-locale hreflang cluster; false = English-only page */
+  i18n?: boolean;
+  /** page-level search keywords (harmless; used by some engines/directories) */
+  keywords?: string[];
+  type?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
 }): Metadata {
-  const { title, description, path, locale } = opts;
+  const { title, description: rawDescription, path, locale } = opts;
+  const description = trimDescription(rawDescription);
   const canonical = `${BASE_URL}${localePath(path, locale)}`;
-  const languages: Record<string, string> = {};
-  for (const l of LOCALES) languages[l] = `${BASE_URL}${localePath(path, l)}`;
-  languages["x-default"] = `${BASE_URL}${localePath(path, "en")}`;
+  const i18n = opts.i18n !== false;
+  const languages: Record<string, string> | undefined = i18n
+    ? Object.fromEntries([
+        ...LOCALES.map((l) => [l, `${BASE_URL}${localePath(path, l)}`]),
+        ["x-default", `${BASE_URL}${localePath(path, "en")}`],
+      ])
+    : undefined;
 
   return {
     title,
     description,
+    keywords: opts.keywords,
     alternates: { canonical, languages },
     robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
     openGraph: {
-      type: "website",
+      type: opts.type ?? "website",
       url: canonical,
       title,
       description,
       siteName: "HMZ Technology",
       locale: OG_LOCALE[locale] ?? "en_US",
       images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+      ...(opts.type === "article"
+        ? { publishedTime: opts.publishedTime, modifiedTime: opts.modifiedTime ?? opts.publishedTime }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
+      site: "@hmztechnology",
       title,
       description,
       images: ["/og-image.png"],

@@ -117,6 +117,37 @@ function getIndustryName(lang: string, industry: string): string {
   );
 }
 
+const INDUSTRY_TEMPLATES: Record<string, { title: (n: string) => string; desc: (n: string) => string }> = {
+  ar: {
+    title: (n) => `حلول الذكاء الاصطناعي لقطاع ${n} | HMZ Technology`,
+    desc: (n) => `حلول ذكاء اصطناعي جاهزة لقطاع ${n}: روبوتات محادثة واتساب، أتمتة الأعمال، وكلاء أذكياء. عائد استثمار مثبت وتنفيذ سريع مع HMZ Technology.`,
+  },
+  de: {
+    title: (n) => `KI-Lösungen für ${n} | HMZ Technology`,
+    desc: (n) => `Massgeschneiderte KI-Lösungen für die Branche ${n}: WhatsApp-Chatbots, Prozessautomatisierung, KI-Agenten. Nachweisbarer ROI, schnelle Umsetzung.`,
+  },
+  fr: {
+    title: (n) => `Solutions IA pour ${n} | HMZ Technology`,
+    desc: (n) => `Solutions IA sur mesure pour le secteur ${n} : chatbots WhatsApp, automatisation, agents IA. ROI prouvé et déploiement rapide par HMZ Technology.`,
+  },
+  it: {
+    title: (n) => `Soluzioni AI per ${n} | HMZ Technology`,
+    desc: (n) => `Soluzioni AI su misura per il settore ${n}: chatbot WhatsApp, automazione dei processi, agenti AI. ROI comprovato e implementazione rapida.`,
+  },
+  hi: {
+    title: (n) => `${n} के लिए AI समाधान | HMZ Technology`,
+    desc: (n) => `${n} उद्योग के लिए तैयार AI समाधान: WhatsApp चैटबॉट, बिज़नेस ऑटोमेशन, AI एजेंट। सिद्ध ROI और तेज़ कार्यान्वयन।`,
+  },
+  ms: {
+    title: (n) => `Penyelesaian AI untuk ${n} | HMZ Technology`,
+    desc: (n) => `Penyelesaian AI tersuai untuk industri ${n}: chatbot WhatsApp, automasi perniagaan, ejen AI. ROI terbukti dan pelaksanaan pantas.`,
+  },
+  en: {
+    title: (n) => `${n} AI Solutions | HMZ Technology`,
+    desc: (n) => `Ready-made AI solutions for the ${n} industry: WhatsApp chatbots, business automation, and AI agents with proven ROI and rapid deployment.`,
+  },
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -124,9 +155,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang, industry } = await params;
   const industryName = getIndustryName(lang, industry);
+  const t = INDUSTRY_TEMPLATES[lang] ?? INDUSTRY_TEMPLATES.en;
   return buildMetadata({
-    title: `${industryName} | HMZ Technology`,
-    description: `Solutions for ${industryName}`,
+    title: t.title(industryName),
+    description: t.desc(industryName),
     path: `/solutions/${industry}`,
     locale: lang,
   });

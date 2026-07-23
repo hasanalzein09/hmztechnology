@@ -3,7 +3,7 @@ import RootShell from "@/components/RootShell";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.hmz.technology"),
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/favicon.ico" }], apple: "/apple-touch-icon.png" },
 };
 
 const I18N_LOCALES = ["ar", "de", "fr", "it", "hi", "ms"] as const;

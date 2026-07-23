@@ -10,6 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "Explore 300+ revenue-generating solutions tailored for your industry. AI, Automation, WhatsApp Bots, and more.",
     path: "/solutions",
     locale: "en",
+    keywords: ["AI solutions by industry", "healthcare AI chatbot", "real estate AI", "ecommerce automation", "industry AI agents"],
   });
 }
 

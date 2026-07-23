@@ -53,6 +53,6 @@ HMZ Technology helps companies move from AI pilots to production: strategy, buil
 
 ## Optional
 
-- [Sitemap](https://www.hmz.technology/sitemap-index.xml): Full XML sitemap of all pages in 7 languages.
+- [Sitemap](https://www.hmz.technology/sitemap.xml): Full XML sitemap of all pages in 7 languages.
 - [Privacy Policy](https://www.hmz.technology/privacy-policy): Data handling and privacy practices.
 - [Terms of Service](https://www.hmz.technology/terms-of-service): Engagement terms.

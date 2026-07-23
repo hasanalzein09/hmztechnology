@@ -25,6 +25,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: serviceData.description,
     path: `/services/${service}`,
     locale: "en",
+    keywords: [
+      serviceData.title,
+      `${serviceData.title} agency`,
+      `${serviceData.title} MENA`,
+      "HMZ Technology",
+      "AI agency Lebanon",
+    ],
   });
 }
 

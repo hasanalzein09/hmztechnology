@@ -38,6 +38,27 @@ export default function RootShell({
       className={`${jakarta.variable} ${grotesk.variable} ${plexArabic.variable}`}
     >
       <head>
+        <meta name="theme-color" content="#030014" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SiteNavigationElement",
+              "@id": "https://www.hmz.technology/#nav",
+              name: ["Services", "Solutions", "Blog", "FAQ", "About", "Contact"],
+              url: [
+                "https://www.hmz.technology/services",
+                "https://www.hmz.technology/solutions",
+                "https://www.hmz.technology/blog",
+                "https://www.hmz.technology/faq",
+                "https://www.hmz.technology/about",
+                "https://www.hmz.technology/contact",
+              ],
+            }),
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationGraph) }}

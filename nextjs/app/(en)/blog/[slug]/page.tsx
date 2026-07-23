@@ -24,6 +24,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: post.description,
     path: `/blog/${post.slug}`,
     locale: "en",
+    i18n: false, // blog is English-only
+    type: "article",
+    publishedTime: new Date(post.pubDate).toISOString(),
+    keywords: post.tags,
   });
 }
 

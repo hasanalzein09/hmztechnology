@@ -19,6 +19,11 @@ export const metadata = buildMetadata({
     "Leading AI chatbot development company. Automate WhatsApp, Instagram & Messenger with custom AI solutions. Serving USA, UAE, Europe & Worldwide.",
   path: "/",
   locale: "en",
+  keywords: [
+    "AI agency", "AI chatbot development", "WhatsApp chatbot", "AI voice agents",
+    "business automation", "AI agents", "generative engine optimization",
+    "AI agency Lebanon", "AI agency MENA", "RAG assistants", "AI SDR", "MCP integrations",
+  ],
 });
 
 export default function HomePage() {

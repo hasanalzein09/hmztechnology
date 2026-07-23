@@ -27,6 +27,8 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     path: "/blog",
     locale: "en",
+    i18n: false, // blog is English-only
+    keywords: ["AI blog", "GEO guide", "AI agents", "WhatsApp automation", "AI for business"],
   });
 }
 

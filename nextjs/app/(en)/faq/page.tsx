@@ -106,6 +106,7 @@ export const metadata = buildMetadata({
     "Direct answers about HMZ Technology's AI services: WhatsApp AI chatbots, AI voice agents, Generative Engine Optimization (GEO), custom AI agents, pricing, deployment speed, and AI strategy for 2026-2030.",
   path: "/faq",
   locale: "en",
+  keywords: ["AI chatbot FAQ", "what is GEO", "AI voice agent cost", "AI agency questions", "WhatsApp bot pricing"],
 });
 
 export default function FaqPage() {

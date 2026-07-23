@@ -4,6 +4,7 @@ import { servicesData2026 } from "@/lib/servicesData2026";
 import { getAllIndustries, getSolutionsByIndustry } from "@/lib/solutionsData";
 import { marketsData } from "@/lib/marketsData";
 import { getAllPosts } from "@/lib/blog";
+import { projectsData } from "@/lib/projectsData";
 
 export const dynamic = "force-static";
 
@@ -19,9 +20,9 @@ function alternatesFor(path: string): Record<string, string> {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
   const entries: MetadataRoute.Sitemap = [];
-
+  // Stable truthful date (matches this content release; blog posts use real pubDates)
+  const now = new Date("2026-07-23");
   // Multilingual core pages (7 locales each)
   const i18nPaths = ["/", "/about", "/contact", "/faq", "/services", "/solutions", "/projects", "/privacy-policy", "/terms-of-service"];
   for (const p of i18nPaths) {
@@ -64,8 +65,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Projects (7 locales) — 3 case studies per language, use en slugs
-  const projectSlugs = ["clinic-whatsapp-bot", "ecommerce-instagram", "restaurant-ordering"];
+  // Projects (7 locales) — real slugs from data
+  const projectSlugs = projectsData.en.projects.map((p) => p.slug);
   for (const slug of projectSlugs) {
     entries.push({
       url: `${BASE}/projects/${slug}/`,

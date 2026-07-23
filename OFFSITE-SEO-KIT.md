@@ -66,9 +66,16 @@ Create with EXACT canonical data above:
 
 ## 6️⃣ Wikidata (2-4 h — machine-readable entity, free, no notability bar)
 1. https://www.wikidata.org → create item "HMZ Technology"
-2. Statements: instance of=business, industry=artificial intelligence, inception=2023, founder=Hasan El Zein, headquarters=Beirut, official website, country=Lebanon
+2. Statements: instance of=business, industry=artificial intelligence, inception=2023, founder=Hasan El Zein, headquarters=Beirut, **official website (P856), phone number (P1329: +96170106083), email (P968: sales@hmz.technology)**, country=Lebanon
 3. Add references to every statement (else it gets deleted)
-4. After creation, add the Q-ID to `sameAs` in OrganizationSchema.tsx
+4. After creation, add the Q-ID to `sameAs` in lib/seo.ts organizationGraph
+
+## 6️⃣ bis — Apple Business Connect (30 min, feeds Siri/Apple Maps AI)
+https://businessconnect.apple.com → same exact NAP. Siri answers pull from here.
+
+## 6️⃣ ter — Phone format rule (entity consistency)
+Machine surfaces (schema, Wikidata, directories): `+96170106083` (E.164, no spaces).
+Display surfaces (website text): `+961 70 106 083`. Never mix formats on the same property.
 
 ## 7️⃣ Cloudflare Dashboard checks (5 min)
 - Cloudflare → hmz.technology zone → Security → Bots: make sure **"Block AI Bots" is OFF** (it overrides our robots.txt welcome rules)

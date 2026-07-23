@@ -15,6 +15,14 @@ export function marketMetadata(market: string) {
     description: m.metaDescription,
     path: `/${market}`,
     locale: "en",
+    i18n: false, // market pages are English-only — no hreflang to 404s
+    keywords: [
+      `AI agency ${m.countryName}`,
+      `AI chatbot ${m.countryName}`,
+      `WhatsApp automation ${m.countryName}`,
+      "AI voice agents",
+      "business automation",
+    ],
   });
 }
 
