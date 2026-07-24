@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd } from "@/lib/schemas";
 import ServiceDetail from "@/components/react/ServiceDetail";
 import FAQSchema from "@/components/react/FAQSchema";
 import { servicesData } from "@/lib/servicesData";
@@ -141,6 +142,21 @@ export default async function ServicePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd(
+              [
+                { name: "Home", path: "/" },
+                { name: "Services", path: "/services" },
+                { name: serviceData.title, path: `/services/${service}` },
+              ],
+              lang,
+            ),
+          ),
+        }}
       />
     </>
   );

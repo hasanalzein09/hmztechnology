@@ -10,6 +10,7 @@ const LocalBusinessSchema = ({ locale }: { locale?: string }) => {
             description: 'Professional AI chatbot development services in Lebanon. WhatsApp, Instagram, and Messenger automation for Lebanese businesses.',
             url: 'https://www.hmz.technology/lebanon',
             telephone: '+96170106083',
+            sameAs: ['https://wa.me/96170106083'],
             email: 'sales@hmz.technology',
             address: {
                 '@type': 'PostalAddress',
@@ -54,6 +55,7 @@ const LocalBusinessSchema = ({ locale }: { locale?: string }) => {
             description: 'Professional AI chatbot development services in Saudi Arabia. WhatsApp, Instagram, and Messenger automation for Saudi businesses.',
             url: 'https://www.hmz.technology/saudi-arabia',
             telephone: '+96170106083',
+            sameAs: ['https://wa.me/96170106083'],
             email: 'sales@hmz.technology',
             address: {
                 '@type': 'PostalAddress',
@@ -92,6 +94,7 @@ const LocalBusinessSchema = ({ locale }: { locale?: string }) => {
             description: 'Professional AI chatbot development services in the UAE and Dubai. WhatsApp, Instagram, and Messenger automation for Emirati businesses.',
             url: 'https://www.hmz.technology/uae',
             telephone: '+96170106083',
+            sameAs: ['https://wa.me/96170106083'],
             email: 'sales@hmz.technology',
             address: {
                 '@type': 'PostalAddress',
@@ -130,6 +133,7 @@ const LocalBusinessSchema = ({ locale }: { locale?: string }) => {
             description: 'Professional AI chatbot development services in United States. WhatsApp, Instagram & Messenger automation for American businesses across all 50 states.',
             url: 'https://www.hmz.technology/usa',
             telephone: '+96170106083',
+            sameAs: ['https://wa.me/96170106083'],
             email: 'sales@hmz.technology',
             address: {
                 '@type': 'PostalAddress',
@@ -169,6 +173,7 @@ const LocalBusinessSchema = ({ locale }: { locale?: string }) => {
             description: 'Professional AI chatbot development services in Germany. WhatsApp, Instagram, and Messenger automation for German businesses.',
             url: 'https://www.hmz.technology/deutschland',
             telephone: '+96170106083',
+            sameAs: ['https://wa.me/96170106083'],
             email: 'sales@hmz.technology',
             address: {
                 '@type': 'PostalAddress',
@@ -207,6 +212,7 @@ const LocalBusinessSchema = ({ locale }: { locale?: string }) => {
             description: 'Professional AI chatbot development services in France. WhatsApp, Instagram, and Messenger automation for French businesses.',
             url: 'https://www.hmz.technology/france',
             telephone: '+96170106083',
+            sameAs: ['https://wa.me/96170106083'],
             email: 'sales@hmz.technology',
             address: {
                 '@type': 'PostalAddress',
@@ -239,6 +245,7 @@ const LocalBusinessSchema = ({ locale }: { locale?: string }) => {
             description: 'Professional AI chatbot development services in Italy. WhatsApp, Instagram, and Messenger automation for Italian businesses.',
             url: 'https://www.hmz.technology/italia',
             telephone: '+96170106083',
+            sameAs: ['https://wa.me/96170106083'],
             email: 'sales@hmz.technology',
             address: {
                 '@type': 'PostalAddress',
@@ -270,6 +277,7 @@ const LocalBusinessSchema = ({ locale }: { locale?: string }) => {
             description: 'Professional AI chatbot development services in India. WhatsApp, Instagram, and Messenger automation for Indian businesses.',
             url: 'https://www.hmz.technology/india',
             telephone: '+96170106083',
+            sameAs: ['https://wa.me/96170106083'],
             email: 'sales@hmz.technology',
             address: {
                 '@type': 'PostalAddress',
@@ -301,6 +309,7 @@ const LocalBusinessSchema = ({ locale }: { locale?: string }) => {
             description: 'Professional AI chatbot development services in Malaysia. WhatsApp, Instagram, and Messenger automation for Malaysian businesses.',
             url: 'https://www.hmz.technology/malaysia',
             telephone: '+96170106083',
+            sameAs: ['https://wa.me/96170106083'],
             email: 'sales@hmz.technology',
             address: {
                 '@type': 'PostalAddress',

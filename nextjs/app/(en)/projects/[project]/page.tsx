@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, projectJsonLd } from "@/lib/schemas";
 import { projectsData } from "@/lib/projectsData";
 import Header from "@/components/react/Header";
 import Footer from "@/components/react/Footer";
@@ -35,10 +36,31 @@ export default async function ProjectDetailPage({
   params: Promise<{ project: string }>;
 }) {
   const { project } = await params;
+  const projectData = projectsData.en.projects.find((p) => p.slug === project);
+  const schemas = projectData
+    ? [
+        projectJsonLd(projectData, "en"),
+        breadcrumbJsonLd(
+          [
+            { name: "Home", path: "/" },
+            { name: "Projects", path: "/projects" },
+            { name: projectData.title, path: `/projects/${project}` },
+          ],
+          "en",
+        ),
+      ]
+    : [];
   return (
     <>
       <Header lang="en" />
       <main>
+        {schemas.map((s, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+          />
+        ))}
         <TranslatedProjectDetail projectSlug={project} lang="en" />
       </main>
       <Footer lang="en" />

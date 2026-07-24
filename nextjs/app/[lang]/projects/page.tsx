@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, projectsIndexJsonLd } from "@/lib/schemas";
+import { projectsData } from "@/lib/projectsData";
 import Header from "@/components/react/Header";
 import Footer from "@/components/react/Footer";
 import TranslatedProjects from "@/components/react/TranslatedProjects";
@@ -51,10 +53,27 @@ export default async function ProjectsPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+  const schemas = [
+    projectsIndexJsonLd(projectsData.en.projects, lang),
+    breadcrumbJsonLd(
+      [
+        { name: "Home", path: "/" },
+        { name: "Projects", path: "/projects" },
+      ],
+      lang,
+    ),
+  ];
   return (
     <>
       <Header lang={lang} />
       <main>
+        {schemas.map((s, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+          />
+        ))}
         <TranslatedProjects lang={lang as Language} />
       </main>
       <Footer lang={lang} />

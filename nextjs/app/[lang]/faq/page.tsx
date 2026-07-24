@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd } from "@/lib/schemas";
 import Header from "@/components/react/Header";
 import Footer from "@/components/react/Footer";
 
@@ -670,6 +671,20 @@ export default async function FaqPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd(
+              [
+                { name: "Home", path: "/" },
+                { name: "FAQ", path: "/faq" },
+              ],
+              lang,
+            ),
+          ),
+        }}
       />
     </>
   );

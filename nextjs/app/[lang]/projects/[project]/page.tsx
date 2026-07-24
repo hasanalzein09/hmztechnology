@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, projectJsonLd } from "@/lib/schemas";
 import Header from "@/components/react/Header";
 import Footer from "@/components/react/Footer";
 import TranslatedProjectDetail from "@/components/react/TranslatedProjectDetail";
@@ -72,11 +73,34 @@ export default async function ProjectPage({
   params: Promise<{ lang: string; project: string }>;
 }) {
   const { lang, project } = await params;
-  if (!getProject(project, lang)) notFound();
+  const projectData = getProject(project, lang);
+  if (!projectData) notFound();
+  const localized = metaTranslations[project]?.[lang];
+  const schemas = [
+    projectJsonLd(
+      { ...projectData, title: localized?.title ?? projectData.title, description: localized?.description ?? projectData.description },
+      lang,
+    ),
+    breadcrumbJsonLd(
+      [
+        { name: "Home", path: "/" },
+        { name: "Projects", path: "/projects" },
+        { name: localized?.title ?? projectData.title, path: `/projects/${project}` },
+      ],
+      lang,
+    ),
+  ];
   return (
     <>
       <Header lang={lang} />
       <main>
+        {schemas.map((s, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+          />
+        ))}
         <TranslatedProjectDetail projectSlug={project} lang={lang as Language} />
       </main>
       <Footer lang={lang} />

@@ -1,5 +1,6 @@
 // ─── SEO constants & helpers (single source of truth) ───
 import type { Metadata } from "next";
+import { SITE_NAME, WHATSAPP_NUMBER, WHATSAPP_LINK, EMAIL, SOCIAL } from "./contact";
 
 export const BASE_URL = "https://www.hmz.technology";
 export const LOCALES = ["en", "ar", "de", "fr", "it", "hi", "ms"] as const;
@@ -84,8 +85,8 @@ export const organizationGraph = {
     {
       "@type": ["Organization", "ProfessionalService"],
       "@id": `${BASE_URL}/#organization`,
-      name: "HMZ Technology",
       alternateName: "HMZ AI Agency",
+      name: SITE_NAME,
       url: BASE_URL,
       logo: { "@type": "ImageObject", url: `${BASE_URL}/og-image.png`, width: 1200, height: 630 },
       image: `${BASE_URL}/og-image.png`,
@@ -95,13 +96,16 @@ export const organizationGraph = {
       founder: { "@id": `${BASE_URL}/#founder` },
       address: { "@type": "PostalAddress", addressLocality: "Beirut", addressCountry: "LB" },
       contactPoint: [
-        { "@type": "ContactPoint", telephone: "+96170106083", contactType: "sales", email: "sales@hmz.technology", availableLanguage: ["English", "Arabic", "French", "German", "Italian", "Hindi", "Malay"] },
-        { "@type": "ContactPoint", telephone: "+96170106083", contactType: "technical support", availableLanguage: ["English", "Arabic"] },
+        { "@type": "ContactPoint", telephone: WHATSAPP_NUMBER, contactType: "sales", email: EMAIL, availableLanguage: ["English", "Arabic", "French", "German", "Italian", "Hindi", "Malay"] },
+        { "@type": "ContactPoint", telephone: WHATSAPP_NUMBER, contactType: "technical support", availableLanguage: ["English", "Arabic"] },
+        // WhatsApp is our primary contact channel — explicit so engines & LLMs cite it
+        { "@type": "ContactPoint", telephone: WHATSAPP_NUMBER, contactType: "customer service", contactOption: "TollFree", url: WHATSAPP_LINK, name: "WhatsApp", availableLanguage: ["English", "Arabic", "French", "German", "Italian", "Hindi", "Malay"] },
       ],
       sameAs: [
-        "https://www.linkedin.com/company/hmz-technology",
-        "https://twitter.com/hmztechnology",
-        "https://www.instagram.com/hmz.technology",
+        SOCIAL.linkedin,
+        SOCIAL.twitter,
+        SOCIAL.instagram,
+        WHATSAPP_LINK,
       ],
       knowsAbout: [
         "Artificial Intelligence", "AI Chatbots", "AI Agents", "AI Voice Agents",
