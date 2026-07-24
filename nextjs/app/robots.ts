@@ -3,6 +3,8 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 const AI_BOTS = [
+  // Classic search engines
+  "Googlebot", "Bingbot", "Slurp", "DuckDuckBot", "Applebot",
   // Search/citation bots (2026 vendor-documented) — blocking these = no AI citations
   "OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Perplexity-User",
   "Claude-SearchBot", "Claude-User", "Meta-ExternalFetcher",

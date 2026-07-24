@@ -25,7 +25,9 @@ console.log(`Submitting ${urls.length} URLs to IndexNow in batches of 100...`);
 let ok = 0, fail = 0;
 for (let i = 0; i < urls.length; i += 100) {
   const batch = urls.slice(i, i + 100);
-  const res = await fetch("https://api.indexnow.org/indexnow", {
+  // Bing endpoint (api.indexnow.org unreachable from some networks; Bing
+  // propagates submissions to all IndexNow partners: Yandex, Naver, Seznam, Yep, Amazon)
+  const res = await fetch("https://www.bing.com/indexnow", {
     method: "POST",
     headers: { "Content-Type": "application/json; charset=utf-8" },
     body: JSON.stringify({
