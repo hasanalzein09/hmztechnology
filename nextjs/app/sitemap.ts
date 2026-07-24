@@ -85,5 +85,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
+  // Arabic blog (standalone Arabic-only section)
+  const arPosts = getAllPosts("ar");
+  if (arPosts.length) {
+    entries.push({ url: `${BASE_URL}/ar/blog/`, lastModified: now, priority: 0.7 });
+    for (const post of arPosts) {
+      entries.push({
+        url: `${BASE_URL}/ar/blog/${post.slug}/`,
+        lastModified: new Date(post.pubDate),
+        priority: 0.6,
+      });
+    }
+  }
+
   return entries;
 }

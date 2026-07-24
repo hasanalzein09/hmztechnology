@@ -8,24 +8,25 @@ import { mdComponents } from "@/components/react/blogMarkdown";
 import { getAllPosts, getPost } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
 
+// Arabic blog only — other locales have no blog content
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
+  return getAllPosts("ar").map((post) => ({ lang: "ar", slug: post.slug }));
 }
 
-type PageProps = { params: Promise<{ slug: string }> };
+type PageProps = { params: Promise<{ lang: string; slug: string }> };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = getPost(slug, "ar");
   if (!post) return {};
   return buildMetadata({
     title: `${post.title} | HMZ Technology`,
     description: post.description,
     path: `/blog/${post.slug}`,
-    locale: "en",
-    i18n: false, // blog is English-only
+    locale: "ar",
+    i18n: false, // Arabic blog is standalone
     type: "article",
     publishedTime: new Date(post.pubDate).toISOString(),
     keywords: post.tags,
@@ -33,15 +34,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 const formatDate = (date: Date) =>
-  date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  date.toLocaleDateString("ar-LB", { year: "numeric", month: "long", day: "numeric" });
 
-export default async function BlogPostPage({ params }: PageProps) {
-  const { slug } = await params;
-  const post = getPost(slug);
+export default async function ArabicBlogPostPage({ params }: PageProps) {
+  const { lang, slug } = await params;
+  if (lang !== "ar") notFound();
+  const post = getPost(slug, "ar");
   if (!post) notFound();
 
   const site = "https://www.hmz.technology";
-  const articleUrl = `${site}/blog/${post.slug}`;
+  const articleUrl = `${site}/ar/blog/${post.slug}`;
   const pubDate = new Date(post.pubDate);
 
   const articleSchema = {
@@ -51,7 +53,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     description: post.description,
     datePublished: pubDate.toISOString(),
     dateModified: pubDate.toISOString(),
-    inLanguage: "en",
+    inLanguage: "ar",
     mainEntityOfPage: articleUrl,
     author: {
       "@type": "Person",
@@ -79,17 +81,16 @@ export default async function BlogPostPage({ params }: PageProps) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: site },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${site}/blog/` },
+      { "@type": "ListItem", position: 1, name: "الرئيسية", item: `${site}/ar/` },
+      { "@type": "ListItem", position: 2, name: "المدونة", item: `${site}/ar/blog/` },
       { "@type": "ListItem", position: 3, name: post.title, item: articleUrl },
     ],
   };
 
   return (
     <>
-      <Header lang="en" />
+      <Header lang="ar" />
       <main className="relative min-h-screen bg-[#030014] overflow-hidden">
-        {/* Background glow effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px]"></div>
           <div className="absolute top-1/2 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]"></div>
@@ -100,16 +101,16 @@ export default async function BlogPostPage({ params }: PageProps) {
           <nav aria-label="Breadcrumb" className="mb-10">
             <ol className="flex flex-wrap items-center gap-2 text-sm text-white/40">
               <li>
-                <a href="/" className="hover:text-cyan-400 transition-colors">
-                  Home
+                <a href="/ar" className="hover:text-cyan-400 transition-colors">
+                  الرئيسية
                 </a>
               </li>
               <li aria-hidden="true" className="text-white/20">
                 /
               </li>
               <li>
-                <a href="/blog" className="hover:text-cyan-400 transition-colors">
-                  Blog
+                <a href="/ar/blog" className="hover:text-cyan-400 transition-colors">
+                  المدونة
                 </a>
               </li>
               <li aria-hidden="true" className="text-white/20">
@@ -127,7 +128,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           {/* Article Header */}
           <header className="mb-12">
             <div className="flex flex-wrap items-center gap-3 mb-6">
-              <span className="px-3 py-1 rounded-full text-xs font-semibold border capitalize text-cyan-400 bg-cyan-500/10 border-cyan-500/20">
+              <span className="px-3 py-1 rounded-full text-xs font-semibold border text-cyan-400 bg-cyan-500/10 border-cyan-500/20">
                 {post.category.replace("-", " ")}
               </span>
               {post.tags.slice(0, 3).map((tag) => (
@@ -150,14 +151,14 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <span className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-xs font-bold text-white">
                   HZ
                 </span>
-                <span className="text-white/70">Hasan El Zein, Founder</span>
+                <span className="text-white/70">حسن الزين، المؤسس</span>
               </span>
               <span>
-                Published:{" "}
+                نُشر:{" "}
                 <time dateTime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
               </span>
               <span>
-                Last updated:{" "}
+                آخر تحديث:{" "}
                 <time dateTime={pubDate.toISOString()} className="text-cyan-400/80">
                   {formatDate(pubDate)}
                 </time>
@@ -179,24 +180,24 @@ export default async function BlogPostPage({ params }: PageProps) {
                 HZ
               </span>
               <div>
-                <p className="text-white font-semibold mb-1">Hasan El Zein</p>
+                <p className="text-white font-semibold mb-1">حسن الزين</p>
                 <p className="text-white/50 text-sm leading-relaxed mb-3">
-                  Founder of HMZ Technology — an AI agency building chatbots, voice
-                  agents, and autonomous business systems for companies across the
-                  Middle East, Europe, and North America.
+                  مؤسس HMZ Technology — وكالة ذكاء اصطناعي تبني روبوتات محادثة،
+                  وكلاء صوتيين، وأنظمة أعمال ذاتية للشركات في الشرق الأوسط وأوروبا
+                  وأميركا الشمالية.
                 </p>
                 <a
-                  href="/contact"
+                  href="/ar/contact"
                   className="text-cyan-400 hover:text-cyan-300 text-sm font-medium transition-colors"
                 >
-                  Book a free consultation →
+                  احجز استشارة مجانية ←
                 </a>
               </div>
             </div>
           </footer>
         </article>
       </main>
-      <Footer lang="en" />
+      <Footer lang="ar" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}

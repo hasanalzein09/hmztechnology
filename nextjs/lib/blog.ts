@@ -18,10 +18,17 @@ export interface BlogPost {
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
-export function getAllPosts(): BlogPost[] {
-  const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith(".md"));
+/** Blog content is organized as content/blog/*.md (en) and content/blog/<locale>/*.md */
+function blogDirFor(locale: string): string {
+  return locale === "en" ? BLOG_DIR : path.join(BLOG_DIR, locale);
+}
+
+export function getAllPosts(locale = "en"): BlogPost[] {
+  const dir = blogDirFor(locale);
+  if (!fs.existsSync(dir)) return [];
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".md"));
   const posts = files.map((file) => {
-    const raw = fs.readFileSync(path.join(BLOG_DIR, file), "utf8");
+    const raw = fs.readFileSync(path.join(dir, file), "utf8");
     const { data, content } = matter(raw);
     return {
       slug: file.replace(/\.md$/, ""),
@@ -39,6 +46,16 @@ export function getAllPosts(): BlogPost[] {
   return posts.sort((a, b) => new Date(b.pubDate).valueOf() - new Date(a.pubDate).valueOf());
 }
 
-export function getPost(slug: string): BlogPost | undefined {
-  return getAllPosts().find((p) => p.slug === slug);
+export function getPost(slug: string, locale = "en"): BlogPost | undefined {
+  return getAllPosts(locale).find((p) => p.slug === slug);
+}
+
+/** Locales that have at least one blog post (used by sitemap & routing). */
+export function getBlogLocales(): string[] {
+  if (!fs.existsSync(BLOG_DIR)) return ["en"];
+  const locales = fs
+    .readdirSync(BLOG_DIR, { withFileTypes: true })
+    .filter((d) => d.isDirectory() && getAllPosts(d.name).length > 0)
+    .map((d) => d.name);
+  return ["en", ...locales];
 }
