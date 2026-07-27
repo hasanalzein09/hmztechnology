@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import TranslatedSolutions from "@/components/react/TranslatedSolutions";
 import Footer from "@/components/react/Footer";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, solutionsIndexJsonLd } from "@/lib/schemas";
+import { getAllIndustries } from "@/lib/solutionsData";
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
@@ -15,10 +17,27 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function SolutionsPage() {
+  const schemas = [
+    solutionsIndexJsonLd(getAllIndustries(), "en"),
+    breadcrumbJsonLd(
+      [
+        { name: "Home", path: "/" },
+        { name: "Solutions", path: "/solutions" },
+      ],
+      "en",
+    ),
+  ];
   return (
     <>
       <TranslatedSolutions lang="en" />
       <Footer lang="en" />
+      {schemas.map((s, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
     </>
   );
 }

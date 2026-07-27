@@ -4,6 +4,7 @@ import TranslatedIndustryPage from "@/components/react/TranslatedIndustryPage";
 import Footer from "@/components/react/Footer";
 import { getAllIndustries, getSolutionsByIndustry } from "@/lib/solutionsData";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, industryIndexJsonLd } from "@/lib/schemas";
 
 export const dynamicParams = false;
 
@@ -30,10 +31,30 @@ export default async function IndustryPage({ params }: PageProps) {
   const solutions = getSolutionsByIndustry(industry);
   if (solutions.length === 0) notFound();
 
+  const industryName = industry.charAt(0).toUpperCase() + industry.slice(1);
+  const schemas = [
+    industryIndexJsonLd(industryName, industry, solutions, "en"),
+    breadcrumbJsonLd(
+      [
+        { name: "Home", path: "/" },
+        { name: "Solutions", path: "/solutions" },
+        { name: industryName, path: `/solutions/${industry}` },
+      ],
+      "en",
+    ),
+  ];
+
   return (
     <>
       <TranslatedIndustryPage industrySlug={industry} solutions={solutions} lang="en" />
       <Footer lang="en" />
+      {schemas.map((s, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
     </>
   );
 }

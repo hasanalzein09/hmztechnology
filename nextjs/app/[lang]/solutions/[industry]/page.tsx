@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, industryIndexJsonLd } from "@/lib/schemas";
 import TranslatedIndustryPage from "@/components/react/TranslatedIndustryPage";
 import Footer from "@/components/react/Footer";
 import { getAllIndustries, getSolutionsByIndustry } from "@/lib/solutionsData";
@@ -171,6 +172,18 @@ export default async function IndustryPage({
 }) {
   const { lang, industry } = await params;
   const solutions = getSolutionsByIndustry(industry);
+  const industryName = getIndustryName(lang, industry);
+  const schemas = [
+    industryIndexJsonLd(industryName, industry, solutions, lang),
+    breadcrumbJsonLd(
+      [
+        { name: "Home", path: "/" },
+        { name: "Solutions", path: "/solutions" },
+        { name: industryName, path: `/solutions/${industry}` },
+      ],
+      lang,
+    ),
+  ];
   return (
     <>
       <TranslatedIndustryPage
@@ -179,6 +192,13 @@ export default async function IndustryPage({
         lang={lang as Language}
       />
       <Footer lang={lang} />
+      {schemas.map((s, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
     </>
   );
 }

@@ -67,3 +67,57 @@ export function projectsIndexJsonLd(projects: Project[], locale: string) {
     },
   };
 }
+
+/** CollectionPage + ItemList JSON-LD for the solutions index page. */
+export function solutionsIndexJsonLd(
+  industries: { name: string; slug: string; count: number }[],
+  locale: string,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${absUrl("/solutions", locale)}#collection`,
+    name: `${SITE_NAME} Solutions`,
+    url: absUrl("/solutions", locale),
+    inLanguage: locale,
+    isPartOf: { "@id": `${BASE_URL}/#website` },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: industries.length,
+      itemListElement: industries.map((ind, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: absUrl(`/solutions/${ind.slug}`, locale),
+        name: `${ind.name} Solutions`,
+      })),
+    },
+  };
+}
+
+/** CollectionPage + ItemList JSON-LD for an industry solutions page. */
+export function industryIndexJsonLd(
+  industryName: string,
+  industrySlug: string,
+  solutions: { slug: string; title: string }[],
+  locale: string,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${absUrl(`/solutions/${industrySlug}`, locale)}#collection`,
+    name: `${industryName} Solutions | ${SITE_NAME}`,
+    url: absUrl(`/solutions/${industrySlug}`, locale),
+    inLanguage: locale,
+    isPartOf: { "@id": `${BASE_URL}/#website` },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: solutions.length,
+      itemListElement: solutions.map((s, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: absUrl(`/solutions/${industrySlug}/${s.slug}`, locale),
+        name: s.title,
+      })),
+    },
+  };
+}

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, solutionsIndexJsonLd } from "@/lib/schemas";
+import { getAllIndustries } from "@/lib/solutionsData";
 import TranslatedSolutions from "@/components/react/TranslatedSolutions";
 import Footer from "@/components/react/Footer";
 import type { Language } from "@/components/react/types";
@@ -43,10 +45,27 @@ export default async function SolutionsPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
+  const schemas = [
+    solutionsIndexJsonLd(getAllIndustries(), lang),
+    breadcrumbJsonLd(
+      [
+        { name: "Home", path: "/" },
+        { name: "Solutions", path: "/solutions" },
+      ],
+      lang,
+    ),
+  ];
   return (
     <>
       <TranslatedSolutions lang={lang as Language} />
       <Footer lang={lang} />
+      {schemas.map((s, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
     </>
   );
 }

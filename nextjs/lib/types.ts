@@ -63,6 +63,10 @@ export interface Solution {
         results: string[]
         arabicResults?: string[]
     }
+    /** Unique expert commentary block (anti-thin-content); rendered on EN pages */
+    expertInsight?: string
+    /** Arabic version of the expert insight; rendered on AR pages */
+    arabicExpertInsight?: string
 }
 
 export interface SolutionTranslation {

@@ -7,7 +7,7 @@ import {
     ArrowLeft, CheckCircle2, Star, Shield, Clock, Zap,
     MessageCircle, ArrowRight, ChevronDown, Check,
     Timer, Sparkles, Building2, Users, Layout, Smartphone,
-    Globe, Server, Lock, Play, BarChart3, TrendingUp
+    Globe, Server, Lock, Play, BarChart3, TrendingUp, Lightbulb
 } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
@@ -49,6 +49,7 @@ const translations: Record<Language, {
     inactionTitle: string
     inactionText: string
     ctaUrgent: string
+    expertInsight: string
 }> = {
     en: {
         backToResults: 'Back',
@@ -84,7 +85,8 @@ const translations: Record<Language, {
         workflowSteps: ['Day 1-2: Deep Analysis', 'Day 3-5: Custom AI Training', 'Day 6-7: System Integration', 'Day 8: Launch & Optimization'],
         inactionTitle: 'The Cost of Waiting',
         inactionText: 'Every day without automation, your competitors are capturing the leads you\'re losing. The question isn\'t whether you can afford this solution—it\'s whether you can afford not to have it.',
-        ctaUrgent: 'Start Your Transformation Today'
+        ctaUrgent: 'Start Your Transformation Today',
+        expertInsight: 'Expert Insight'
     },
     ar: {
         backToResults: 'عودة',
@@ -120,7 +122,8 @@ const translations: Record<Language, {
         workflowSteps: ['اليوم 1-2: تحليل معمق', 'اليوم 3-5: تدريب AI مخصص', 'اليوم 6-7: تكامل الأنظمة', 'اليوم 8: الإطلاق والتحسين'],
         inactionTitle: 'تكلفة الانتظار',
         inactionText: 'كل يوم بدون أتمتة، منافسوك يستحوذون على العملاء الذين تخسرهم. السؤال ليس هل تستطيع تحمل تكلفة هذا الحل—بل هل تستطيع تحمل عدم امتلاكه؟',
-        ctaUrgent: 'ابدأ تحولك اليوم'
+        ctaUrgent: 'ابدأ تحولك اليوم',
+        expertInsight: 'رؤية الخبراء'
     },
     de: {
         backToResults: 'Zurück',
@@ -156,7 +159,8 @@ const translations: Record<Language, {
         workflowSteps: ['Tag 1-2: Tiefenanalyse', 'Tag 3-5: KI-Training', 'Tag 6-7: Systemintegration', 'Tag 8: Launch & Optimierung'],
         inactionTitle: 'Die Kosten des Wartens',
         inactionText: 'Jeden Tag ohne Automatisierung erobern Ihre Wettbewerber die Leads, die Sie verlieren. Die Frage ist nicht, ob Sie sich diese Lösung leisten können—sondern ob Sie es sich leisten können, sie nicht zu haben.',
-        ctaUrgent: 'Starten Sie Ihre Transformation heute'
+        ctaUrgent: 'Starten Sie Ihre Transformation heute',
+        expertInsight: 'Experten-Einsicht'
     },
     fr: {
         backToResults: 'Retour',
@@ -192,7 +196,8 @@ const translations: Record<Language, {
         workflowSteps: ['Jour 1-2: Analyse approfondie', 'Jour 3-5: Formation IA', 'Jour 6-7: Intégration système', 'Jour 8: Lancement et optimisation'],
         inactionTitle: 'Le coût de l\'attente',
         inactionText: 'Chaque jour sans automatisation, vos concurrents capturent les leads que vous perdez. La question n\'est pas si vous pouvez vous permettre cette solution—c\'est si vous pouvez vous permettre de ne pas l\'avoir.',
-        ctaUrgent: 'Commencez votre transformation aujourd\'hui'
+        ctaUrgent: 'Commencez votre transformation aujourd\'hui',
+        expertInsight: 'Avis d\'expert'
     },
     it: {
         backToResults: 'Indietro',
@@ -228,7 +233,8 @@ const translations: Record<Language, {
         workflowSteps: ['Giorno 1-2: Analisi approfondita', 'Giorno 3-5: Training IA', 'Giorno 6-7: Integrazione sistemi', 'Giorno 8: Lancio e ottimizzazione'],
         inactionTitle: 'Il costo dell\'attesa',
         inactionText: 'Ogni giorno senza automazione, i tuoi concorrenti catturano i lead che stai perdendo. La domanda non è se puoi permetterti questa soluzione—è se puoi permetterti di non averla.',
-        ctaUrgent: 'Inizia la tua trasformazione oggi'
+        ctaUrgent: 'Inizia la tua trasformazione oggi',
+        expertInsight: 'Visione dell\'esperto'
     },
     hi: {
         backToResults: 'वापस',
@@ -264,7 +270,8 @@ const translations: Record<Language, {
         workflowSteps: ['दिन 1-2: गहन विश्लेषण', 'दिन 3-5: AI प्रशिक्षण', 'दिन 6-7: सिस्टम एकीकरण', 'दिन 8: लॉन्च और अनुकूलन'],
         inactionTitle: 'प्रतीक्षा की कीमत',
         inactionText: 'ऑटोमेशन के बिना हर दिन, आपके प्रतिस्पर्धी उन लीड्स को पकड़ रहे हैं जिन्हें आप खो रहे हैं। सवाल यह नहीं है कि आप इस समाधान को वहन कर सकते हैं—यह है कि क्या आप इसके बिना रह सकते हैं।',
-        ctaUrgent: 'आज अपना परिवर्तन शुरू करें'
+        ctaUrgent: 'आज अपना परिवर्तन शुरू करें',
+        expertInsight: 'विशेषज्ञ की राय'
     },
     ms: {
         backToResults: 'Kembali',
@@ -300,7 +307,8 @@ const translations: Record<Language, {
         workflowSteps: ['Hari 1-2: Analisis Mendalam', 'Hari 3-5: Latihan AI', 'Hari 6-7: Integrasi Sistem', 'Hari 8: Pelancaran & Pengoptimuman'],
         inactionTitle: 'Kos Menunggu',
         inactionText: 'Setiap hari tanpa automasi, pesaing anda menangkap lead yang anda hilangkan. Persoalannya bukan sama ada anda mampu penyelesaian ini—tetapi sama ada anda mampu tidak memilikinya.',
-        ctaUrgent: 'Mulakan Transformasi Anda Hari Ini'
+        ctaUrgent: 'Mulakan Transformasi Anda Hari Ini',
+        expertInsight: 'Pandangan Pakar'
     }
 }
 
@@ -321,6 +329,13 @@ export default function TranslatedSolutionDetail({ solution, lang, industrySlug 
     const features = translated?.features || (lang === 'ar' && solution.arabicFeatures ? solution.arabicFeatures : solution.features)
     const baseBenefits = translated?.benefits || (lang === 'ar' && solution.arabicBenefits ? solution.arabicBenefits : solution.benefits)
     const faqs = translated?.faqs || (lang === 'ar' && solution.arabicFaqs ? solution.arabicFaqs : solution.faqs)
+
+    // Unique expert insight block (EN/AR only — avoids mixed-language pages on other locales)
+    const insight = lang === 'ar'
+        ? solution.arabicExpertInsight ?? solution.expertInsight
+        : lang === 'en'
+            ? solution.expertInsight
+            : undefined
     
     // Extend benefits to double the count (12 benefits)
     const benefits = getExtendedBenefits(baseBenefits, industrySlug, lang === 'ar' ? 'ar' : 'en', 12)
@@ -447,6 +462,32 @@ export default function TranslatedSolutionDetail({ solution, lang, industrySlug 
                                 </p>
                             </div>
                         </motion.section>
+
+                        {/* EXPERT INSIGHT - unique per-solution commentary (EN/AR) */}
+                        {insight && (
+                            <motion.section
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6 }}
+                                className="bg-gradient-to-br from-cyan-500/5 to-blue-900/10 border border-cyan-500/20 rounded-3xl p-8 md:p-12 relative overflow-hidden"
+                            >
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 blur-[100px] -mr-32 -mt-32" />
+                                <div className="relative z-10">
+                                    <div className="flex items-center gap-3 mb-6">
+                                        <div className="p-3 bg-cyan-500/20 rounded-xl">
+                                            <Lightbulb className="w-6 h-6 text-cyan-400" />
+                                        </div>
+                                        <h2 className="text-2xl md:text-3xl font-bold text-white">
+                                            {t.expertInsight}
+                                        </h2>
+                                    </div>
+                                    <p className="text-lg text-slate-300 leading-relaxed whitespace-pre-line">
+                                        {insight}
+                                    </p>
+                                </div>
+                            </motion.section>
+                        )}
 
                         {/* WORKFLOW - Success Roadmap */}
                         <motion.section
