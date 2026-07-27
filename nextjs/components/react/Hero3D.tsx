@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion'
-import { useCallback } from 'react'
-import NeuralOrb3D from './NeuralOrb3D'
+import { useCallback, useEffect, useRef } from 'react'
+import NeuralGalaxy3D from './NeuralGalaxy3D'
 
 type Language = 'en' | 'ar' | 'de' | 'fr' | 'it' | 'hi' | 'ms'
 
@@ -15,6 +15,7 @@ interface HeroTranslation {
     cta2: string
     stats: { value: string; label: string }[]
     scrollText: string
+    marquee: string[]
 }
 
 // Same copy as Hero.tsx — kept in sync intentionally.
@@ -33,7 +34,8 @@ const heroTranslations: Record<Language, HeroTranslation> = {
             { value: '3 sec', label: 'AI Response' },
             { value: '0', label: 'Templates Used' }
         ],
-        scrollText: 'See what we build'
+        scrollText: 'See what we build',
+        marquee: ['WhatsApp AI Chatbots', 'AI Voice Agents', 'RAG Assistants', 'AI SDR Agents', 'GEO', 'Private LLM', 'AI Training', 'Multi-Agent Systems', 'MCP Integrations', 'AI Automations']
     },
     ar: {
         badge: '🎯 حلول AI مخصصة 100% - بدون قوالب',
@@ -49,7 +51,8 @@ const heroTranslations: Record<Language, HeroTranslation> = {
             { value: '٣ ث', label: 'رد AI' },
             { value: '٠', label: 'قوالب مستخدمة' }
         ],
-        scrollText: 'شوف شو منبني'
+        scrollText: 'شوف شو منبني',
+        marquee: ['روبوتات واتساب ذكية', 'وكلاء صوت AI', 'مساعدات RAG', 'وكلاء مبيعات AI', 'تحسين GEO', 'نماذج خاصة', 'تدريب AI', 'أنظمة متعددة الوكلاء', 'تكاملات MCP', 'أتمتة الأعمال']
     },
     de: {
         badge: '🎯 100% Maßgeschneiderte KI-Lösungen',
@@ -65,7 +68,8 @@ const heroTranslations: Record<Language, HeroTranslation> = {
             { value: '3 Sek', label: 'KI-Antwort' },
             { value: '0', label: 'Vorlagen' }
         ],
-        scrollText: 'Sehen Sie, was wir bauen'
+        scrollText: 'Sehen Sie, was wir bauen',
+        marquee: ['WhatsApp KI-Chatbots', 'KI-Sprachagenten', 'RAG-Assistenten', 'KI-SDR-Agenten', 'GEO', 'Private LLMs', 'KI-Training', 'Multi-Agenten-Systeme', 'MCP-Integrationen', 'KI-Automatisierung']
     },
     fr: {
         badge: '🎯 Solutions IA 100% Sur Mesure',
@@ -81,7 +85,8 @@ const heroTranslations: Record<Language, HeroTranslation> = {
             { value: '3 sec', label: 'Réponse IA' },
             { value: '0', label: 'Modèles' }
         ],
-        scrollText: 'Découvrez nos créations'
+        scrollText: 'Découvrez nos créations',
+        marquee: ['Chatbots IA WhatsApp', 'Agents vocaux IA', 'Assistants RAG', 'Agents SDR IA', 'GEO', 'LLM privés', 'Formation IA', 'Systèmes multi-agents', 'Intégrations MCP', 'Automatisations IA']
     },
     it: {
         badge: '🎯 Soluzioni AI 100% Personalizzate',
@@ -97,7 +102,8 @@ const heroTranslations: Record<Language, HeroTranslation> = {
             { value: '3 sec', label: 'Risposta AI' },
             { value: '0', label: 'Modelli' }
         ],
-        scrollText: 'Scopri cosa costruiamo'
+        scrollText: 'Scopri cosa costruiamo',
+        marquee: ['Chatbot AI WhatsApp', 'Agenti vocali AI', 'Assistenti RAG', 'Agenti SDR AI', 'GEO', 'LLM privati', 'Formazione AI', 'Sistemi multi-agente', 'Integrazioni MCP', 'Automazioni AI']
     },
     hi: {
         badge: '🎯 100% कस्टम AI समाधान',
@@ -113,7 +119,8 @@ const heroTranslations: Record<Language, HeroTranslation> = {
             { value: '3 सेक', label: 'AI प्रतिक्रिया' },
             { value: '0', label: 'टेम्पलेट' }
         ],
-        scrollText: 'देखें हम क्या बनाते हैं'
+        scrollText: 'देखें हम क्या बनाते हैं',
+        marquee: ['WhatsApp AI चैटबॉट', 'AI वॉइस एजेंट', 'RAG असिस्टेंट', 'AI SDR एजेंट', 'GEO', 'प्राइवेट LLM', 'AI ट्रेनिंग', 'मल्टी-एजेंट सिस्टम', 'MCP इंटीग्रेशन', 'AI ऑटोमेशन']
     },
     ms: {
         badge: '🎯 Penyelesaian AI 100% Tersuai',
@@ -129,18 +136,80 @@ const heroTranslations: Record<Language, HeroTranslation> = {
             { value: '3 saat', label: 'Respons AI' },
             { value: '0', label: 'Templat' }
         ],
-        scrollText: 'Lihat apa yang kami bina'
+        scrollText: 'Lihat apa yang kami bina',
+        marquee: ['Chatbot AI WhatsApp', 'Ejen Suara AI', 'Pembantu RAG', 'Ejen SDR AI', 'GEO', 'LLM Peribadi', 'Latihan AI', 'Sistem Multi-Ejen', 'Integrasi MCP', 'Automasi AI']
     }
 }
+
+/** Word-by-word reveal — words stay in SSR HTML (crawler-safe), animation is pure transform/opacity. */
+const StaggeredWords = ({ text, className, delay }: { text: string; className?: string; delay: number }) => (
+    <span className={className}>
+        {text.split(' ').map((word, i) => (
+            <motion.span
+                key={i}
+                className="inline-block will-change-transform"
+                initial={{ opacity: 0, y: 24, rotateX: -45, filter: 'blur(6px)' }}
+                animate={{ opacity: 1, y: 0, rotateX: 0, filter: 'blur(0px)' }}
+                transition={{ duration: 0.55, delay: delay + i * 0.09, ease: [0.22, 1, 0.36, 1] }}
+            >
+                {word}{'\u00A0'}
+            </motion.span>
+        ))}
+    </span>
+)
+
+/** Count-up for ASCII-digit stat values; other scripts render the final value statically. */
+const CountUp = ({ value, startDelay }: { value: string; startDelay: number }) => {
+    const ref = useRef<HTMLSpanElement>(null)
+    const match = value.match(/^(\d+)(.*)$/)
+
+    useEffect(() => {
+        if (!match || !ref.current) return
+        const target = parseInt(match[1], 10)
+        const suffix = match[2]
+        let raf = 0
+        const timeout = setTimeout(() => {
+            const start = performance.now()
+            const duration = 1600
+            const step = (now: number) => {
+                const p = Math.min((now - start) / duration, 1)
+                const eased = 1 - Math.pow(1 - p, 3)
+                if (ref.current) ref.current.textContent = `${Math.round(target * eased)}${suffix}`
+                if (p < 1) raf = requestAnimationFrame(step)
+            }
+            raf = requestAnimationFrame(step)
+        }, startDelay * 1000)
+        return () => { clearTimeout(timeout); cancelAnimationFrame(raf) }
+    }, [value, startDelay, match])
+
+    return <span ref={ref}>{value}</span>
+}
+
+/** Infinite keyword marquee — direction-aware for RTL. */
+const KeywordMarquee = ({ items, isRtl }: { items: string[]; isRtl: boolean }) => (
+    <div className="relative w-full max-w-4xl overflow-hidden py-5 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+        <motion.div
+            className="flex gap-10 whitespace-nowrap w-max"
+            animate={{ x: isRtl ? ['-50%', '0%'] : ['0%', '-50%'] }}
+            transition={{ duration: 35, repeat: Infinity, ease: 'linear' }}
+        >
+            {[...items, ...items].map((keyword, i) => (
+                <span key={i} className="flex items-center gap-3 text-sm font-medium text-white/35">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500" />
+                    {keyword}
+                </span>
+            ))}
+        </motion.div>
+    </div>
+)
 
 interface Hero3DProps {
     lang: string
 }
 
 /**
- * Hero3D — the hero copy is fully SSR'd (no client-mount gate, no client-only
- * typewriter) so every word is in the initial HTML for crawlers. The 3D
- * NeuralOrb is pure decoration: three.js loads lazily post-hydration.
+ * Hero3D — hero copy is fully SSR'd (every word in initial HTML for crawlers).
+ * The 3D Neural Galaxy is decorative: three.js loads lazily post-hydration.
  */
 const Hero3D = ({ lang }: Hero3DProps) => {
     const language = (heroTranslations[lang as Language] ? lang : 'en') as Language
@@ -151,13 +220,17 @@ const Hero3D = ({ lang }: Hero3DProps) => {
         return lang === 'en' ? '/contact' : `/${lang}/contact`
     }, [lang])
 
+    const getProjectsLink = useCallback(() => {
+        return lang === 'en' ? '/projects' : `/${lang}/projects`
+    }, [lang])
+
     return (
         <section
             dir={isRtl ? 'rtl' : 'ltr'}
             className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#030014]"
         >
-            {/* 3D Neural Orb Background (decorative, lazy three.js) */}
-            <NeuralOrb3D />
+            {/* 3D Neural Galaxy Background (decorative, lazy three.js) */}
+            <NeuralGalaxy3D />
 
             {/* Gradient Orbs */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -227,32 +300,29 @@ const Hero3D = ({ lang }: Hero3DProps) => {
                         </div>
                     </motion.div>
 
-                    {/* Main Headline */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        className="mb-8"
-                    >
-                        <h1 className="heading-ai text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[0.9] tracking-tight">
-                            <span className="block text-white mb-2">
-                                {t.titleLine1}
-                            </span>
-                            <span className="block text-white/80 mb-2">
-                                {t.titleLine2}
-                            </span>
+                    {/* Main Headline — staggered word reveal */}
+                    <div className="mb-8">
+                        <h1 className="heading-ai text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[0.9] tracking-tight [perspective:800px]">
+                            <StaggeredWords text={t.titleLine1} className="block text-white mb-2" delay={0.35} />
+                            <StaggeredWords text={t.titleLine2} className="block text-white/80 mb-2" delay={0.7} />
                             <span className="block text-gradient-ai">
-                                {t.titleLine3}
-                                <span className="animate-pulse text-cyan-400">|</span>
+                                <StaggeredWords text={t.titleLine3} delay={1.05} />
+                                <motion.span
+                                    className="inline-block text-cyan-400"
+                                    animate={{ opacity: [1, 0.2, 1] }}
+                                    transition={{ duration: 1.1, repeat: Infinity }}
+                                >
+                                    |
+                                </motion.span>
                             </span>
                         </h1>
-                    </motion.div>
+                    </div>
 
                     {/* Subtitle */}
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
+                        transition={{ duration: 0.8, delay: 1.4 }}
                         className="subheading-ai text-lg md:text-xl lg:text-2xl max-w-3xl mb-12 text-white/60 leading-relaxed"
                     >
                         {t.subtitle}
@@ -262,8 +332,8 @@ const Hero3D = ({ lang }: Hero3DProps) => {
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.8 }}
-                        className="flex flex-col sm:flex-row gap-4 mb-16"
+                        transition={{ duration: 0.8, delay: 1.6 }}
+                        className="flex flex-col sm:flex-row gap-4 mb-14"
                     >
                         <motion.a
                             href={getContactLink()}
@@ -277,6 +347,12 @@ const Hero3D = ({ lang }: Hero3DProps) => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </span>
+                            {/* Shine sweep */}
+                            <motion.span
+                                className="absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                                animate={{ x: ['-200%', '250%'] }}
+                                transition={{ duration: 1.8, repeat: Infinity, repeatDelay: 2.5, ease: 'easeInOut' }}
+                            />
                             <motion.div
                                 className="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500"
                                 initial={{ x: '100%' }}
@@ -300,11 +376,21 @@ const Hero3D = ({ lang }: Hero3DProps) => {
                         </motion.a>
                     </motion.div>
 
-                    {/* Stats */}
+                    {/* Keyword Marquee */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 1.8 }}
+                        className="w-full flex justify-center mb-10"
+                    >
+                        <KeywordMarquee items={t.marquee} isRtl={isRtl} />
+                    </motion.div>
+
+                    {/* Stats with count-up */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 1 }}
+                        transition={{ duration: 0.8, delay: 2 }}
                         className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12"
                     >
                         {t.stats.map((stat, index) => (
@@ -312,11 +398,11 @@ const Hero3D = ({ lang }: Hero3DProps) => {
                                 key={index}
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
+                                transition={{ duration: 0.5, delay: 2.1 + index * 0.12 }}
                                 className="text-center"
                             >
                                 <div className="stat-number text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
-                                    {stat.value}
+                                    <CountUp value={stat.value} startDelay={2.2 + index * 0.12} />
                                 </div>
                                 <div className="text-sm md:text-base text-white/50 font-medium">
                                     {stat.label}
@@ -331,7 +417,7 @@ const Hero3D = ({ lang }: Hero3DProps) => {
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 2, duration: 1 }}
+                transition={{ delay: 2.6, duration: 1 }}
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
             >
                 <span className="text-xs text-white/40 tracking-widest uppercase">
