@@ -128,6 +128,7 @@ export const organizationGraph = {
       "@id": `${BASE_URL}/#founder`,
       name: "Hasan El Zein",
       jobTitle: "Founder & AI Engineer",
+      url: `${BASE_URL}/about/`,
       worksFor: { "@id": `${BASE_URL}/#organization` },
       knowsAbout: ["Artificial Intelligence", "AI Chatbots", "AI Agents", "Generative Engine Optimization", "Business Automation", "Web Development"],
     },

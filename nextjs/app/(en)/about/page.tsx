@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd } from "@/lib/schemas";
 import Header from "@/components/react/Header";
 import Footer from "@/components/react/Footer";
 import AboutContent from "@/components/react/AboutContent";
@@ -26,6 +27,20 @@ export default function AboutPage() {
       </main>
       <Footer lang={lang} />
       <LocalBusinessSchema />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd(
+              [
+                { name: "Home", path: "/" },
+                { name: "About", path: "/about" },
+              ],
+              "en",
+            ),
+          ),
+        }}
+      />
     </>
   );
 }
