@@ -46,9 +46,9 @@ export const marketsData: Record<string, Market> = {
         schemaLocalBusinessId: 'lebanon-local-business',
         heroH1: 'AI Agency in Lebanon',
         heroSub:
-            'HMZ Technology is headquartered in Beirut Digital District. We build WhatsApp AI chatbots, AI voice agents and business automation for Lebanese companies — in Lebanese Arabic, English and French, with local hands-on support.',
+            'HMZ Technology LLC is a US-registered AI agency (Michigan) with deep Lebanese roots. We build WhatsApp AI chatbots, AI voice agents and business automation for Lebanese companies — in Lebanese Arabic, English and French, with hands-on support in Lebanon.',
         localIntro:
-            'Lebanese businesses run on WhatsApp: with over 90% smartphone penetration and WhatsApp as the default sales channel for retail, clinics, real estate and restaurants, every missed message is lost revenue. HMZ Technology is a home-grown Beirut AI agency — we build production-grade AI systems for the Lebanese market and export the same systems to the GCC, Europe and North America.',
+            'Lebanese businesses run on WhatsApp: with over 90% smartphone penetration and WhatsApp as the default sales channel for retail, clinics, real estate and restaurants, every missed message is lost revenue. HMZ Technology is a Lebanese-founded AI agency (registered in Michigan, USA) — we build production-grade AI systems for the Lebanese market and export the same systems to the GCC, Europe and North America.',
         arabicIntro:
             'إتش إم زي تكنولوجي هي وكالة ذكاء اصطناعي لبنانية مقرها بيروت. نطوّر روبوتات واتساب ذكية، وكلاء صوت بالذكاء الاصطناعي، وأنظمة أتمتة للشركات اللبنانية بالعربي والإنكليزي والفرنسي — إطلاق خلال ٨ أيام مع دعم محلي مباشر.',
         topServices: [
@@ -63,12 +63,12 @@ export const marketsData: Record<string, Market> = {
             { value: '8 days', label: 'Average WhatsApp bot go-live' },
             { value: '3 sec', label: 'AI response time, 24/7' },
             { value: '3 langs', label: 'Arabic, English & French AI' },
-            { value: 'Beirut', label: 'Home market — BDD headquarters' },
+            { value: 'Lebanon', label: 'Home market — Lebanese-founded team' },
         ],
         faqs: [
             {
                 q: 'Do you deliver AI systems to businesses anywhere in Lebanon?',
-                a: 'Yes. HMZ is headquartered in Beirut Digital District and serves clients in Beirut, Tripoli, Sidon, Tyre, Zahle and Jounieh. On-site workshops are available in Greater Beirut; everywhere else is delivered remotely with full documentation and training.',
+                a: 'Yes. HMZ Technology LLC (Michigan, USA) is a Lebanese-founded agency serving clients in Beirut, Tripoli, Sidon, Tyre, Zahle and Jounieh. On-site workshops are available in Greater Beirut; everywhere else is delivered remotely with full documentation and training.',
             },
             {
                 q: 'Do your chatbots understand Lebanese Arabic?',
@@ -85,7 +85,7 @@ export const marketsData: Record<string, Market> = {
         ],
         ctaText: 'Get Your Free AI Consultation in Lebanon',
         metaDescription:
-            'HMZ Technology is a Beirut-based AI agency serving all of Lebanon: WhatsApp AI chatbots, AI voice agents and business automation in Arabic, English and French. Go live in 8 days.',
+            'HMZ Technology is a Lebanese-founded, US-registered AI agency (Michigan LLC) serving all of Lebanon: WhatsApp AI chatbots, AI voice agents and business automation in Arabic, English and French. Go live in 8 days.',
     },
 
     'saudi-arabia': {
@@ -96,7 +96,7 @@ export const marketsData: Record<string, Market> = {
         schemaLocalBusinessId: 'saudi-local-business',
         heroH1: 'AI Agency in Saudi Arabia',
         heroSub:
-            'Vision 2030-grade AI for the Kingdom: Arabic-first WhatsApp chatbots, AI voice agents and enterprise automation for Riyadh, Jeddah and Dammam — PDPL-compliant and delivered remotely from Beirut.',
+            'Vision 2030-grade AI for the Kingdom: Arabic-first WhatsApp chatbots, AI voice agents and enterprise automation for Riyadh, Jeddah and Dammam — PDPL-compliant and delivered remotely by our senior AI team.',
         localIntro:
             'Saudi Arabia has committed over $40 billion to national AI investment under Vision 2030, and the Kingdom is the largest digital economy in MENA — digital transformation spending across the region is projected to grow from $82.6B to $628B by 2036 at a 22.5% CAGR, with KSA at the center. Saudi customers expect instant Arabic-first service on WhatsApp, and giga-project competition means businesses that automate first win. HMZ Technology builds Arabic-native AI systems for Saudi enterprises, SMEs and government-adjacent organizations.',
         arabicIntro:
@@ -117,7 +117,7 @@ export const marketsData: Record<string, Market> = {
         ],
         faqs: [
             {
-                q: 'Do you deliver to Saudi Arabia despite being based in Beirut?',
+                q: 'Do you deliver to Saudi Arabia even though you are a US-registered company?',
                 a: 'Yes — most of our Saudi engagements are delivered fully remotely with dedicated Arabic-speaking project managers, weekly video check-ins, and SLAs. We serve Riyadh, Jeddah, Dammam, Mecca, Medina and Taif, and can travel for enterprise kick-offs.',
             },
             {
@@ -215,7 +215,7 @@ export const marketsData: Record<string, Market> = {
         faqs: [
             {
                 q: 'How do you work with US clients across time zones?',
-                a: 'Our Beirut team overlaps 2–4 working hours with EST each morning and covers CST–PST through asynchronous delivery with recorded walkthroughs, Slack/Teams channels, and weekly live calls scheduled in your time zone.',
+                a: 'Our delivery team overlaps 2–4 working hours with EST each morning and covers CST–PST through asynchronous delivery with recorded walkthroughs, Slack/Teams channels, and weekly live calls scheduled in your time zone.',
             },
             {
                 q: 'Can you sign US-standard contracts, NDAs and DPAs?',
@@ -270,8 +270,8 @@ export const marketsData: Record<string, Market> = {
                 a: 'Yes. Our AI agents converse in natural, business-quality German (and English), including formal Sie-form customer communication, and can be trained on your German documentation, FAQs and product data.',
             },
             {
-                q: 'How do you collaborate with German companies from Beirut?',
-                a: 'Beirut is only one hour ahead of Germany (CET+1), so we share nearly the full working day. Projects run with weekly video calls, written status reports, and German or English project communication — your choice.',
+                q: 'How do you collaborate with German companies remotely?',
+                a: 'Our team is only one hour ahead of Germany (CET+1), so we share nearly the full working day. Projects run with weekly video calls, written status reports, and German or English project communication — your choice.',
             },
             {
                 q: 'How does pricing and payment work for German clients?',
@@ -290,7 +290,7 @@ export const marketsData: Record<string, Market> = {
         schemaLocalBusinessId: 'france-local-business',
         heroH1: 'AI Agency in France',
         heroSub:
-            'French-language AI chatbots, voice agents and automation for French businesses — RGPD-compliant, EU-hosted options, and Paris-aligned working hours from our Beirut studio.',
+            'French-language AI chatbots, voice agents and automation for French businesses — RGPD-compliant, EU-hosted options, and Paris-aligned working hours from our senior delivery team.',
         localIntro:
             'France is Europe\'s AI powerhouse — home to Mistral AI and a national AI strategy backed by billions in public and private investment, with Paris hosting the 2025 AI Action Summit. French consumers, however, expect service in impeccable French and data handled under strict RGPD rules. HMZ Technology builds French-native AI chatbots, voice agents and automation for Paris, Lyon and Marseille — luxury retail, real estate, healthcare and professional services.',
         topServices: [
@@ -318,7 +318,7 @@ export const marketsData: Record<string, Market> = {
             },
             {
                 q: 'How do you work with French companies remotely?',
-                a: 'Beirut is one hour ahead of Paris, so we share almost the entire working day. Projects run in French or English with weekly video calls and written reporting; on-site kick-offs in Paris are possible for larger engagements.',
+                a: 'Our team is one hour ahead of Paris, so we share almost the entire working day. Projects run in French or English with weekly video calls and written reporting; on-site kick-offs in Paris are possible for larger engagements.',
             },
             {
                 q: 'How does pricing and payment work for French clients?',
@@ -366,7 +366,7 @@ export const marketsData: Record<string, Market> = {
             },
             {
                 q: 'How do you collaborate with Italian companies?',
-                a: 'Rome and Milan are just one hour behind Beirut, so we share the working day. Projects run in English or Italian via weekly video calls and written updates, with remote delivery and full training for your team.',
+                a: 'Our team is just one hour ahead of Rome and Milan, so we share the working day. Projects run in English or Italian via weekly video calls and written updates, with remote delivery and full training for your team.',
             },
             {
                 q: 'How does pricing and payment work for Italian clients?',
@@ -405,7 +405,7 @@ export const marketsData: Record<string, Market> = {
         faqs: [
             {
                 q: 'Do you deliver AI systems to Indian businesses?',
-                a: 'Yes. We serve Mumbai, Delhi, Bengaluru, Hyderabad, Chennai and Pune remotely. Beirut is 2.5 hours behind IST, giving us extended daily overlap, and our 24/7 AI systems mean your customers are covered around the clock regardless.',
+                a: 'Yes. We serve Mumbai, Delhi, Bengaluru, Hyderabad, Chennai and Pune remotely. Our team is 2.5 hours behind IST, giving us extended daily overlap, and our 24/7 AI systems mean your customers are covered around the clock regardless.',
             },
             {
                 q: 'Do your chatbots support Hindi and regional languages?',

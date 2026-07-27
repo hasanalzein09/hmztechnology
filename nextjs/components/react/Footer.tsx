@@ -291,7 +291,7 @@ const Footer = ({ lang }: FooterProps) => {
 
                             {/* Machine-readable NAP — extractable contact facts for AI engines */}
                             <address className="not-italic text-sm text-white/50 leading-relaxed mb-6">
-                                HMZ Technology, Beirut, Lebanon —{' '}
+                                HMZ Technology LLC, Michigan, USA —{' '}
                                 <a href="tel:+96170106083" className="text-white/70 hover:text-cyan-400 transition">+961 70 106 083</a>{' '}
                                 ·{' '}
                                 <a href="mailto:sales@hmz.technology" className="text-white/70 hover:text-cyan-400 transition">sales@hmz.technology</a>{' '}

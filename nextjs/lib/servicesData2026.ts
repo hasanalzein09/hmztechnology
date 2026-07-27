@@ -2477,6 +2477,747 @@ export const servicesData2026: Record<string, Record<string, Service>> = {
             costOfInaction: 'Penyesuaian terkumpul seperti modal: perniagaan yang mula bersedia pada 2026 akan berubah secara struktur sehingga tidak dikenali — dalam erti kata baik — menjelang 2030, manakala yang lewat menghadapi jurang yang wang sahaja tidak dapat tutup. Dalam setiap revolusi teknologi, yang bersedia bukan sekadar terselamat; mereka mengambil alih yang tidak bersedia. Sejarah tidak pernah sekali pun memberi ganjaran kepada penantian.',
             psychologicalHook: 'Pada 2050, syarikat anda akan menjadi kajian kes tentang pandangan jauh — atau tentang penafian. Cerita mana yang anda mahu sampaikan kepada cucu anda?'
         }
+    },
+    'private-llm-deployment': {
+        en: {
+            id: 'private-llm-deployment',
+            icon: '🔒',
+            title: 'Private AI & On-Premise LLM Deployment',
+            description: 'Private AI deployment puts a full large language model — Llama, DeepSeek, or Qwen — inside your own perimeter, on your servers or your private cloud, so your data never touches a public AI API. 60% of enterprises cite data privacy as the top barrier to AI adoption, and regulated industries like banking, healthcare, and government often cannot legally send data to public AI clouds at all. We deploy air-gapped, compliant, fully-owned AI that answers to no one but you.',
+            features: [
+                'Open-Weight Models: Llama, DeepSeek & Qwen — Fully Yours',
+                'Air-Gapped, On-Premise or Private Cloud Deployment',
+                'Private RAG Over Your Internal Documents & Records',
+                'PDPL, GDPR & Sector Compliance Built Into the Architecture',
+                'Zero Data Ever Leaves Your Perimeter — Guaranteed by Design'
+            ],
+            benefits: [
+                'Adopt AI Without Surrendering Data Sovereignty',
+                'Pass Compliance Audits With AI Your Regulator Approves',
+                'Kill Per-Token API Bills — Fixed Cost, Unlimited Usage',
+                'Your AI, Your Servers, Your Rules — Forever'
+            ],
+            faq: [
+                { question: 'Which open-weight models do you deploy?', answer: 'We benchmark and deploy the best open-weight models for your use case — Llama, DeepSeek, Qwen and others — fine-tuned on your terminology. Because the weights run on your infrastructure, no prompt or document ever leaves your control.' },
+                { question: 'Can it really run fully offline, air-gapped?', answer: 'Yes. We deploy on your own GPUs on-premise, in a private cloud tenancy, or in a fully air-gapped environment with no internet connection at all. Updates and model upgrades arrive through controlled, auditable channels.' },
+                { question: 'How does private RAG work?', answer: 'We index your internal documents, contracts, policies and records into a vector store hosted inside your perimeter. The LLM retrieves and cites only your content, so staff get instant, accurate answers from your knowledge — not the open internet.' },
+                { question: 'Is it compliant with PDPL and GDPR?', answer: 'The architecture is designed for exactly that: data residency inside your chosen jurisdiction, no third-party processors, full audit logs, and role-based access. We document everything your compliance team and regulators need to sign off.' },
+                { question: 'How long does deployment take?', answer: 'A typical first production deployment takes 4 to 8 weeks: infrastructure assessment, model selection, security hardening, private RAG setup, and team handover. Air-gapped projects with strict certification needs can run longer.' }
+            ],
+            crisisSolved: 'Every prompt your team sends to a public AI tool is data leaving your building. For a bank, a hospital, or a ministry, that is not a productivity gain — it is a breach waiting for a headline. Samsung banned ChatGPT after engineers leaked source code into it; regulators across the Gulf and Europe now fine uncontrolled data transfers. The demand for AI inside these organizations is enormous, but public clouds are a dead end. Private deployment is the only door that opens.',
+            workflow: [
+                'Week 1: Infrastructure, Compliance & Use-Case Assessment',
+                'Week 2-3: Model Selection, Security Hardening & Deployment',
+                'Week 4-5: Private RAG Over Your Documents & Integrations',
+                'Week 6-8: Team Training, Handover & Ongoing Support'
+            ],
+            costOfInaction: 'Your employees are already using public AI tools with your data — 75% of knowledge workers say they use AI at work, with or without permission. Every unsanctioned prompt is an uncontrolled transfer of client records, financials, or state secrets to servers you do not own. One leak, one audit, one headline, and the cost dwarfs a decade of private infrastructure. The organizations that move first get AI and keep their data; the rest choose between falling behind or getting breached.',
+            psychologicalHook: 'The AI race will not wait for your compliance committee. Deploy privately — or watch from the sidelines.'
+        },
+        ar: {
+            id: 'private-llm-deployment',
+            icon: '🔒',
+            title: 'الذكاء الاصطناعي الخاص ونشر النماذج اللغوية داخل مؤسستك',
+            description: 'النشر الخاص للذكاء الاصطناعي يضع نموذجاً لغوياً كاملاً — Llama أو DeepSeek أو Qwen — داخل نطاقك الخاص، على خوادمك أو في سحابتك الخاصة، فلا تلمس بياناتك أي واجهة ذكاء اصطناعي عامة إطلاقاً. 60% من المؤسسات تذكر خصوصية البيانات كأكبر عائق أمام تبني الذكاء الاصطناعي، والقطاعات المنظمة كالمصارف والرعاية الصحية والحكومات غالباً لا يسمح لها القانون أصلاً بإرسال بياناتها إلى سحابات الذكاء العامة. نحن ننشر ذكاءً اصطناعياً معزولاً ومتوافقاً ومملوكاً بالكامل، لا يجيب إلا لك.',
+            features: [
+                'نماذج مفتوحة الأوزان: Llama و DeepSeek و Qwen — ملكك بالكامل',
+                'نشر معزول تماماً، داخل مقرّك أو في سحابة خاصة',
+                'استرجاع معزز خاص (RAG) فوق مستنداتك وسجلاتك الداخلية',
+                'امتثال PDPL و GDPR والقطاعات المنظمة مدمج في البنية',
+                'صفر بيانات يغادر نطاقك — مضمون بالتصميم'
+            ],
+            benefits: [
+                'تبنَّ الذكاء الاصطناعي دون التنازل عن سيادة بياناتك',
+                'اجتز تدقيقات الامتثال بذكاء يوافق عليه منظّموك',
+                'ودّع فواتير الاستعلامات — تكلفة ثابتة واستخدام غير محدود',
+                'ذكاؤك وخوادمك وقواعدك — إلى الأبد'
+            ],
+            faq: [
+                { question: 'ما النماذج مفتوحة الأوزان التي تنشرونها؟', answer: 'نقيس وننشر أفضل النماذج مفتوحة الأوزان لحالة استخدامك — Llama و DeepSeek و Qwen وغيرها — مضبوطة على مصطلحاتك. ولأن الأوزان تعمل على بنيتك التحتية، لا يغادر أي استعلام أو مستند سيطرتك أبداً.' },
+                { question: 'هل يمكنه فعلاً العمل دون اتصال بالإنترنت، بشكل معزول تماماً؟', answer: 'نعم. ننشره على معالجاتك الرسومية داخل مقرك، أو في سحابة خاصة مخصصة، أو في بيئة معزولة بالكامل بلا أي اتصال بالإنترنت. التحديثات وترقيات النموذج تصل عبر قنوات خاضعة للرقابة والتدقيق.' },
+                { question: 'كيف يعمل الاسترجاع المعزز الخاص (RAG)؟', answer: 'نفهرس مستنداتك الداخلية وعقودك وسياساتك وسجلاتك في مخزن متجهات مستضاف داخل نطاقك. النموذج يسترجع ويستشهد بمحتواك فقط، فيحصل موظفوك على إجابات فورية دقيقة من معرفتك — لا من الإنترنت المفتوح.' },
+                { question: 'هل هو متوافق مع PDPL و GDPR؟', answer: 'البنية مصممة لهذا تحديداً: إقامة البيانات داخل الولاية القضائية التي تختارها، بلا معالجين خارجيين، مع سجلات تدقيق كاملة وصلاحيات وصول حسب الدور. نوثق كل ما يحتاجه فريق الامتثال والجهات التنظيمية للموافقة.' },
+                { question: 'كم يستغرق النشر؟', answer: 'أول نشر إنتاجي نموذجي يستغرق من 4 إلى 8 أسابيع: تقييم البنية التحتية، اختيار النموذج، تحصين الأمن، إعداد الاسترجاع المعزز الخاص، وتسليم الفريق. المشاريع المعزولة ذات متطلبات الاعتماد الصارمة قد تستغرق أطول.' }
+            ],
+            crisisSolved: 'كل استعلام يرسله فريقك إلى أداة ذكاء اصطناعي عامة هو بيانات تغادر مبناك. بالنسبة لمصرف أو مستشفى أو وزارة، هذه ليست مكسب إنتاجية — بل خرق ينتظر عنواناً في الصحف. سامسونج حظرت ChatGPT بعد أن سرّب مهندسوها شيفرة مصدرية إليه، والمنظمون في الخليج وأوروبا يفرضون الآن غرامات على عمليات نقل البيانات غير المنضبطة. الطلب على الذكاء الاصطناعي داخل هذه المؤسسات هائل، لكن السحابات العامة طريق مسدود. النشر الخاص هو الباب الوحيد المفتوح.',
+            workflow: [
+                'الأسبوع 1: تقييم البنية التحتية والامتثال وحالات الاستخدام',
+                'الأسبوع 2-3: اختيار النموذج وتحصين الأمن والنشر',
+                'الأسبوع 4-5: استرجاع معزز خاص فوق مستنداتك مع التكاملات',
+                'الأسبوع 6-8: تدريب الفريق والتسليم والدعم المستمر'
+            ],
+            costOfInaction: 'موظفوك يستخدمون أدوات الذكاء الاصطناعي العامة مع بياناتك الآن — 75% من العاملين المعرفيين يقولون إنهم يستخدمون الذكاء الاصطناعي في العمل، بإذن أو بدونه. كل استعلام غير مصرح به هو نقل غير منضبط لسجلات العملاء أو البيانات المالية أو أسرار الدولة إلى خوادم لا تملكها. تسريب واحد، تدقيق واحد، عنوان صحفي واحد، وتتجاوز الكلفة عقداً كاملاً من البنية التحتية الخاصة. المؤسسات التي تتحرك أولاً تحصل على الذكاء الاصطناعي وتحتفظ ببياناتها؛ أما الباقون فخيارهم بين التخلف أو الاختراق.',
+            psychologicalHook: 'سباق الذكاء الاصطناعي لن ينتظر لجنة الامتثال لديك. انشر بشكل خاص — أو شاهد من المدرجات.'
+        },
+        de: {
+            id: 'private-llm-deployment',
+            icon: '🔒',
+            title: 'Private KI & On-Premise-LLM-Deployment',
+            description: 'Ein privates KI-Deployment bringt ein vollständiges Large Language Model — Llama, DeepSeek oder Qwen — in Ihren eigenen Perimeter, auf Ihre Server oder in Ihre Private Cloud, sodass Ihre Daten niemals eine öffentliche KI-API berühren. 60 % der Unternehmen nennen Datenschutz als größte Hürde bei der KI-Einführung, und regulierte Branchen wie Banken, Gesundheitswesen und Behörden dürfen ihre Daten oft schlicht nicht an öffentliche KI-Clouds senden. Wir liefern abgeschottete, compliant, vollständig eigene KI, die nur Ihnen Rechenschaft schuldet.',
+            features: [
+                'Open-Weight-Modelle: Llama, DeepSeek & Qwen — vollständig Ihr Eigentum',
+                'Air-Gapped-, On-Premise- oder Private-Cloud-Deployment',
+                'Privates RAG über Ihre internen Dokumente & Akten',
+                'PDPL-, DSGVO- & Branchen-Compliance in die Architektur eingebaut',
+                'Null Daten verlassen je Ihren Perimeter — by Design garantiert'
+            ],
+            benefits: [
+                'KI einführen, ohne die Datensouveränität aufzugeben',
+                'Compliance-Audits bestehen — mit KI, die Ihre Aufsicht akzeptiert',
+                'Schluss mit API-Rechnungen pro Token — fixe Kosten, unbegrenzte Nutzung',
+                'Ihre KI, Ihre Server, Ihre Regeln — für immer'
+            ],
+            faq: [
+                { question: 'Welche Open-Weight-Modelle setzen Sie ein?', answer: 'Wir benchmarken und deployen die besten Open-Weight-Modelle für Ihren Anwendungsfall — Llama, DeepSeek, Qwen und weitere — feinabgestimmt auf Ihre Terminologie. Weil die Gewichte auf Ihrer Infrastruktur laufen, verlässt kein Prompt und kein Dokument jemals Ihre Kontrolle.' },
+                { question: 'Funktioniert das wirklich vollständig offline, air-gapped?', answer: 'Ja. Wir deployen auf Ihren eigenen GPUs vor Ort, in einer Private-Cloud-Tenancy oder in einer vollständig abgeschotteten Umgebung ohne jede Internetverbindung. Updates und Modell-Upgrades kommen über kontrollierte, auditierbare Kanäle.' },
+                { question: 'Wie funktioniert privates RAG?', answer: 'Wir indexieren Ihre internen Dokumente, Verträge, Richtlinien und Akten in einem Vektorspeicher innerhalb Ihres Perimeters. Das LLM ruft ausschließlich Ihre Inhalte ab und zitiert sie — Ihre Mitarbeiter erhalten sofort präzise Antworten aus Ihrem Wissen statt aus dem offenen Internet.' },
+                { question: 'Ist das DSGVO- und PDPL-konform?', answer: 'Die Architektur ist genau dafür gebaut: Datenresidenz in der Jurisdiktion Ihrer Wahl, keine Drittverarbeiter, vollständige Audit-Logs und rollenbasierte Zugriffe. Wir dokumentieren alles, was Ihr Compliance-Team und Ihre Aufsichtsbehörden für die Freigabe brauchen.' },
+                { question: 'Wie lange dauert ein Deployment?', answer: 'Ein typisches erstes Produktiv-Deployment dauert 4 bis 8 Wochen: Infrastruktur-Assessment, Modellauswahl, Security-Hardening, Aufbau des privaten RAG und Übergabe an Ihr Team. Air-Gapped-Projekte mit strengen Zertifizierungsanforderungen können länger laufen.' }
+            ],
+            crisisSolved: 'Jeder Prompt, den Ihr Team an ein öffentliches KI-Tool sendet, sind Daten, die Ihr Gebäude verlassen. Für eine Bank, ein Krankenhaus oder ein Ministerium ist das kein Produktivitätsgewinn — sondern ein Datenleck, das auf seine Schlagzeile wartet. Samsung verbot ChatGPT, nachdem Ingenieure Quellcode hinein geleakt hatten; Aufsichtsbehörden am Golf und in Europa verhängen inzwischen Bußgelder für unkontrollierte Datentransfers. Der KI-Hunger in diesen Organisationen ist enorm, aber öffentliche Clouds sind eine Sackgasse. Das private Deployment ist die einzige Tür, die sich öffnet.',
+            workflow: [
+                'Woche 1: Infrastruktur-, Compliance- & Use-Case-Assessment',
+                'Woche 2–3: Modellauswahl, Security-Hardening & Deployment',
+                'Woche 4–5: Privates RAG über Ihre Dokumente & Integrationen',
+                'Woche 6–8: Team-Schulung, Übergabe & laufender Support'
+            ],
+            costOfInaction: 'Ihre Mitarbeiter nutzen bereits öffentliche KI-Tools mit Ihren Daten — 75 % der Wissensarbeiter geben an, KI bei der Arbeit zu nutzen, mit oder ohne Erlaubnis. Jeder nicht freigegebene Prompt ist ein unkontrollierter Transfer von Kundendaten, Finanzzahlen oder Staatsgeheimnissen auf Server, die Ihnen nicht gehören. Ein Leck, ein Audit, eine Schlagzeile — und die Kosten übersteigen ein Jahrzehnt privater Infrastruktur. Die Organisationen, die zuerst handeln, bekommen KI und behalten ihre Daten; die übrigen wählen zwischen Abgehängtwerden und Gehacktwerden.',
+            psychologicalHook: 'Das KI-Rennen wartet nicht auf Ihr Compliance-Komitee. Deployen Sie privat — oder schauen Sie von der Tribüne aus zu.'
+        },
+        fr: {
+            id: 'private-llm-deployment',
+            icon: '🔒',
+            title: 'IA privée & déploiement de LLM on-premise',
+            description: 'Le déploiement d’IA privée installe un grand modèle de langage complet — Llama, DeepSeek ou Qwen — à l’intérieur de votre propre périmètre, sur vos serveurs ou dans votre cloud privé, pour que vos données ne touchent jamais une API d’IA publique. 60 % des entreprises citent la confidentialité des données comme premier frein à l’adoption de l’IA, et les secteurs réglementés — banque, santé, administrations — ne peuvent souvent pas, légalement, envoyer leurs données vers les clouds d’IA publics. Nous déployons une IA cloisonnée, conforme et entièrement vôtre, qui ne rend de comptes qu’à vous.',
+            features: [
+                'Modèles open-weight : Llama, DeepSeek et Qwen — 100 % à vous',
+                'Déploiement air-gapped, on-premise ou cloud privé',
+                'RAG privé sur vos documents et archives internes',
+                'Conformité PDPL, RGPD et sectorielle intégrée à l’architecture',
+                'Zéro donnée ne quitte jamais votre périmètre — garanti par conception'
+            ],
+            benefits: [
+                'Adoptez l’IA sans renoncer à votre souveraineté des données',
+                'Passez les audits de conformité avec une IA validée par vos régulateurs',
+                'Fini les factures d’API au token — coût fixe, usage illimité',
+                'Votre IA, vos serveurs, vos règles — pour toujours'
+            ],
+            faq: [
+                { question: 'Quels modèles open-weight déployez-vous ?', answer: 'Nous benchmarkons et déployons les meilleurs modèles open-weight pour votre cas d’usage — Llama, DeepSeek, Qwen et d’autres — affinés sur votre terminologie. Comme les poids tournent sur votre infrastructure, aucun prompt ni document ne quitte jamais votre contrôle.' },
+                { question: 'Peut-il vraiment fonctionner hors ligne, en air-gapped ?', answer: 'Oui. Nous déployons sur vos propres GPU on-premise, dans une tenancy de cloud privé ou dans un environnement totalement cloisonné, sans aucune connexion Internet. Mises à jour et montées de version passent par des canaux contrôlés et auditables.' },
+                { question: 'Comment fonctionne le RAG privé ?', answer: 'Nous indexons vos documents internes, contrats, politiques et archives dans un vector store hébergé à l’intérieur de votre périmètre. Le LLM ne récupère et ne cite que votre contenu : vos équipes obtiennent des réponses instantanées et précises issues de votre savoir — pas de l’Internet ouvert.' },
+                { question: 'Est-ce conforme au RGPD et au PDPL ?', answer: 'L’architecture est conçue pour cela : résidence des données dans la juridiction de votre choix, aucun sous-traitant tiers, journaux d’audit complets et accès par rôles. Nous documentons tout ce dont votre équipe conformité et vos régulateurs ont besoin pour valider.' },
+                { question: 'Combien de temps prend un déploiement ?', answer: 'Un premier déploiement en production prend généralement 4 à 8 semaines : évaluation de l’infrastructure, choix du modèle, durcissement de la sécurité, mise en place du RAG privé et transfert à vos équipes. Les projets air-gapped avec de fortes exigences de certification peuvent durer plus longtemps.' }
+            ],
+            crisisSolved: 'Chaque prompt que votre équipe envoie à un outil d’IA public, ce sont des données qui quittent vos murs. Pour une banque, un hôpital ou un ministère, ce n’est pas un gain de productivité — c’est une fuite qui attend son titre de presse. Samsung a banni ChatGPT après que des ingénieurs y ont fait fuiter du code source ; les régulateurs du Golfe et d’Europe sanctionnent désormais les transferts de données non maîtrisés. La demande d’IA dans ces organisations est immense, mais les clouds publics sont une impasse. Le déploiement privé est la seule porte qui s’ouvre.',
+            workflow: [
+                'Semaine 1 : évaluation infrastructure, conformité et cas d’usage',
+                'Semaines 2-3 : choix du modèle, durcissement sécurité et déploiement',
+                'Semaines 4-5 : RAG privé sur vos documents et intégrations',
+                'Semaines 6-8 : formation des équipes, transfert et support continu'
+            ],
+            costOfInaction: 'Vos collaborateurs utilisent déjà des outils d’IA publics avec vos données — 75 % des travailleurs du savoir déclarent utiliser l’IA au travail, avec ou sans autorisation. Chaque prompt non validé est un transfert incontrôlé de dossiers clients, de données financières ou de secrets d’État vers des serveurs qui ne vous appartiennent pas. Une fuite, un audit, un titre de presse, et la facture dépasse dix ans d’infrastructure privée. Les organisations qui agissent les premières obtiennent l’IA et gardent leurs données ; les autres choisissent entre prendre du retard ou subir une fuite.',
+            psychologicalHook: 'La course à l’IA n’attendra pas votre comité de conformité. Déployez en privé — ou regardez depuis les tribunes.'
+        },
+        it: {
+            id: 'private-llm-deployment',
+            icon: '🔒',
+            title: 'AI privata e deployment LLM on-premise',
+            description: 'Il deployment di AI privata porta un large language model completo — Llama, DeepSeek o Qwen — dentro il tuo perimetro, sui tuoi server o nel tuo cloud privato, così i tuoi dati non toccano mai un’API di AI pubblica. Il 60% delle imprese cita la privacy dei dati come primo ostacolo all’adozione dell’AI, e i settori regolamentati — banche, sanità, pubblica amministrazione — spesso non possono legalmente inviare i propri dati ai cloud di AI pubblici. Noi deployiamo un’AI isolata, conforme e interamente tua, che risponde solo a te.',
+            features: [
+                'Modelli open-weight: Llama, DeepSeek e Qwen — interamente tuoi',
+                'Deployment air-gapped, on-premise o private cloud',
+                'RAG privato su documenti e archivi interni',
+                'Conformità PDPL, GDPR e settoriale integrata nell’architettura',
+                'Zero dati lasciano mai il tuo perimetro — garantito by design'
+            ],
+            benefits: [
+                'Adotta l’AI senza cedere la sovranità sui tuoi dati',
+                'Supera gli audit di compliance con un’AI approvata dai tuoi regolatori',
+                'Basta bollette API a token — costo fisso, uso illimitato',
+                'La tua AI, i tuoi server, le tue regole — per sempre'
+            ],
+            faq: [
+                { question: 'Quali modelli open-weight deployate?', answer: 'Benchmarkiamo e deployiamo i migliori modelli open-weight per il tuo caso d’uso — Llama, DeepSeek, Qwen e altri — affinati sulla tua terminologia. Poiché i pesi girano sulla tua infrastruttura, nessun prompt o documento lascia mai il tuo controllo.' },
+                { question: 'Può davvero funzionare offline, in air-gapped?', answer: 'Sì. Deployiamo sulle tue GPU on-premise, in una tenancy di private cloud o in un ambiente completamente isolato, senza alcuna connessione Internet. Aggiornamenti e upgrade del modello arrivano tramite canali controllati e verificabili.' },
+                { question: 'Come funziona il RAG privato?', answer: 'Indicizziamo i tuoi documenti interni, contratti, policy e archivi in un vector store ospitato dentro il tuo perimetro. L’LLM recupera e cita solo i tuoi contenuti: il personale ottiene risposte immediate e precise dalla tua conoscenza — non dall’Internet aperto.' },
+                { question: 'È conforme a GDPR e PDPL?', answer: 'L’architettura è progettata proprio per questo: residenza dei dati nella giurisdizione che scegli, nessun sub-responsabile terzo, log di audit completi e accessi basati sui ruoli. Documentiamo tutto ciò che serve al tuo team compliance e ai regolatori per l’approvazione.' },
+                { question: 'Quanto dura un deployment?', answer: 'Un primo deployment in produzione richiede in genere da 4 a 8 settimane: assessment dell’infrastruttura, scelta del modello, hardening della sicurezza, setup del RAG privato e passaggio di consegne al team. I progetti air-gapped con requisiti di certificazione stringenti possono richiedere più tempo.' }
+            ],
+            crisisSolved: 'Ogni prompt che il tuo team invia a uno strumento di AI pubblica sono dati che escono dal tuo edificio. Per una banca, un ospedale o un ministero non è un guadagno di produttività — è una falla che aspetta un titolo di giornale. Samsung ha vietato ChatGPT dopo che alcuni ingegneri vi avevano fatto trapelare codice sorgente; i regolatori del Golfo e d’Europa ora multano i trasferimenti di dati non controllati. La domanda di AI in queste organizzazioni è enorme, ma i cloud pubblici sono un vicolo cieco. Il deployment privato è l’unica porta che si apre.',
+            workflow: [
+                'Settimana 1: assessment di infrastruttura, compliance e casi d’uso',
+                'Settimane 2-3: scelta del modello, hardening di sicurezza e deployment',
+                'Settimane 4-5: RAG privato sui tuoi documenti e integrazioni',
+                'Settimane 6-8: formazione del team, consegna e supporto continuo'
+            ],
+            costOfInaction: 'I tuoi dipendenti stanno già usando strumenti di AI pubblica con i tuoi dati — il 75% dei knowledge worker dichiara di usare l’AI al lavoro, con o senza permesso. Ogni prompt non autorizzato è un trasferimento incontrollato di cartelle cliniche, dati finanziari o segreti di Stato verso server che non possiedi. Una fuga, un audit, un titolo di giornale, e il costo supera un decennio di infrastruttura privata. Le organizzazioni che si muovono per prime ottengono l’AI e conservano i propri dati; le altre scelgono tra restare indietro o farsi violare.',
+            psychologicalHook: 'La corsa all’AI non aspetterà il tuo comitato compliance. Deploya in privato — o guarda dagli spalti.'
+        },
+        hi: {
+            id: 'private-llm-deployment',
+            icon: '🔒',
+            title: 'प्राइवेट AI और ऑन-प्रिमाइस LLM डिप्लॉयमेंट',
+            description: 'प्राइवेट AI डिप्लॉयमेंट एक पूरे लार्ज लैंग्वेज मॉडल — Llama, DeepSeek या Qwen — को आपके अपने परिमीटर के अंदर, आपके सर्वरों या आपके प्राइवेट क्लाउड पर लाता है, ताकि आपका डेटा कभी किसी पब्लिक AI API को न छुए। 60% एंटरप्राइज़ डेटा प्राइवेसी को AI अपनाने की सबसे बड़ी बाधा बताते हैं, और बैंकिंग, हेल्थकेयर और सरकार जैसे विनियमित क्षेत्र अक्सर कानूनी रूप से अपना डेटा पब्लिक AI क्लाउड्स को भेज ही नहीं सकते। हम एयर-गैप्ड, कम्प्लायंट, पूरी तरह आपके स्वामित्व वाली AI डिप्लॉय करते हैं जो सिर्फ़ आपके प्रति जवाबदेह है।',
+            features: [
+                'ओपन-वेट मॉडल: Llama, DeepSeek और Qwen — पूरी तरह आपके',
+                'एयर-गैप्ड, ऑन-प्रिमाइस या प्राइवेट क्लाउड डिप्लॉयमेंट',
+                'आपके आंतरिक दस्तावेज़ों और रिकॉर्ड्स पर प्राइवेट RAG',
+                'PDPL, GDPR और सेक्टर कम्प्लायंस आर्किटेक्चर में निर्मित',
+                'शून्य डेटा कभी आपका परिमीटर नहीं छोड़ता — डिज़ाइन से गारंटीड'
+            ],
+            benefits: [
+                'डेटा सार्वभौमिकता छोड़े बिना AI अपनाएँ',
+                'ऐसी AI के साथ कम्प्लायंस ऑडिट पास करें जिसे आपका रेगुलेटर स्वीकारे',
+                'प्रति-टोकन API बिलों को अलविदा — फ़िक्स्ड लागत, असीमित उपयोग',
+                'आपकी AI, आपके सर्वर, आपके नियम — हमेशा के लिए'
+            ],
+            faq: [
+                { question: 'आप कौन-से ओपन-वेट मॉडल डिप्लॉय करते हैं?', answer: 'हम आपके उपयोग-मामले के लिए सर्वश्रेष्ठ ओपन-वेट मॉडल — Llama, DeepSeek, Qwen और अन्य — बेंचमार्क करके डिप्लॉय करते हैं, आपकी शब्दावली पर फ़ाइन-ट्यून किए हुए। क्योंकि वेट्स आपके इंफ्रास्ट्रक्चर पर चलते हैं, कोई भी प्रॉम्प्ट या दस्तावेज़ कभी आपके नियंत्रण से बाहर नहीं जाता।' },
+                { question: 'क्या यह सच में पूरी तरह ऑफ़लाइन, एयर-गैप्ड चल सकता है?', answer: 'हाँ। हम आपके अपने GPU पर ऑन-प्रिमाइस, प्राइवेट क्लाउड टेनेंसी में, या बिना किसी इंटरनेट कनेक्शन के पूरी तरह अलग-थलग वातावरण में डिप्लॉय करते हैं। अपडेट और मॉडल अपग्रेड नियंत्रित, ऑडिट योग्य चैनलों से आते हैं।' },
+                { question: 'प्राइवेट RAG कैसे काम करता है?', answer: 'हम आपके आंतरिक दस्तावेज़ों, अनुबंधों, नीतियों और रिकॉर्ड्स को आपके परिमीटर के अंदर होस्ट किए गए वेक्टर स्टोर में इंडेक्स करते हैं। LLM केवल आपकी सामग्री ही खोजता और उद्धृत करता है, ताकि स्टाफ़ को आपकी जानकारी से तुरंत सटीक जवाब मिलें — खुले इंटरनेट से नहीं।' },
+                { question: 'क्या यह PDPL और GDPR अनुरूप है?', answer: 'आर्किटेक्चर ठीक इसी के लिए बनाया गया है: आपके चुने क्षेत्राधिकार में डेटा निवास, कोई थर्ड-पार्टी प्रोसेसर नहीं, पूरे ऑडिट लॉग और रोल-आधारित एक्सेस। हम वह सब कुछ दस्तावेज़ित करते हैं जो आपकी कम्प्लायंस टीम और रेगुलेटरों को मंज़ूरी के लिए चाहिए।' },
+                { question: 'डिप्लॉयमेंट में कितना समय लगता है?', answer: 'पहला प्रोडक्शन डिप्लॉयमेंट आमतौर पर 4 से 8 सप्ताह लेता है: इंफ्रास्ट्रक्चर मूल्यांकन, मॉडल चयन, सुरक्षा हार्डनिंग, प्राइवेट RAG सेटअप और टीम हैंडओवर। सख्त प्रमाणन ज़रूरतों वाले एयर-गैप्ड प्रोजेक्ट ज़्यादा समय ले सकते हैं।' }
+            ],
+            crisisSolved: 'आपकी टीम द्वारा किसी पब्लिक AI टूल को भेजा गया हर प्रॉम्प्ट आपकी इमारत से बाहर जाता डेटा है। किसी बैंक, अस्पताल या मंत्रालय के लिए यह उत्पादकता की बढ़ोतरी नहीं — बल्कि सुर्ख़ियों का इंतज़ार करती एक सेंध है। इंजीनियरों के सोर्स कोड लीक करने के बाद Samsung ने ChatGPT पर प्रतिबंध लगा दिया; खाड़ी और यूरोप के नियामक अब अनियंत्रित डेटा ट्रांसफ़र पर जुर्माना लगा रहे हैं। इन संगठनों में AI की मांग विशाल है, लेकिन पब्लिक क्लाउड्स एक बंजर रास्ता हैं। प्राइवेट डिप्लॉयमेंट ही एकमात्र खुला दरवाज़ा है।',
+            workflow: [
+                'सप्ताह 1: इंफ्रास्ट्रक्चर, कम्प्लायंस और उपयोग-मामले का मूल्यांकन',
+                'सप्ताह 2-3: मॉडल चयन, सुरक्षा हार्डनिंग और डिप्लॉयमेंट',
+                'सप्ताह 4-5: आपके दस्तावेज़ों पर प्राइवेट RAG और इंटीग्रेशन',
+                'सप्ताह 6-8: टीम प्रशिक्षण, हैंडओवर और निरंतर सहायता'
+            ],
+            costOfInaction: 'आपके कर्मचारी पहले से ही आपके डेटा के साथ पब्लिक AI टूल्स इस्तेमाल कर रहे हैं — 75% नॉलेज वर्कर्स कहते हैं कि वे काम पर AI उपयोग करते हैं, अनुमति के साथ या बिना। हर अनधिकृत प्रॉम्प्ट क्लाइंट रिकॉर्ड्स, वित्तीय आँकड़ों या राजकीय रहस्यों का ऐसे सर्वरों पर अनियंत्रित हस्तांतरण है जिनका मालिक आप नहीं हैं। एक लीक, एक ऑडिट, एक सुर्ख़ी — और लागत एक दशक के प्राइवेट इंफ्रास्ट्रक्चर से ज़्यादा हो जाती है। जो संगठन पहले बढ़ते हैं, वे AI भी पाते हैं और डेटा भी रखते हैं; बाक़ी के लिए विकल्प है — पीछे रहना या उल्लंघन का शिकार होना।',
+            psychologicalHook: 'AI की दौड़ आपकी कम्प्लायंस समिति का इंतज़ार नहीं करेगी। प्राइवेट डिप्लॉय करें — या दर्शकदीर्घा से देखते रहें।'
+        },
+        ms: {
+            id: 'private-llm-deployment',
+            icon: '🔒',
+            title: 'AI Peribadi & Penggunaan LLM On-Premise',
+            description: 'Penggunaan AI peribadi membawa model bahasa besar penuh — Llama, DeepSeek atau Qwen — ke dalam perimeter anda sendiri, pada pelayan anda atau awan peribadi anda, supaya data anda tidak pernah menyentuh API AI awam. 60% perusahaan menyebut privasi data sebagai halangan utama penerimaan AI, dan industri terkawal seperti perbankan, penjagaan kesihatan dan kerajaan selalunya tidak dibenarkan undang-undang menghantar data mereka ke awan AI awam langsung. Kami melancarkan AI terasing, patuh dan milik penuh anda, yang hanya bertanggungjawab kepada anda.',
+            features: [
+                'Model berwajaran terbuka: Llama, DeepSeek & Qwen — milik anda sepenuhnya',
+                'Penggunaan air-gapped, on-premise atau awan peribadi',
+                'RAG peribadi merentasi dokumen & rekod dalaman anda',
+                'Pematuhan PDPL, GDPR & sektoral dibina ke dalam seni bina',
+                'Sifar data meninggalkan perimeter anda — dijamin melalui reka bentuk'
+            ],
+            benefits: [
+                'Terima pakai AI tanpa mengorbankan kedaulatan data',
+                'Lulus audit pematuhan dengan AI yang diluluskan pengawal selia anda',
+                'Hapuskan bil API setiap token — kos tetap, penggunaan tanpa had',
+                'AI anda, pelayan anda, peraturan anda — selamanya'
+            ],
+            faq: [
+                { question: 'Model berwajaran terbuka manakah yang anda gunakan?', answer: 'Kami membuat penanda aras dan melancarkan model berwajaran terbuka terbaik untuk kes penggunaan anda — Llama, DeepSeek, Qwen dan lain-lain — ditala pada terminologi anda. Oleh kerana wajaran berjalan pada infrastruktur anda, tiada prompt atau dokumen yang meninggalkan kawalan anda.' },
+                { question: 'Bolehkah ia benar-benar berfungsi luar talian, air-gapped?', answer: 'Ya. Kami melancarkannya pada GPU anda sendiri di premis, dalam tenancy awan peribadi, atau dalam persekitaran terasing sepenuhnya tanpa sebarang sambungan internet. Kemas kini dan naik taraf model dihantar melalui saluran terkawal dan boleh diaudit.' },
+                { question: 'Bagaimanakah RAG peribadi berfungsi?', answer: 'Kami mengindeks dokumen dalaman, kontrak, dasar dan rekod anda ke dalam stor vektor yang dihoskan di dalam perimeter anda. LLM hanya mendapatkan dan memetik kandungan anda, jadi kakitangan menerima jawapan segera dan tepat daripada pengetahuan anda — bukan internet terbuka.' },
+                { question: 'Adakah ia patuh PDPL dan GDPR?', answer: 'Seni binanya direka untuk itu: tempat tinggal data dalam bidang kuasa pilihan anda, tiada pemproses pihak ketiga, log audit lengkap dan akses berasaskan peranan. Kami mendokumentasikan semua yang diperlukan pasukan pematuhan dan pengawal selia anda untuk meluluskan.' },
+                { question: 'Berapa lamakah masa yang diambil untuk penggunaan?', answer: 'Penggunaan pengeluaran pertama biasanya mengambil masa 4 hingga 8 minggu: penilaian infrastruktur, pemilihan model, pengukuhan keselamatan, persediaan RAG peribadi dan serahan pasukan. Projek air-gapped dengan keperluan pensijilan ketat mungkin mengambil masa lebih lama.' }
+            ],
+            crisisSolved: 'Setiap prompt yang dihantar pasukan anda kepada alat AI awam ialah data yang meninggalkan bangunan anda. Bagi bank, hospital atau kementerian, itu bukan keuntungan produktiviti — tetapi kebocoran yang menunggu tajuk berita. Samsung mengharamkan ChatGPT selepas juruteranya membocorkan kod sumber ke dalamnya; pengawal selia di Teluk dan Eropah kini mengenakan denda ke atas pemindahan data tidak terkawal. Permintaan terhadap AI dalam organisasi ini amat besar, tetapi awan awam ialah jalan buntu. Penggunaan peribadi ialah satu-satunya pintu yang terbuka.',
+            workflow: [
+                'Minggu 1: Penilaian infrastruktur, pematuhan & kes penggunaan',
+                'Minggu 2-3: Pemilihan model, pengukuhan keselamatan & penggunaan',
+                'Minggu 4-5: RAG peribadi merentasi dokumen anda & integrasi',
+                'Minggu 6-8: Latihan pasukan, serahan & sokongan berterusan'
+            ],
+            costOfInaction: 'Pekerja anda sudah pun menggunakan alat AI awam dengan data anda — 75% pekerja berpengetahuan menyatakan mereka menggunakan AI di tempat kerja, dengan atau tanpa kebenaran. Setiap prompt tanpa kebenaran ialah pemindahan tidak terkawal rekod pelanggan, kewangan atau rahsia negara kepada pelayan yang bukan milik anda. Satu kebocoran, satu audit, satu tajuk berita, dan kosnya melebihi sedekad infrastruktur peribadi. Organisasi yang bertindak dahulu mendapat AI dan mengekalkan data mereka; selebihnya terpaksa memilih antara ketinggalan atau diceroboh.',
+            psychologicalHook: 'Perlumbaan AI tidak akan menunggu jawatankuasa pematuhan anda. Lancarkan secara peribadi — atau tonton dari tribun.'
+        }
+    },
+    'ai-visibility-monitoring': {
+        en: {
+            id: 'ai-visibility-monitoring',
+            icon: '📡',
+            title: 'AI Visibility & GEO Monitoring',
+            description: 'AI Visibility & GEO Monitoring tells you exactly what ChatGPT, Gemini, Perplexity, Claude, and Google AI Overviews say about your brand — and about your competitors — every single month. 60% of searches now end without a single click, and buyers increasingly ask AI assistants who to trust. If AI engines ignore you, misquote you, or recommend your rival, you would never know — until now. We track, measure, and report your AI share-of-voice, then hand you the exact GEO actions to win it.',
+            features: [
+                'Tracks ChatGPT, Gemini, Perplexity, Claude & Google AI Overviews Monthly',
+                'Citation Share-of-Voice Reports — You vs. Every Competitor',
+                'Live Query-Monitoring Dashboard for 100+ Buyer Questions',
+                'Instant Alerts When AI Spreads Misinformation About Your Brand',
+                'Actionable GEO Recommendations Ranked by Impact'
+            ],
+            benefits: [
+                'See Your True AI Share-of-Voice Before Your Competitors Do',
+                'Catch False AI Claims About Your Brand in Days, Not Months',
+                'Turn GEO From Guesswork Into a Measured Channel',
+                'Prove AI Marketing ROI to Your Board With Hard Numbers'
+            ],
+            faq: [
+                { question: 'Which AI engines do you monitor?', answer: 'ChatGPT, Google Gemini, Perplexity, Claude by Anthropic, and Google AI Overviews — the five platforms that answer over 90% of AI-assisted buyer questions today. We add new engines as they gain market share, so your tracking never goes stale.' },
+                { question: 'What exactly do we receive each month?', answer: 'A share-of-voice report showing how often each AI engine mentions and cites you versus your competitors, a movement analysis of what changed and why, and a list of GEO actions ranked by expected impact. Executives get a one-page summary; your marketing team gets the full dataset.' },
+                { question: 'Can you detect if AI says something false about us?', answer: 'Yes. We run your brand through hundreds of monitoring queries every cycle and flag hallucinations, outdated pricing, wrong contact details, and competitor-favoring bias within days of them appearing — so you can correct the source before the error hardens into the model\'s default answer.' },
+                { question: 'How is this different from Google Analytics or SEO tools?', answer: 'SEO tools measure blue links; we measure answers. No traditional tool can tell you that Perplexity recommends your competitor three times more often than you, or that Claude describes your pricing incorrectly. That is the layer we add.' },
+                { question: 'Do we need the GEO service for this to be useful?', answer: 'No — monitoring stands alone as your measurement layer, and many clients use the reports to direct their own content teams. That said, pairing monitoring with our GEO execution typically closes visibility gaps 3-5x faster.' }
+            ],
+            crisisSolved: 'Right now, a buyer is asking ChatGPT who the best provider in your category is — and the answer names your competitor. Another asks Gemini about your pricing and gets numbers from 2022. You have dashboards for ads, SEO, and social, but on the fastest-growing discovery channel on earth you are flying completely blind. 60% of searches already end without a click. Every month you do not measure AI answers is a month your competitors quietly own them.',
+            workflow: [
+                'Day 1-5: Baseline Audit — What 5 AI Engines Say About You Today',
+                'Day 6-10: 100+ Buyer Queries Locked & Live Dashboard Configured',
+                'Day 30: First Share-of-Voice Report vs. Your Top Competitors',
+                'Every Month: New Data, Misinformation Alerts & Ranked GEO Actions'
+            ],
+            costOfInaction: 'Your competitors\' GEO efforts are compounding while you cannot even see the scoreboard. AI assistants decide shortlists before buyers ever visit a website, and a brand that is invisible — or misrepresented — in those answers loses deals it never knew existed. The cost is not the subscription you skip; it is the 20-40% of research-stage buyers who never hear your name at all.',
+            psychologicalHook: 'You can\'t improve what you don\'t measure — and right now, AI is talking about you without you.'
+        },
+        ar: {
+            id: 'ai-visibility-monitoring',
+            icon: '📡',
+            title: 'مراقبة الظهور في الذكاء الاصطناعي و GEO',
+            description: 'تكشف لك خدمة مراقبة الظهور في الذكاء الاصطناعي و GEO بالضبط ما يقوله ChatGPT و Gemini و Perplexity و Claude و Google AI Overviews عن علامتك التجارية — وعن منافسيك — كل شهر. 60% من عمليات البحث تنتهي اليوم دون نقرة واحدة، والمشترون يسألون مساعدي الذكاء الاصطناعي بشكل متزايد عن الجهة الجديرة بثقتهم. إذا تجاهلتك محركات الذكاء الاصطناعي أو نقلت عنك خطأً أو أوصت بمنافسك، فلن تعرف أبداً — حتى الآن. نحن نتتبع حصتك الصوتية في إجابات الذكاء الاصطناعي ونقيسها ونرفع تقاريرها، ثم نسلّمك إجراءات GEO الدقيقة للفوز بها.',
+            features: [
+                'تتبع شهري لـ ChatGPT و Gemini و Perplexity و Claude و Google AI Overviews',
+                'تقارير حصة صوتية في الاستشهادات — أنت مقابل كل منافس',
+                'لوحة متابعة مباشرة لأكثر من 100 سؤال يطرحه المشترون',
+                'تنبيهات فورية عندما ينشر الذكاء الاصطناعي معلومات مغلوطة عن علامتك',
+                'توصيات GEO عملية مرتبة حسب الأثر'
+            ],
+            benefits: [
+                'اعرف حصتك الحقيقية في إجابات الذكاء الاصطناعي قبل منافسيك',
+                'اكتشف الادعاءات الزائفة عن علامتك خلال أيام لا أشهر',
+                'حوّل GEO من تخمين إلى قناة تسويقية مُقاسة',
+                'أثبت عائد التسويق عبر الذكاء الاصطناعي لمجلس إدارتك بأرقام صلبة'
+            ],
+            faq: [
+                { question: 'ما هي محركات الذكاء الاصطناعي التي تراقبونها؟', answer: 'نتتبع ChatGPT و Google Gemini و Perplexity و Claude من Anthropic و Google AI Overviews — المنصات الخمس التي تجيب على أكثر من 90% من أسئلة المشترين المدعومة بالذكاء الاصطناعي اليوم. ونضيف المحركات الجديدة كلما كسبت حصة سوقية، فلا تتقادم بياناتك أبداً.' },
+                { question: 'ماذا نستلم بالضبط كل شهر؟', answer: 'تقرير حصة صوتية يوضح كم مرة تذكرك محركات الذكاء الاصطناعي وتستشهد بك مقابل منافسيك، وتحليلاً لما تغيّر ولماذا، وقائمة بإجراءات GEO مرتبة حسب الأثر المتوقع. الإدارة العليا تتلقى ملخصاً من صفحة واحدة، وفريق التسويق يحصل على البيانات الكاملة.' },
+                { question: 'هل تكشفون إذا قال الذكاء الاصطناعي شيئاً زائفاً عنا؟', answer: 'نعم. نمرّر علامتك عبر مئات استعلامات المراقبة في كل دورة ونرصد الهلوسات والأسعار القديمة وبيانات التواصل الخاطئة والانحياز لمنافسيك خلال أيام من ظهورها — لتصحح المصدر قبل أن يتحول الخطأ إلى إجابة افتراضية ثابتة في النموذج.' },
+                { question: 'ما الفرق بين هذه الخدمة وبين Google Analytics وأدوات SEO؟', answer: 'أدوات SEO تقيس الروابط الزرقاء، أما نحن فنقيس الإجابات. لا توجد أداة تقليدية تخبرك أن Perplexity يوصي بمنافسك ثلاث مرات أكثر منك، أو أن Claude يعرض أسعارك بشكل خاطئ. هذه هي الطبقة التي نضيفها.' },
+                { question: 'هل نحتاج خدمة GEO لكي تفيدنا المراقبة؟', answer: 'لا — المراقبة تعمل وحدها كطبقة قياس، وكثير من العملاء يستخدمون التقارير لتوجيه فرق المحتوى لديهم. لكن الجمع بين المراقبة وتنفيذ GEO لدينا يسد فجوات الظهور عادة بسرعة أكبر 3-5 أضعاف.' }
+            ],
+            crisisSolved: 'في هذه اللحظة، يسأل أحد المشترين ChatGPT عن أفضل مزوّد في فئتك — والإجابة تذكر منافسك. ويسأل آخر Gemini عن أسعارك فيحصل على أرقام من عام 2022. لديك لوحات قياس للإعلانات و SEO ووسائل التواصل، لكن في قناة الاكتشاف الأسرع نمواً على وجه الأرض أنت تطير أعمى تماماً. 60% من عمليات البحث تنتهي أصلاً دون نقرة. وكل شهر لا تقيس فيه إجابات الذكاء الاصطناعي هو شهر يمتلكه منافسوك بهدوء.',
+            workflow: [
+                'اليوم 1-5: تدقيق أساسي — ماذا تقول محركات الذكاء الاصطناعي الخمسة عنك اليوم',
+                'اليوم 6-10: تثبيت أكثر من 100 استعلام مشترٍ وتهيئة لوحة المتابعة المباشرة',
+                'اليوم 30: أول تقرير حصة صوتية مقابل أبرز منافسيك',
+                'كل شهر: بيانات جديدة وتنبيهات معلومات مغلوطة وإجراءات GEO مرتبة'
+            ],
+            costOfInaction: 'جهود منافسيك في GEO تتراكم بينما أنت لا ترى حتى لوحة النتائج. مساعدو الذكاء الاصطناعي يحسمون القوائم المختصرة قبل أن يزور المشتري أي موقع، والعلامة الغائبة — أو المُساء تمثيلها — في تلك الإجابات تخسر صفقات لم تكن تعلم بوجودها أصلاً. التكلفة ليست الاشتراك الذي تتخطاه، بل الـ 20-40% من المشترين في مرحلة البحث الذين لا يسمعون اسمك إطلاقاً.',
+            psychologicalHook: 'لا يمكنك تحسين ما لا تقيسه — والذكاء الاصطناعي يتحدث عنك الآن من دونك.'
+        },
+        de: {
+            id: 'ai-visibility-monitoring',
+            icon: '📡',
+            title: 'AI Visibility & GEO Monitoring',
+            description: 'AI Visibility & GEO Monitoring zeigt Ihnen exakt, was ChatGPT, Gemini, Perplexity, Claude und Google AI Overviews über Ihre Marke sagen — und über Ihre Wettbewerber — jeden einzelnen Monat. 60 % aller Suchanfragen enden heute ohne einen einzigen Klick, und Käufer fragen zunehmend KI-Assistenten, wem sie vertrauen sollen. Wenn KI-Systeme Sie ignorieren, falsch zitieren oder Ihren Rivalen empfehlen, würden Sie es nie erfahren — bis jetzt. Wir verfolgen, messen und berichten Ihren KI-Share-of-Voice und liefern Ihnen die exakten GEO-Maßnahmen, um ihn zu gewinnen.',
+            features: [
+                'Monatliches Tracking von ChatGPT, Gemini, Perplexity, Claude & Google AI Overviews',
+                'Citation-Share-of-Voice-Reports — Sie gegen jeden Wettbewerber',
+                'Live-Dashboard zur Überwachung von über 100 Käuferfragen',
+                'Sofortige Alerts, wenn KI Falschinformationen über Ihre Marke verbreitet',
+                'Umsetzbare GEO-Empfehlungen, priorisiert nach Wirkung'
+            ],
+            benefits: [
+                'Sehen Sie Ihren echten KI-Share-of-Voice vor Ihren Wettbewerbern',
+                'Erkennen Sie falsche KI-Aussagen über Ihre Marke in Tagen, nicht Monaten',
+                'Verwandeln Sie GEO von Rätselraten in einen messbaren Kanal',
+                'Belegen Sie den KI-Marketing-ROI gegenüber Ihrem Board mit harten Zahlen'
+            ],
+            faq: [
+                { question: 'Welche KI-Systeme überwachen Sie?', answer: 'ChatGPT, Google Gemini, Perplexity, Claude von Anthropic und Google AI Overviews — die fünf Plattformen, die heute über 90 % der KI-gestützten Käuferfragen beantworten. Neue Systeme fügen wir hinzu, sobald sie Marktanteile gewinnen — Ihr Monitoring bleibt immer aktuell.' },
+                { question: 'Was genau erhalten wir jeden Monat?', answer: 'Einen Share-of-Voice-Report, der zeigt, wie oft jedes KI-System Sie im Vergleich zu Ihren Wettbewerbern erwähnt und zitiert, eine Analyse der Veränderungen und ihrer Gründe sowie eine nach erwarteter Wirkung priorisierte Liste von GEO-Maßnahmen. Die Geschäftsführung erhält eine Zusammenfassung auf einer Seite, Ihr Marketingteam den vollständigen Datensatz.' },
+                { question: 'Erkennen Sie, wenn KI etwas Falsches über uns sagt?', answer: 'Ja. Wir prüfen Ihre Marke in jedem Zyklus über Hunderte von Monitoring-Abfragen und melden Halluzinationen, veraltete Preise, falsche Kontaktdaten und wettbewerbsfreundliche Verzerrungen innerhalb von Tagen — damit Sie die Quelle korrigieren, bevor der Fehler zur Standardantwort des Modells wird.' },
+                { question: 'Wie unterscheidet sich das von Google Analytics oder SEO-Tools?', answer: 'SEO-Tools messen blaue Links; wir messen Antworten. Kein klassisches Tool sagt Ihnen, dass Perplexity Ihren Wettbewerber dreimal häufiger empfiehlt als Sie oder dass Claude Ihre Preise falsch darstellt. Genau diese Ebene liefern wir.' },
+                { question: 'Brauchen wir den GEO-Service, damit sich das lohnt?', answer: 'Nein — das Monitoring funktioniert eigenständig als Messebene, und viele Kunden steuern mit den Reports ihre eigenen Content-Teams. In Kombination mit unserer GEO-Umsetzung schließen Sie Sichtbarkeitslücken jedoch typischerweise 3-5x schneller.' }
+            ],
+            crisisSolved: 'In diesem Moment fragt ein Käufer ChatGPT nach dem besten Anbieter Ihrer Kategorie — und die Antwort nennt Ihren Wettbewerber. Ein anderer fragt Gemini nach Ihren Preisen und erhält Zahlen aus dem Jahr 2022. Sie haben Dashboards für Ads, SEO und Social Media, aber auf dem am schnellsten wachsenden Discovery-Kanal der Welt fliegen Sie komplett blind. 60 % der Suchanfragen enden bereits ohne Klick. Jeder Monat, in dem Sie KI-Antworten nicht messen, ist ein Monat, den Ihre Wettbewerber still für sich besitzen.',
+            workflow: [
+                'Tag 1-5: Basis-Audit — was 5 KI-Systeme heute über Sie sagen',
+                'Tag 6-10: Über 100 Käuferfragen fixiert & Live-Dashboard eingerichtet',
+                'Tag 30: Erster Share-of-Voice-Report gegen Ihre wichtigsten Wettbewerber',
+                'Jeden Monat: Neue Daten, Falschinformations-Alerts & priorisierte GEO-Maßnahmen'
+            ],
+            costOfInaction: 'Die GEO-Anstrengungen Ihrer Wettbewerber verzinsen sich, während Sie nicht einmal die Anzeigetafel sehen. KI-Assistenten bestimmen Shortlists, bevor Käufer überhaupt eine Website besuchen — und eine Marke, die in diesen Antworten unsichtbar oder falsch dargestellt ist, verliert Aufträge, von deren Existenz sie nie erfährt. Die Kosten sind nicht das Abo, das Sie sparen, sondern die 20-40 % der Käufer in der Recherchephase, die Ihren Namen nie hören.',
+            psychologicalHook: 'Sie können nicht verbessern, was Sie nicht messen — und genau jetzt spricht KI über Sie, ohne Sie.'
+        },
+        fr: {
+            id: 'ai-visibility-monitoring',
+            icon: '📡',
+            title: 'AI Visibility & GEO Monitoring',
+            description: 'AI Visibility & GEO Monitoring vous montre exactement ce que ChatGPT, Gemini, Perplexity, Claude et Google AI Overviews disent de votre marque — et de vos concurrents — chaque mois. 60 % des recherches se terminent désormais sans aucun clic, et les acheteurs demandent de plus en plus aux assistants IA à qui faire confiance. Si les moteurs IA vous ignorent, vous citent de travers ou recommandent votre rival, vous ne le sauriez jamais — jusqu\'à présent. Nous suivons, mesurons et rapportons votre part de voix IA, puis nous vous remettons les actions GEO précises pour la conquérir.',
+            features: [
+                'Suivi mensuel de ChatGPT, Gemini, Perplexity, Claude & Google AI Overviews',
+                'Rapports de part de voix citationnelle — vous contre chaque concurrent',
+                'Tableau de bord en direct de plus de 100 questions d\'acheteurs',
+                'Alertes instantanées quand l\'IA diffuse des informations fausses sur votre marque',
+                'Recommandations GEO actionnables classées par impact'
+            ],
+            benefits: [
+                'Voyez votre vraie part de voix IA avant vos concurrents',
+                'Repérez les affirmations IA fausses sur votre marque en jours, pas en mois',
+                'Transformez le GEO de devinette en canal mesuré',
+                'Prouvez le ROI du marketing IA à votre direction avec des chiffres durs'
+            ],
+            faq: [
+                { question: 'Quels moteurs IA surveillez-vous ?', answer: 'ChatGPT, Google Gemini, Perplexity, Claude d\'Anthropic et Google AI Overviews — les cinq plateformes qui répondent à plus de 90 % des questions d\'acheteurs assistées par IA aujourd\'hui. Nous ajoutons les nouveaux moteurs dès qu\'ils gagnent des parts de marché, pour que votre suivi ne soit jamais obsolète.' },
+                { question: 'Que recevons-nous exactement chaque mois ?', answer: 'Un rapport de part de voix montrant combien de fois chaque moteur IA vous mentionne et vous cite face à vos concurrents, une analyse des évolutions et de leurs causes, et une liste d\'actions GEO classées par impact attendu. La direction reçoit une synthèse d\'une page ; votre équipe marketing obtient l\'ensemble des données.' },
+                { question: 'Pouvez-vous détecter si l\'IA dit quelque chose de faux sur nous ?', answer: 'Oui. Nous passons votre marque au travers de centaines de requêtes de surveillance à chaque cycle et signalons hallucinations, tarifs obsolètes, coordonnées erronées et biais favorisant vos concurrents dans les jours qui suivent leur apparition — pour corriger la source avant que l\'erreur ne devienne la réponse par défaut du modèle.' },
+                { question: 'En quoi est-ce différent de Google Analytics ou des outils SEO ?', answer: 'Les outils SEO mesurent les liens bleus ; nous mesurons les réponses. Aucun outil traditionnel ne vous dira que Perplexity recommande votre concurrent trois fois plus souvent que vous, ou que Claude décrit vos tarifs de manière incorrecte. C\'est la couche que nous ajoutons.' },
+                { question: 'Faut-il le service GEO pour que ce soit utile ?', answer: 'Non — le monitoring fonctionne seul comme couche de mesure, et de nombreux clients utilisent les rapports pour piloter leurs propres équipes de contenu. Cela dit, associer le monitoring à notre exécution GEO comble les écarts de visibilité 3 à 5 fois plus vite en général.' }
+            ],
+            crisisSolved: 'En ce moment même, un acheteur demande à ChatGPT qui est le meilleur fournisseur de votre catégorie — et la réponse nomme votre concurrent. Un autre interroge Gemini sur vos tarifs et obtient des chiffres datant de 2022. Vous avez des tableaux de bord pour les pubs, le SEO et les réseaux sociaux, mais sur le canal de découverte qui croît le plus vite au monde, vous avancez totalement à l\'aveugle. 60 % des recherches se terminent déjà sans clic. Chaque mois sans mesurer les réponses IA est un mois que vos concurrents possèdent tranquillement.',
+            workflow: [
+                'Jour 1-5 : audit de référence — ce que 5 moteurs IA disent de vous aujourd\'hui',
+                'Jour 6-10 : plus de 100 requêtes d\'acheteurs verrouillées & tableau de bord configuré',
+                'Jour 30 : premier rapport de part de voix face à vos principaux concurrents',
+                'Chaque mois : nouvelles données, alertes désinformation & actions GEO classées'
+            ],
+            costOfInaction: 'Les efforts GEO de vos concurrents se cumulent pendant que vous ne voyez même pas le tableau des scores. Les assistants IA décident des shortlists avant même que les acheteurs ne visitent un site web — et une marque invisible ou mal représentée dans ces réponses perd des contrats dont elle n\'a jamais soupçonné l\'existence. Le coût, ce n\'est pas l\'abonnement que vous évitez ; ce sont les 20 à 40 % d\'acheteurs en phase de recherche qui n\'entendent jamais votre nom.',
+            psychologicalHook: 'On ne peut pas améliorer ce qu\'on ne mesure pas — et en ce moment, l\'IA parle de vous sans vous.'
+        },
+        it: {
+            id: 'ai-visibility-monitoring',
+            icon: '📡',
+            title: 'AI Visibility & GEO Monitoring',
+            description: 'AI Visibility & GEO Monitoring ti mostra esattamente cosa dicono ChatGPT, Gemini, Perplexity, Claude e Google AI Overviews del tuo brand — e dei tuoi concorrenti — ogni singolo mese. Il 60% delle ricerche oggi termina senza un solo clic, e gli acquirenti chiedono sempre più spesso agli assistenti AI di chi fidarsi. Se i motori AI ti ignorano, ti citano male o consigliano il tuo rivale, non lo sapresti mai — fino ad ora. Tracciamo, misuriamo e riportiamo la tua share of voice AI, poi ti consegniamo le azioni GEO esatte per conquistarla.',
+            features: [
+                'Monitoraggio mensile di ChatGPT, Gemini, Perplexity, Claude e Google AI Overviews',
+                'Report di citation share-of-voice — tu contro ogni concorrente',
+                'Dashboard live con oltre 100 domande degli acquirenti',
+                'Alert immediati quando l\'AI diffonde disinformazione sul tuo brand',
+                'Raccomandazioni GEO attuabili ordinate per impatto'
+            ],
+            benefits: [
+                'Vedi la tua vera share of voice AI prima dei tuoi concorrenti',
+                'Intercetta le affermazioni AI false sul tuo brand in giorni, non mesi',
+                'Trasforma il GEO da scommessa in canale misurato',
+                'Dimostra il ROI del marketing AI al tuo board con numeri concreti'
+            ],
+            faq: [
+                { question: 'Quali motori AI monitorate?', answer: 'ChatGPT, Google Gemini, Perplexity, Claude di Anthropic e Google AI Overviews — le cinque piattaforme che oggi rispondono a oltre il 90% delle domande d\'acquisto assistite dall\'AI. Aggiungiamo nuovi motori man mano che guadagnano quote di mercato, così il tuo monitoraggio non invecchia mai.' },
+                { question: 'Cosa riceviamo esattamente ogni mese?', answer: 'Un report di share of voice che mostra quanto spesso ogni motore AI ti menziona e ti cita rispetto ai concorrenti, un\'analisi dei cambiamenti e delle loro cause, e una lista di azioni GEO ordinate per impatto atteso. I dirigenti ricevono una sintesi di una pagina; il team marketing ottiene il dataset completo.' },
+                { question: 'Riuscite a capire se l\'AI dice qualcosa di falso su di noi?', answer: 'Sì. A ogni ciclo sottoponiamo il tuo brand a centinaia di query di monitoraggio e segnaliamo allucinazioni, prezzi obsoleti, recapiti errati e bias a favore dei concorrenti entro pochi giorni dalla loro comparsa — così puoi correggere la fonte prima che l\'errore diventi la risposta predefinita del modello.' },
+                { question: 'In cosa differisce da Google Analytics o dagli strumenti SEO?', answer: 'Gli strumenti SEO misurano i link blu; noi misuriamo le risposte. Nessuno strumento tradizionale ti dice che Perplexity consiglia il tuo concorrente tre volte più spesso di te, o che Claude descrive i tuoi prezzi in modo sbagliato. È questo il livello che aggiungiamo.' },
+                { question: 'Serve il servizio GEO perché sia utile?', answer: 'No — il monitoraggio funziona da solo come livello di misurazione, e molti clienti usano i report per guidare i propri team di contenuto. Detto questo, abbinare il monitoraggio alla nostra esecuzione GEO chiude tipicamente i gap di visibilità 3-5 volte più in fretta.' }
+            ],
+            crisisSolved: 'In questo istante un acquirente sta chiedendo a ChatGPT chi sia il miglior fornitore della tua categoria — e la risposta nomina il tuo concorrente. Un altro chiede a Gemini i tuoi prezzi e ottiene cifre del 2022. Hai dashboard per ads, SEO e social, ma sul canale di scoperta in più rapida crescita al mondo stai volando completamente alla cieca. Il 60% delle ricerche termina già senza clic. Ogni mese in cui non misuri le risposte AI è un mese che i tuoi concorrenti possiedono in silenzio.',
+            workflow: [
+                'Giorno 1-5: audit di base — cosa dicono oggi 5 motori AI di te',
+                'Giorno 6-10: oltre 100 query d\'acquisto fissate e dashboard live configurata',
+                'Giorno 30: primo report di share of voice contro i tuoi principali concorrenti',
+                'Ogni mese: nuovi dati, alert di disinformazione e azioni GEO ordinate'
+            ],
+            costOfInaction: 'Gli sforzi GEO dei tuoi concorrenti si accumulano mentre tu non vedi nemmeno il tabellone dei punteggi. Gli assistenti AI decidono le shortlist prima ancora che gli acquirenti visitino un sito web — e un brand invisibile o travisato in quelle risposte perde affari di cui non saprà mai nulla. Il costo non è l\'abbonamento che salti: è il 20-40% degli acquirenti in fase di ricerca che non sentirà mai il tuo nome.',
+            psychologicalHook: 'Non puoi migliorare ciò che non misuri — e in questo momento l\'AI sta parlando di te senza di te.'
+        },
+        hi: {
+            id: 'ai-visibility-monitoring',
+            icon: '📡',
+            title: 'AI विज़िबिलिटी और GEO मॉनिटरिंग',
+            description: 'AI विज़िबिलिटी और GEO मॉनिटरिंग आपको हर महीने सटीक बताती है कि ChatGPT, Gemini, Perplexity, Claude और Google AI Overviews आपके ब्रांड के बारे में — और आपके प्रतिस्पर्धियों के बारे में — क्या कह रहे हैं। आज 60% सर्च बिना एक भी क्लिक के खत्म हो जाती हैं, और खरीदार तेज़ी से AI असिस्टेंट्स से पूछते हैं कि किस पर भरोसा करें। अगर AI इंजन आपको नज़रअंदाज़ करें, गलत जानकारी दें या आपके प्रतिद्वंद्वी की सिफ़ारिश करें, तो आपको कभी पता नहीं चलता — अब तक। हम आपकी AI शेयर-ऑफ़-वॉइस को ट्रैक करते हैं, मापते हैं और रिपोर्ट करते हैं, फिर उसे जीतने के लिए सटीक GEO एक्शन आपके हाथ में देते हैं।',
+            features: [
+                'ChatGPT, Gemini, Perplexity, Claude और Google AI Overviews की मासिक ट्रैकिंग',
+                'साइटेशन शेयर-ऑफ़-वॉइस रिपोर्ट — आप बनाम हर प्रतिस्पर्धी',
+                '100+ खरीदार सवालों का लाइव क्वेरी-मॉनिटरिंग डैशबोर्ड',
+                'AI द्वारा ब्रांड से जुड़ी गलत जानकारी फैलने पर तुरंत अलर्ट',
+                'असर के हिसाब से रैंक की गई कार्रवाई योग्य GEO सिफ़ारिशें'
+            ],
+            benefits: [
+                'अपनी असली AI शेयर-ऑफ़-वॉइस प्रतिस्पर्धियों से पहले देखें',
+                'ब्रांड से जुड़े गलत AI दावों को महीनों में नहीं, दिनों में पकड़ें',
+                'GEO को अनुमान से बदलकर मापा जाने वाला चैनल बनाएं',
+                'ठोस आंकड़ों से अपने बोर्ड को AI मार्केटिंग ROI साबित करें'
+            ],
+            faq: [
+                { question: 'आप कौन-से AI इंजन मॉनिटर करते हैं?', answer: 'ChatGPT, Google Gemini, Perplexity, Anthropic का Claude और Google AI Overviews — वे पांच प्लेटफ़ॉर्म जो आज AI-संचालित खरीदार सवालों के 90% से ज़्यादा का जवाब देते हैं। जैसे-जैसे नए इंजन मार्केट शेयर हासिल करते हैं, हम उन्हें जोड़ते जाते हैं ताकि आपकी ट्रैकिंग कभी पुरानी न पड़े।' },
+                { question: 'हर महीने हमें असल में क्या मिलता है?', answer: 'एक शेयर-ऑफ़-वॉइस रिपोर्ट जो दिखाती है कि हर AI इंजन आपको प्रतिस्पर्धियों की तुलना में कितनी बार ज़िक्र और साइट करता है, बदलावों और उनकी वजहों का विश्लेषण, और अपेक्षित असर के हिसाब से रैंक की गई GEO कार्रवाइयों की सूची। एग्जीक्यूटिव को एक-पेज का सारांश मिलता है; आपकी मार्केटिंग टीम को पूरा डेटासेट।' },
+                { question: 'क्या आप पकड़ सकते हैं कि AI हमारे बारे में कुछ गलत कह रहा है?', answer: 'हाँ। हम हर चक्र में आपके ब्रांड को सैकड़ों मॉनिटरिंग क्वेरी से गुज़ारते हैं और हैलुसिनेशन, पुरानी कीमतें, गलत संपर्क विवरण और प्रतिस्पर्धी-पक्षपात को दिखने के कुछ ही दिनों में फ़्लैग कर देते हैं — ताकि गलती मॉडल का डिफ़ॉल्ट जवाब बनने से पहले आप स्रोत ठीक कर सकें।' },
+                { question: 'यह Google Analytics या SEO टूल्स से कैसे अलग है?', answer: 'SEO टूल्स नीले लिंक मापते हैं; हम जवाब मापते हैं। कोई पारंपरिक टूल यह नहीं बता सकता कि Perplexity आपके प्रतिस्पर्धी की सिफ़ारिश आपसे तीन गुना ज़्यादा कर रहा है, या Claude आपकी कीमतें गलत बता रहा है। यही वह परत है जो हम जोड़ते हैं।' },
+                { question: 'क्या इसके उपयोगी होने के लिए GEO सेवा ज़रूरी है?', answer: 'नहीं — मॉनिटरिंग अपने-आप में माप की परत के रूप में काम करती है, और कई क्लाइंट रिपोर्ट से अपनी कंटेंट टीमों को दिशा देते हैं। फिर भी, मॉनिटरिंग को हमारे GEO एक्ज़ीक्यूशन के साथ जोड़ने पर विज़िबिलिटी गैप आमतौर पर 3-5 गुना तेज़ी से बंद होते हैं।' }
+            ],
+            crisisSolved: 'इसी पल कोई खरीदार ChatGPT से पूछ रहा है कि आपकी श्रेणी का सबसे अच्छा प्रदाता कौन है — और जवाब आपके प्रतिस्पर्धी का नाम लेता है। कोई और Gemini से आपकी कीमतें पूछता है और उसे 2022 के आंकड़े मिलते हैं। आपके पास विज्ञापन, SEO और सोशल के डैशबोर्ड हैं, लेकिन दुनिया के सबसे तेज़ी से बढ़ते डिस्कवरी चैनल में आप पूरी तरह अंधे उड़ रहे हैं। 60% सर्च पहले ही बिना क्लिक के खत्म हो रही हैं। हर वह महीना जिसमें आप AI जवाब नहीं मापते, वह महीना आपके प्रतिस्पर्धी चुपचाप अपने नाम कर लेते हैं।',
+            workflow: [
+                'दिन 1-5: बेसलाइन ऑडिट — 5 AI इंजन आज आपके बारे में क्या कहते हैं',
+                'दिन 6-10: 100+ खरीदार क्वेरी तय और लाइव डैशबोर्ड कॉन्फ़िगर',
+                'दिन 30: आपके शीर्ष प्रतिस्पर्धियों के मुकाबले पहली शेयर-ऑफ़-वॉइस रिपोर्ट',
+                'हर महीने: नया डेटा, गलत जानकारी अलर्ट और रैंक की गई GEO कार्रवाइयाँ'
+            ],
+            costOfInaction: 'आपके प्रतिस्पर्धियों के GEO प्रयास चक्रवृद्धि की तरह बढ़ रहे हैं, जबकि आप स्कोरबोर्ड तक नहीं देख पा रहे। AI असिस्टेंट खरीदारों के किसी वेबसाइट पर आने से पहले ही शॉर्टलिस्ट तय कर देते हैं — और जो ब्रांड उन जवाबों में अदृश्य या गलत तरीके से पेश होता है, वह ऐसे सौदे हारता है जिनका उसे कभी पता भी नहीं चलता। लागत वह सब्सक्रिप्शन नहीं है जिसे आप छोड़ते हैं; लागत रिसर्च-स्टेज के वे 20-40% खरीदार हैं जो आपका नाम कभी सुनते ही नहीं।',
+            psychologicalHook: 'आप वही सुधार सकते हैं जो आप मापते हैं — और इस वक्त AI आपके बारे में बिना आपके बात कर रहा है।'
+        },
+        ms: {
+            id: 'ai-visibility-monitoring',
+            icon: '📡',
+            title: 'Pemantauan Keterlihatan AI & GEO',
+            description: 'Pemantauan Keterlihatan AI & GEO memberitahu anda dengan tepat apa yang ChatGPT, Gemini, Perplexity, Claude dan Google AI Overviews katakan tentang jenama anda — dan tentang pesaing anda — setiap bulan. 60% carian kini berakhir tanpa satu klik pun, dan pembeli semakin bertanya kepada pembantu AI siapa yang boleh dipercayai. Jika enjin AI mengabaikan anda, salah memetik anda atau mengesyorkan pesaing anda, anda tidak akan pernah tahu — sehingga kini. Kami menjejak, mengukur dan melaporkan bahagian suara AI anda, kemudian menyerahkan tindakan GEO yang tepat untuk memenanginya.',
+            features: [
+                'Penjejakan bulanan ChatGPT, Gemini, Perplexity, Claude & Google AI Overviews',
+                'Laporan bahagian suara petikan — anda berbanding setiap pesaing',
+                'Papan pemuka langsung memantau lebih 100 soalan pembeli',
+                'Makluman segera apabila AI menyebarkan maklumat palsu tentang jenama anda',
+                'Cadangan GEO boleh laksana disusun mengikut impak'
+            ],
+            benefits: [
+                'Lihat bahagian suara AI sebenar anda sebelum pesaing anda',
+                'Kesan dakwaan AI palsu tentang jenama anda dalam beberapa hari, bukan bulan',
+                'Ubah GEO daripada agakan kepada saluran yang diukur',
+                'Buktikan ROI pemasaran AI kepada lembaga anda dengan angka kukuh'
+            ],
+            faq: [
+                { question: 'Enjin AI manakah yang anda pantau?', answer: 'ChatGPT, Google Gemini, Perplexity, Claude oleh Anthropic dan Google AI Overviews — lima platform yang menjawab lebih 90% soalan pembeli berbantukan AI hari ini. Kami menambah enjin baharu apabila ia memperoleh bahagian pasaran, supaya penjejakan anda tidak pernah lapuk.' },
+                { question: 'Apa sebenarnya yang kami terima setiap bulan?', answer: 'Laporan bahagian suara yang menunjukkan kekerapan setiap enjin AI menyebut dan memetik anda berbanding pesaing, analisis pergerakan tentang apa yang berubah dan mengapa, serta senarai tindakan GEO disusun mengikut impak yang dijangkakan. Eksekutif menerima ringkasan satu halaman; pasukan pemasaran anda mendapat set data penuh.' },
+                { question: 'Bolehkah anda kesan jika AI menyatakan sesuatu yang palsu tentang kami?', answer: 'Ya. Kami menguji jenama anda melalui beratus-ratus pertanyaan pemantauan setiap kitaran dan menandakan halusinasi, harga lapuk, butiran hubungan yang salah dan bias yang memihak pesaing dalam masa beberapa hari selepas ia muncul — supaya anda boleh membetulkan sumber sebelum kesalahan itu menjadi jawapan lalai model.' },
+                { question: 'Apa bezanya dengan Google Analytics atau alat SEO?', answer: 'Alat SEO mengukur pautan biru; kami mengukur jawapan. Tiada alat tradisional yang boleh memberitahu anda bahawa Perplexity mengesyorkan pesaing anda tiga kali lebih kerap daripada anda, atau bahawa Claude menerangkan harga anda dengan salah. Itulah lapisan yang kami tambahkan.' },
+                { question: 'Adakah kami perlukan perkhidmatan GEO untuk ini berguna?', answer: 'Tidak — pemantauan berfungsi secara bebas sebagai lapisan pengukuran, dan ramai pelanggan menggunakan laporan itu untuk mengarahkan pasukan kandungan mereka sendiri. Namun, menggabungkan pemantauan dengan pelaksanaan GEO kami biasanya menutup jurang keterlihatan 3-5 kali lebih pantas.' }
+            ],
+            crisisSolved: 'Ketika ini, seorang pembeli sedang bertanya ChatGPT siapa penyedia terbaik dalam kategori anda — dan jawapannya menyebut pesaing anda. Seorang lagi bertanya Gemini tentang harga anda dan menerima angka dari tahun 2022. Anda mempunyai papan pemuka untuk iklan, SEO dan media sosial, tetapi untuk saluran penemuan yang paling pesat berkembang di dunia, anda terbang dalam kegelapan sepenuhnya. 60% carian sudah berakhir tanpa klik. Setiap bulan anda tidak mengukur jawapan AI ialah sebulan yang dimiliki pesaing anda dengan senyap.',
+            workflow: [
+                'Hari 1-5: Audit garis dasar — apa yang 5 enjin AI katakan tentang anda hari ini',
+                'Hari 6-10: Lebih 100 pertanyaan pembeli dikunci & papan pemuka langsung dikonfigurasi',
+                'Hari 30: Laporan bahagian suara pertama berbanding pesaing utama anda',
+                'Setiap bulan: Data baharu, makluman maklumat palsu & tindakan GEO disusun'
+            ],
+            costOfInaction: 'Usaha GEO pesaing anda terkumpul manakala anda tidak dapat melihat papan skor pun. Pembantu AI menentukan senarai pendek sebelum pembeli melawat mana-mana laman web — dan jenama yang tidak kelihatan atau disalah gambar dalam jawapan itu kehilangan urusan yang tidak pernah diketahuinya wujud. Kosnya bukan langganan yang anda langkau; ia adalah 20-40% pembeli di peringkat penyelidikan yang tidak pernah mendengar nama anda langsung.',
+            psychologicalHook: 'Anda tidak boleh menambah baik apa yang anda tidak ukur — dan sekarang ini, AI bercakap tentang anda tanpa anda.'
+        }
+    },
+    'corporate-ai-training': {
+        en: {
+            id: 'corporate-ai-training',
+            icon: '🎓',
+            title: 'Corporate AI Training & Enablement',
+            description: '70% of employees have never received a single hour of AI training from their employer — yet AI is already rewriting their job descriptions. Corporate AI Training & Enablement turns your workforce from AI-anxious to AI-powered: executive strategy workshops, hands-on prompt engineering, department-specific playbooks, and 30-60-90 day adoption programs delivered in Arabic or English, onsite or remote. Companies that train their teams adopt AI 3-5x faster — and the ones that don\'t are quietly preparing their people to work for someone who did.',
+            features: [
+                'Executive AI Strategy Workshops for Leadership Teams',
+                'Hands-On Prompt Engineering Training for Every Team',
+                'Department Playbooks for Sales, HR, Ops & Customer Service',
+                '30-60-90 Day Adoption Programs With Measurable ROI',
+                'Delivered in Arabic or English — Onsite or Remote'
+            ],
+            benefits: [
+                'Adopt AI 3-5x Faster Than Untrained Competitors',
+                'Turn AI-Anxious Employees Into AI-Powered Performers',
+                'Save 5-10 Hours Per Employee Per Week, Every Week',
+                'One Trained Team Outperforms Ten Expensive Tools'
+            ],
+            faq: [
+                { question: 'Is this a generic online course or real training?', answer: 'Real, hands-on training built around your actual workflows, your tools, and examples from your own business. No generic slides, no theory dumps — every participant leaves applying AI to their real daily tasks.' },
+                { question: 'Do you deliver training in Arabic?', answer: 'Yes — full programs in Modern Standard Arabic or English, with bilingual materials and examples drawn from regional markets. We train in the language your team thinks in.' },
+                { question: 'What does each department actually get?', answer: 'A custom playbook with 30-50 ready-to-use cases and prompts for its daily work — sales writes proposals faster, HR screens CVs with precision, customer service replies in minutes instead of hours.' },
+                { question: 'How do you measure ROI?', answer: 'We take a productivity baseline before training, then measure at the 30, 60, and 90-day checkpoints: hours saved, adoption rate, and output quality. You will know exactly what your investment bought.' },
+                { question: 'Can non-technical staff be trained?', answer: 'That is exactly who this program is for. No coding background needed — anyone who can send a WhatsApp message can learn to work with AI. We start at each team\'s level and build from there.' }
+            ],
+            crisisSolved: 'Here\'s the uncomfortable truth: your competitors\' employees are already using AI to finish in two hours what your team finishes in two days — while 70% of your people, never trained, either fear AI or use it secretly and badly. This shadow AI leaks your data into public tools, results are inconsistent, and the productivity gap compounds every month. Training is no longer a perk; it\'s the line between a workforce that multiplies your investment and one that quietly becomes obsolete.',
+            workflow: [
+                'Week 1: AI Readiness Audit — Skills, Tools & Workflows Mapped',
+                'Week 2-3: Executive Workshop & Department Playbooks Delivered',
+                'Week 4-8: Hands-On Team Training — Arabic or English, Onsite or Remote',
+                'Day 30-60-90: Adoption Checkpoints With Documented Productivity Gains'
+            ],
+            costOfInaction: 'Every untrained employee costs you 5-10 hours a week of work AI could already handle — multiply that by your headcount and 12 months, and the loss dwarfs any training budget. Worse, untrained teams don\'t stand still: they misuse public AI tools with your confidential data, or disengage while AI-literate competitors pull ahead. The most expensive AI strategy of 2026 is assuming your people will figure it out alone.',
+            psychologicalHook: 'AI won\'t take your team\'s jobs — but your competitor\'s trained team will take their customers.'
+        },
+        ar: {
+            id: 'corporate-ai-training',
+            icon: '🎓',
+            title: 'تدريب الشركات على الذكاء الاصطناعي وتمكين الفرق',
+            description: '70% من الموظفين لم يتلقوا ساعة تدريب واحدة على الذكاء الاصطناعي من جهة عملهم — مع أن الذكاء الاصطناعي يعيد كتابة توصيفات وظائفهم الآن. برنامج تدريب الشركات على الذكاء الاصطناعي يحوّل فريقك من القلق تجاه الذكاء الاصطناعي إلى التفوق به: ورش استراتيجية للقيادات، تدريب عملي على هندسة الأوامر، أدلة تشغيل مخصصة لكل قسم، وبرامج تبنٍّ على مدى 30-60-90 يوماً — بالعربية أو الإنجليزية، حضورياً أو عن بُعد. الشركات التي تدرّب فرقها تتبنى الذكاء الاصطناعي أسرع بثلاث إلى خمس مرات — وأما التي لا تفعل، فهي تُعدّ موظفيها بصمت ليعملوا لدى من فعل.',
+            features: [
+                'ورش استراتيجية في الذكاء الاصطناعي للقيادات والمدراء',
+                'تدريب عملي على هندسة الأوامر لجميع الفرق',
+                'أدلة تشغيل مخصصة للمبيعات والموارد البشرية والعمليات وخدمة العملاء',
+                'برامج تبنٍّ على مدى 30-60-90 يوماً بعائد قابل للقياس',
+                'بالعربية أو الإنجليزية — حضورياً أو عن بُعد'
+            ],
+            benefits: [
+                'تبنَّ الذكاء الاصطناعي أسرع بثلاث إلى خمس مرات من منافسيك',
+                'حوّل الموظفين القلقين إلى أداء مدعوم بالذكاء الاصطناعي',
+                'وفّر 5-10 ساعات أسبوعياً لكل موظف، كل أسبوع',
+                'فريق واحد مدرّب يتفوق على عشر أدوات باهظة'
+            ],
+            faq: [
+                { question: 'هل هذا كورس عام عبر الإنترنت أم تدريب حقيقي؟', answer: 'تدريب عملي حقيقي، مبني على سير عملكم الفعلي وأدواتكم وأمثلة من واقع عملكم. لا شرائح عامة ولا نظريات — كل متدرب يخرج وهو يطبق الذكاء الاصطناعي على مهامه اليومية الحقيقية.' },
+                { question: 'هل تقدمون التدريب بالعربية؟', answer: 'نعم — برامج كاملة بالعربية الفصحى أو الإنجليزية، مع مواد ثنائية اللغة وأمثلة من أسواق المنطقة. ندرّب باللغة التي يفكر بها فريقكم.' },
+                { question: 'ماذا يحصل كل قسم فعلياً؟', answer: 'دليل تشغيل مخصص يضم 30-50 حالة استخدام وأمراً جاهزاً لمهامه اليومية — المبيعات تكتب العروض أسرع، الموارد البشرية تفرز السير الذاتية بدقة، وخدمة العملاء ترد في دقائق لا في ساعات.' },
+                { question: 'كيف تقيسون العائد على الاستثمار؟', answer: 'نجري تقييماً أولياً للإنتاجية قبل التدريب، ثم نقيس عند نقاط 30 و60 و90 يوماً: الساعات الموفرة، نسبة التبني، وجودة المخرجات. ستعرف بالضبط ماذا اشترى استثمارك.' },
+                { question: 'هل يمكن تدريب الموظفين غير التقنيين؟', answer: 'هذا هو جمهورنا الأساسي بالضبط. لا حاجة لأي خلفية برمجية — من يستطيع إرسال رسالة واتساب يستطيع تعلم العمل مع الذكاء الاصطناعي. نبدأ من مستوى كل فريق ونبني من هناك.' }
+            ],
+            crisisSolved: 'الحقيقة المزعجة: موظفو منافسيك ينجزون بالذكاء الاصطناعي في ساعتين ما ينجزه فريقك في يومين — بينما 70% من فريقك، الذين لم يتلقوا أي تدريب، إما خائفون من الذكاء الاصطناعي أو يستخدمونه سراً وبشكل خاطئ. هذا الاستخدام الخفي يسرّب بياناتك إلى أدوات عامة، والمخرجات غير متسقة، وفجوة الإنتاجية تتراكم كل شهر. التدريب لم يعد رفاهية؛ إنه الفرق بين فريق يضاعف استثمارك وفريق يصبح قديماً بهدوء.',
+            workflow: [
+                'الأسبوع 1: تقييم جاهزية الذكاء الاصطناعي — المهارات والأدوات وسير العمل',
+                'الأسبوع 2-3: ورشة القيادات وتسليم أدلة الأقسام',
+                'الأسبوع 4-8: تدريب عملي للفرق — بالعربية أو الإنجليزية، حضورياً أو عن بُعد',
+                'اليوم 30-60-90: نقاط قياس التبني مع مكاسب إنتاجية موثقة'
+            ],
+            costOfInaction: 'كل موظف غير مدرّب يكلفك 5-10 ساعات أسبوعياً من أعمال يستطيع الذكاء الاصطناعي إنجازها اليوم — اضرب ذلك في عدد موظفيك و12 شهراً، وستجد أن الخسارة تفوق أي ميزانية تدريب بمراحل. والأسوأ أن الفرق غير المدرّبة لا تقف مكانها: إما تسيء استخدام الأدوات العامة ببياناتك السرية، أو تفقد حماسها بينما ينطلق المنافسون المدرَّبون. أغلى استراتيجية ذكاء اصطناعي في 2026 هي افتراض أن موظفيك سيتعلمون بمفردهم.',
+            psychologicalHook: 'الذكاء الاصطناعي لن يأخذ وظائف فريقك — لكن فريق منافسك المدرَّب سيأخذ عملاءهم.'
+        },
+        de: {
+            id: 'corporate-ai-training',
+            icon: '🎓',
+            title: 'KI-Training & Enablement für Unternehmen',
+            description: '70 % der Mitarbeitenden haben von ihrem Arbeitgeber nie auch nur eine Stunde KI-Schulung erhalten — dabei schreibt KI ihre Stellenbeschreibungen bereits neu. Unser Corporate-KI-Training verwandelt Ihre Belegschaft von KI-verunsichert zu KI-gestärkt: Strategie-Workshops für Führungskräfte, praktisches Prompt-Engineering, abteilungsspezifische Playbooks und 30-60-90-Tage-Adoptionsprogramme — auf Arabisch oder Englisch, vor Ort oder remote. Unternehmen, die ihre Teams schulen, führen KI 3- bis 5-mal schneller ein — und die übrigen bereiten ihre Mitarbeitenden still für jemanden vor, der es tut.',
+            features: [
+                'KI-Strategie-Workshops für Führungsetagen',
+                'Praxisnahes Prompt-Engineering-Training für jedes Team',
+                'Abteilungs-Playbooks für Vertrieb, HR, Operations & Kundenservice',
+                '30-60-90-Tage-Adoptionsprogramme mit messbarem ROI',
+                'Auf Arabisch oder Englisch — vor Ort oder remote'
+            ],
+            benefits: [
+                'Führen Sie KI 3- bis 5-mal schneller ein als ungeschulte Wettbewerber',
+                'Verwandeln Sie KI-verunsicherte Mitarbeitende in KI-gestärke Leistungsträger',
+                'Sparen Sie 5-10 Stunden pro Mitarbeitendem und Woche — jede Woche',
+                'Ein geschultes Team schlägt zehn teure Werkzeuge'
+            ],
+            faq: [
+                { question: 'Ist das ein generischer Online-Kurs oder echtes Training?', answer: 'Echtes Praxistraining, aufgebaut auf Ihren tatsächlichen Arbeitsabläufen, Ihren Tools und Beispielen aus Ihrem Arbeitsalltag. Keine generischen Folien, keine Theorie — jeder Teilnehmende verlässt das Training und wendet KI direkt auf die eigenen Aufgaben an.' },
+                { question: 'Schulen Sie auch auf Arabisch?', answer: 'Ja — komplette Programme auf Hocharabisch oder Englisch, mit zweisprachigen Materialien und Beispielen aus den Märkten der Region. Wir schulen in der Sprache, in der Ihr Team denkt.' },
+                { question: 'Was bekommen die Abteilungen konkret?', answer: 'Ein maßgeschneidertes Playbook mit 30-50 sofort einsetzbaren Anwendungsfällen und Prompts für den Arbeitsalltag — Vertrieb erstellt Angebote schneller, HR filtert Bewerbungen präziser, der Kundenservice antwortet in Minuten statt Stunden.' },
+                { question: 'Wie messen Sie den ROI?', answer: 'Wir erheben vor der Schulung eine Produktivitäts-Baseline und messen dann an den Tag-30-, 60- und 90-Meilensteinen: eingesparte Stunden, Adoptionsrate und Outputqualität. Sie sehen exakt, was Ihre Investition bewirkt hat.' },
+                { question: 'Können auch nicht-technische Mitarbeitende geschult werden?', answer: 'Genau dafür ist das Programm gemacht. Keine Programmierkenntnisse nötig — wer eine WhatsApp-Nachricht schicken kann, kann lernen, mit KI zu arbeiten. Wir starten auf dem Niveau jedes Teams und bauen darauf auf.' }
+            ],
+            crisisSolved: 'Die unbequeme Wahrheit: Die Mitarbeitenden Ihrer Wettbewerber erledigen mit KI in zwei Stunden, wofür Ihr Team zwei Tage braucht — während 70 % Ihrer Belegschaft, nie geschult, KI entweder fürchten oder heimlich und falsch nutzen. Diese Schatten-KI leitet Ihre Daten in öffentliche Tools, die Ergebnisse sind inkonsistent, und die Produktivitätslücke wächst jeden Monat. Schulung ist kein Benefit mehr; sie ist der Unterschied zwischen einer Belegschaft, die Ihre Investition multipliziert, und einer, die still obsolet wird.',
+            workflow: [
+                'Woche 1: KI-Readiness-Audit — Skills, Tools & Workflows kartiert',
+                'Woche 2-3: Führungskräfte-Workshop & Übergabe der Abteilungs-Playbooks',
+                'Woche 4-8: Praxistraining für die Teams — Arabisch oder Englisch, vor Ort oder remote',
+                'Tag 30-60-90: Adoptions-Checkpoints mit dokumentierten Produktivitätsgewinnen'
+            ],
+            costOfInaction: 'Jeder ungeschulte Mitarbeitende kostet Sie 5-10 Stunden pro Woche an Arbeit, die KI bereits übernehmen könnte — multipliziert mit Ihrer Belegschaft und 12 Monaten übersteigt der Verlust jedes Schulungsbudget bei Weitem. Schlimmer noch: Ungeschulte Teams bleiben nicht stehen — sie nutzen öffentliche KI-Tools falsch und mit Ihren vertraulichen Daten, oder sie verlieren den Anschluss, während KI-erfahrene Wettbewerber davonziehen. Die teuerste KI-Strategie 2026 ist die Annahme, Ihre Leute lernten das schon allein.',
+            psychologicalHook: 'KI wird Ihrem Team nicht die Jobs nehmen — aber das geschulte Team Ihres Wettbewerbers wird ihm die Kunden nehmen.'
+        },
+        fr: {
+            id: 'corporate-ai-training',
+            icon: '🎓',
+            title: 'Formation IA en entreprise & accompagnement',
+            description: '70 % des salariés n’ont jamais reçu ne serait-ce qu’une heure de formation à l’IA de la part de leur employeur — alors que l’IA réécrit déjà leurs fiches de poste. Notre programme de formation IA pour entreprises transforme vos équipes d’angoissées en augmentées : ateliers de stratégie pour dirigeants, ingénierie des prompts en pratique, playbooks par département et programmes d’adoption 30-60-90 jours — en arabe ou en anglais, sur site ou à distance. Les entreprises qui forment leurs équipes adoptent l’IA 3 à 5 fois plus vite — et les autres préparent en silence leurs salariés pour quelqu’un qui l’a fait.',
+            features: [
+                'Ateliers de stratégie IA pour comités de direction',
+                'Ingénierie des prompts 100 % pratique pour chaque équipe',
+                'Playbooks par département : ventes, RH, opérations & service client',
+                'Programmes d’adoption 30-60-90 jours au ROI mesurable',
+                'En arabe ou en anglais — sur site ou à distance'
+            ],
+            benefits: [
+                'Adoptez l’IA 3 à 5 fois plus vite que vos concurrents non formés',
+                'Transformez des salariés inquiets en performers augmentés par l’IA',
+                'Économisez 5 à 10 heures par salarié et par semaine, chaque semaine',
+                'Une équipe formée vaut dix outils coûteux'
+            ],
+            faq: [
+                { question: 'Est-ce un cours en ligne générique ou une vraie formation ?', answer: 'Une vraie formation pratique, construite sur vos processus réels, vos outils et des exemples tirés de votre quotidien. Pas de slides génériques ni de théorie — chaque participant repart en appliquant l’IA à ses propres tâches.' },
+                { question: 'Formez-vous en arabe ?', answer: 'Oui — des programmes complets en arabe standard ou en anglais, avec supports bilingues et exemples issus des marchés de la région. Nous formons dans la langue dans laquelle votre équipe pense.' },
+                { question: 'Que reçoivent concrètement les départements ?', answer: 'Un playbook sur mesure de 30 à 50 cas d’usage et prompts prêts à l’emploi pour leurs tâches quotidiennes — les ventes rédigent leurs offres plus vite, les RH trient les CV avec précision, le service client répond en minutes, pas en heures.' },
+                { question: 'Comment mesurez-vous le ROI ?', answer: 'Nous établissons une baseline de productivité avant la formation, puis mesurons aux jalons 30, 60 et 90 jours : heures économisées, taux d’adoption et qualité des livrables. Vous savez exactement ce que votre investissement a acheté.' },
+                { question: 'Peut-on former des profils non techniques ?', answer: 'C’est exactement notre cœur de cible. Aucune compétence en programmation requise — qui sait envoyer un message WhatsApp peut apprendre à travailler avec l’IA. Nous partons du niveau de chaque équipe et construisons à partir de là.' }
+            ],
+            crisisSolved: 'La vérité qui dérange : les salariés de vos concurrents font avec l’IA en deux heures ce que vos équipes font en deux jours — pendant que 70 % de vos effectifs, jamais formés, craignent l’IA ou l’utilisent en cachette et mal. Ce shadow AI fait fuiter vos données vers des outils publics, les résultats sont incohérents, et l’écart de productivité se creuse chaque mois. La formation n’est plus un avantage ; c’est la frontière entre une équipe qui multiplie votre investissement et une équipe qui devient silencieusement obsolète.',
+            workflow: [
+                'Semaine 1 : audit de maturité IA — compétences, outils & processus cartographiés',
+                'Semaines 2-3 : atelier dirigeants & remise des playbooks par département',
+                'Semaines 4-8 : formation pratique des équipes — arabe ou anglais, sur site ou à distance',
+                'Jours 30-60-90 : points d’adoption avec gains de productivité documentés'
+            ],
+            costOfInaction: 'Chaque salarié non formé vous coûte 5 à 10 heures par semaine de travail que l’IA pourrait déjà absorber — multipliez par vos effectifs et 12 mois, et la perte dépasse largement tout budget de formation. Pire, les équipes non formées ne restent pas sur place : elles utilisent mal les outils publics avec vos données confidentielles, ou décrochent pendant que des concurrents formés à l’IA prennent de l’avance. La stratégie IA la plus chère de 2026 consiste à supposer que vos équipes apprendront seules.',
+            psychologicalHook: 'L’IA ne prendra pas les postes de vos équipes — mais l’équipe formée de votre concurrent prendra leurs clients.'
+        },
+        it: {
+            id: 'corporate-ai-training',
+            icon: '🎓',
+            title: 'Formazione AI aziendale & enablement',
+            description: 'Il 70% dei dipendenti non ha mai ricevuto neppure un’ora di formazione sull’AI dal proprio datore di lavoro — eppure l’AI sta già riscrivendo le loro mansioni. Il nostro programma di formazione AI per aziende trasforma la tua forza lavoro da ansiosa a potenziata dall’AI: workshop strategici per i dirigenti, prompt engineering pratico, playbook per reparto e programmi di adozione 30-60-90 giorni — in arabo o inglese, in sede o da remoto. Le aziende che formano i propri team adottano l’AI 3-5 volte più in fretta — e quelle che non lo fanno stanno silenziosamente preparando i propri dipendenti per qualcun altro.',
+            features: [
+                'Workshop strategici sull’AI per il top management',
+                'Prompt engineering pratico per ogni team',
+                'Playbook per vendite, HR, operations & customer service',
+                'Programmi di adozione 30-60-90 giorni con ROI misurabile',
+                'In arabo o inglese — in sede o da remoto'
+            ],
+            benefits: [
+                'Adotta l’AI 3-5 volte più in fretta dei concorrenti non formati',
+                'Trasforma dipendenti ansiosi in professionisti potenziati dall’AI',
+                'Risparmia 5-10 ore a settimana per dipendente, ogni settimana',
+                'Un team formato vale più di dieci strumenti costosi'
+            ],
+            faq: [
+                { question: 'È un corso online generico o formazione vera?', answer: 'Formazione pratica vera, costruita sui vostri flussi di lavoro reali, sui vostri strumenti e su esempi tratti dal vostro quotidiano. Niente slide generiche né teoria — ogni partecipante esce applicando l’AI alle proprie attività reali.' },
+                { question: 'Formate in arabo?', answer: 'Sì — programmi completi in arabo standard o inglese, con materiali bilingui ed esempi dai mercati della regione. Formiamo nella lingua in cui il tuo team pensa.' },
+                { question: 'Cosa ricevono concretamente i reparti?', answer: 'Un playbook su misura con 30-50 casi d’uso e prompt pronti per le attività quotidiane — le vendite preparano offerte più in fretta, le HR filtrano i CV con precisione, il customer service risponde in minuti, non ore.' },
+                { question: 'Come misurate il ROI?', answer: 'Rileviamo una baseline di produttività prima della formazione, poi misuriamo ai traguardi dei 30, 60 e 90 giorni: ore risparmiate, tasso di adozione e qualità dell’output. Saprai esattamente cosa ha comprato il tuo investimento.' },
+                { question: 'Si possono formare profili non tecnici?', answer: 'È esattamente per loro che esiste il programma. Nessuna competenza di programmazione richiesta — chi sa mandare un messaggio WhatsApp può imparare a lavorare con l’AI. Partiamo dal livello di ogni team e costruiamo da lì.' }
+            ],
+            crisisSolved: 'La verità scomoda: i dipendenti dei tuoi concorrenti fanno con l’AI in due ore ciò che il tuo team fa in due giorni — mentre il 70% dei tuoi, mai formato, teme l’AI o la usa di nascosto e male. Questo shadow AI fa trapelare i tuoi dati in strumenti pubblici, i risultati sono incoerenti e il divario di produttività cresce ogni mese. La formazione non è più un benefit: è il confine tra una forza lavoro che moltiplica il tuo investimento e una che diventa silenziosamente obsoleta.',
+            workflow: [
+                'Settimana 1: audit di prontezza AI — competenze, strumenti & flussi mappati',
+                'Settimane 2-3: workshop per dirigenti & consegna dei playbook di reparto',
+                'Settimane 4-8: formazione pratica dei team — arabo o inglese, in sede o da remoto',
+                'Giorni 30-60-90: checkpoint di adozione con guadagni di produttività documentati'
+            ],
+            costOfInaction: 'Ogni dipendente non formato ti costa 5-10 ore a settimana di lavoro che l’AI potrebbe già gestire — moltiplica per l’organico e per 12 mesi, e la perdita supera di gran lunga qualsiasi budget formativo. Peggio: i team non formati non restano fermi — usano male gli strumenti pubblici con i tuoi dati riservati, o si spengono mentre i concorrenti formati all’AI scappano avanti. La strategia AI più costosa del 2026 è fingere che il tuo personale imparerà da solo.',
+            psychologicalHook: 'L’AI non toglierà il lavoro al tuo team — ma il team formato del tuo concorrente gli toglierà i clienti.'
+        },
+        hi: {
+            id: 'corporate-ai-training',
+            icon: '🎓',
+            title: 'कॉर्पोरेट AI प्रशिक्षण और सशक्तिकरण',
+            description: '70% कर्मचारियों को अपने नियोक्ता से AI की एक घंटे की भी ट्रेनिंग कभी नहीं मिली — जबकि AI उनकी नौकरियों के विवरण पहले ही फिर से लिख रहा है। हमारा कॉर्पोरेट AI ट्रेनिंग कार्यक्रम आपकी टीम को AI से घबराई हुई से AI-संचालित बनाता है: एग्जीक्यूटिव स्ट्रैटेजी वर्कशॉप, व्यावहारिक प्रॉम्प्ट इंजीनियरिंग, विभाग-वार प्लेबुक, और 30-60-90 दिनों के अडॉप्शन कार्यक्रम — अरबी या अंग्रेज़ी में, ऑनसाइट या रिमोट। जो कंपनियाँ अपनी टीमों को ट्रेन करती हैं वे AI को 3-5 गुना तेज़ी से अपनाती हैं — और जो नहीं करतीं, वे चुपचाप अपने लोगों को किसी ऐसे के लिए तैयार कर रही हैं जिसने कर लिया।',
+            features: [
+                'लीडरशिप टीमों के लिए एग्जीक्यूटिव AI स्ट्रैटेजी वर्कशॉप',
+                'हर टीम के लिए हैंड्स-ऑन प्रॉम्प्ट इंजीनियरिंग ट्रेनिंग',
+                'सेल्स, HR, ऑप्स और कस्टमर सर्विस के लिए विभागीय प्लेबुक',
+                'मापने योग्य ROI के साथ 30-60-90 दिनों के अडॉप्शन प्रोग्राम',
+                'अरबी या अंग्रेज़ी में — ऑनसाइट या रिमोट'
+            ],
+            benefits: [
+                'बिना ट्रेन किए प्रतिस्पर्धियों से 3-5 गुना तेज़ी से AI अपनाएँ',
+                'AI से घबराए कर्मचारियों को AI-संचालित परफ़ॉर्मर में बदलें',
+                'हर कर्मचारी के लिए हर हफ़्ते 5-10 घंटे बचाएँ, हर हफ़्ते',
+                'एक ट्रेन्ड टीम दस महंगे टूल्स से बेहतर है'
+            ],
+            faq: [
+                { question: 'क्या यह कोई सामान्य ऑनलाइन कोर्स है या असली ट्रेनिंग?', answer: 'असली, व्यावहारिक ट्रेनिंग — आपके असली वर्कफ़्लो, आपके टूल्स और आपके कारोबार के उदाहरणों पर आधारित। कोई जेनेरिक स्लाइड्स नहीं, कोई थ्योरी नहीं — हर प्रतिभागी AI को अपने रोज़मर्रा के कामों पर लागू करते हुए निकलता है।' },
+                { question: 'क्या आप अरबी में ट्रेनिंग देते हैं?', answer: 'हाँ — मानक अरबी या अंग्रेज़ी में पूरे कार्यक्रम, द्विभाषी सामग्री और क्षेत्र के बाज़ारों के उदाहरणों के साथ। हम उसी भाषा में ट्रेन करते हैं जिसमें आपकी टीम सोचती है।' },
+                { question: 'विभागों को असल में क्या मिलता है?', answer: 'रोज़मर्रा के कामों के लिए 30-50 तैयार यूज़ केस और प्रॉम्प्ट वाली कस्टम प्लेबुक — सेल्स तेज़ी से प्रस्ताव लिखती है, HR सटीकता से CV छांटती है, कस्टमर सर्विस घंटों के बजाय मिनटों में जवाब देती है।' },
+                { question: 'ROI कैसे मापते हैं?', answer: 'ट्रेनिंग से पहले प्रोडक्टिविटी की बेसलाइन लेते हैं, फिर 30, 60 और 90 दिनों के पड़ावों पर मापते हैं: बचे घंटे, अडॉप्शन रेट और आउटपुट की गुणवत्ता। आपको ठीक-ठीक पता होगा कि आपके निवेश ने क्या खरीदा।' },
+                { question: 'क्या गैर-तकनीकी कर्मचारियों को ट्रेन किया जा सकता है?', answer: 'यह कार्यक्रम ठीक उन्हीं के लिए है। किसी कोडिंग की ज़रूरत नहीं — जो WhatsApp मैसेज भेज सकता है, वह AI के साथ काम करना सीख सकता है। हम हर टीम के स्तर से शुरू करते हैं और वहीं से आगे बढ़ाते हैं।' }
+            ],
+            crisisSolved: 'कड़वी सच्चाई: आपके प्रतिस्पर्धियों के कर्मचारी AI से दो घंटे में वो कर रहे हैं जो आपकी टीम दो दिन में करती है — जबकि आपके 70% लोग, जिन्हें कभी ट्रेनिंग नहीं मिली, या तो AI से डर रहे हैं या उसे चुपके से और ग़लत तरीके से इस्तेमाल कर रहे हैं। यह शैडो AI आपका डेटा सार्वजनिक टूल्स में लीक कर रहा है, नतीजे असंगत हैं, और प्रोडक्टिविटी की खाई हर महीने गहरी होती जा रही है। ट्रेनिंग अब कोई सुविधा नहीं; यही फ़र्क़ है उस टीम के बीच जो आपका निवेश गुणा करती है और उसके बीच जो चुपचाप अप्रचलित हो जाती है।',
+            workflow: [
+                'हफ़्ता 1: AI तैयारी ऑडिट — स्किल्स, टूल्स और वर्कफ़्लो की मैपिंग',
+                'हफ़्ता 2-3: एग्जीक्यूटिव वर्कशॉप और विभागीय प्लेबुक की डिलीवरी',
+                'हफ़्ता 4-8: टीमों की व्यावहारिक ट्रेनिंग — अरबी या अंग्रेज़ी, ऑनसाइट या रिमोट',
+                'दिन 30-60-90: दर्ज प्रोडक्टिविटी गेन के साथ अडॉप्शन चेकपॉइंट'
+            ],
+            costOfInaction: 'हर बिना ट्रेन किया कर्मचारी आपको हफ़्ते में 5-10 घंटे का वो काम खो देता है जिसे AI आज ही संभाल सकता है — इसे अपने हेडकाउंट और 12 महीनों से गुणा करें, और नुकसान किसी भी ट्रेनिंग बजट से कहीं ज़्यादा निकलेगा। बुरी बात यह है कि बिना ट्रेन की टीमें स्थिर नहीं रहतीं: वे आपके गोपनीय डेटा के साथ सार्वजनिक AI टूल्स का ग़लत इस्तेमाल करती हैं, या AI-साक्षर प्रतिस्पर्धियों के आगे निकलते देख हार मान लेती हैं। 2026 की सबसे महंगी AI स्ट्रैटेजी यह मानना है कि आपके लोग अपने आप सीख लेंगे।',
+            psychologicalHook: 'AI आपकी टीम की नौकरियाँ नहीं लेगा — लेकिन प्रतिस्पर्धी की ट्रेन्ड टीम उसके ग्राहक ज़रूर ले लेगी।'
+        },
+        ms: {
+            id: 'corporate-ai-training',
+            icon: '🎓',
+            title: 'Latihan AI Korporat & Pembolehan',
+            description: '70% pekerja tidak pernah menerima walau sejam latihan AI daripada majikan mereka — sedangkan AI sudah menulis semula deskripsi tugas mereka. Program Latihan AI Korporat kami mengubah tenaga kerja anda daripada cemas terhadap AI kepada berkuasa dengan AI: bengkel strategi untuk eksekutif, kejuruteraan prompt secara praktikal, playbook mengikut jabatan, dan program penerimaan 30-60-90 hari — dalam bahasa Arab atau Inggeris, di lokasi atau secara jarak jauh. Syarikat yang melatih pasukannya menerima AI 3-5 kali lebih pantas — dan yang tidak berbuat demikian sedang menyediakan pekerjanya secara senyap untuk orang lain yang sudah melakukannya.',
+            features: [
+                'Bengkel Strategi AI Eksekutif untuk Pasukan Kepimpinan',
+                'Latihan Kejuruteraan Prompt Praktikal untuk Setiap Pasukan',
+                'Playbook Jabatan untuk Jualan, HR, Operasi & Khidmat Pelanggan',
+                'Program Penerimaan 30-60-90 Hari Dengan ROI Terukur',
+                'Dalam Bahasa Arab atau Inggeris — Di Lokasi atau Jarak Jauh'
+            ],
+            benefits: [
+                'Terima AI 3-5 Kali Lebih Pantas Daripada Pesaing Tidak Terlatih',
+                'Ubah Pekerja Cemas AI Kepada Prestasi Berkuasa AI',
+                'Jimat 5-10 Jam Seminggu Setiap Pekerja, Setiap Minggu',
+                'Satu Pasukan Terlatih Mengatasi Sepuluh Alat Mahal'
+            ],
+            faq: [
+                { question: 'Adakah ini kursus dalam talian generik atau latihan sebenar?', answer: 'Latihan praktikal sebenar, dibina atas aliran kerja sebenar anda, alat anda dan contoh daripada perniagaan anda sendiri. Tiada slaid generik atau teori semata-mata — setiap peserta keluar dengan mengaplikasikan AI pada tugas hariannya sendiri.' },
+                { question: 'Adakah anda melatih dalam bahasa Arab?', answer: 'Ya — program penuh dalam bahasa Arab standard atau Inggeris, dengan bahan dwibahasa dan contoh daripada pasaran rantau ini. Kami melatih dalam bahasa yang pasukan anda berfikir.' },
+                { question: 'Apa yang sebenarnya diterima setiap jabatan?', answer: 'Playbook tersuai dengan 30-50 kes penggunaan dan prompt sedia guna untuk tugas harian — jualan menulis tawaran lebih pantas, HR menapis CV dengan tepat, khidmat pelanggan membalas dalam minit, bukan jam.' },
+                { question: 'Bagaimana anda mengukur ROI?', answer: 'Kami mengambil garis dasar produktiviti sebelum latihan, kemudian mengukur pada pencapaian hari ke-30, 60 dan 90: jam dijimatkan, kadar penerimaan dan kualiti output. Anda akan tahu dengan tepat apa yang dibeli oleh pelaburan anda.' },
+                { question: 'Bolehkah kakitangan bukan teknikal dilatih?', answer: 'Itulah sasaran utama program ini. Tiada kemahiran pengekodan diperlukan — sesiapa yang boleh menghantar mesej WhatsApp boleh belajar bekerja dengan AI. Kami bermula dari tahap setiap pasukan dan membina dari situ.' }
+            ],
+            crisisSolved: 'Kebenaran yang tidak selesa: pekerja pesaing anda sudah menggunakan AI untuk menyiapkan dalam dua jam apa yang pasukan anda siapkan dalam dua hari — manakala 70% pekerja anda yang tidak pernah dilatih sama ada takut pada AI atau menggunakannya secara sembunyi dan salah. Shadow AI ini membocorkan data anda ke alat awam, hasilnya tidak konsisten, dan jurang produktiviti semakin membesar setiap bulan. Latihan bukan lagi manfaat sampingan; ia perbezaan antara tenaga kerja yang menggandakan pelaburan anda dengan yang menjadi lapuk secara senyap.',
+            workflow: [
+                'Minggu 1: Audit Kesediaan AI — Kemahiran, Alat & Aliran Kerja Dipetakan',
+                'Minggu 2-3: Bengkel Eksekutif & Penyerahan Playbook Jabatan',
+                'Minggu 4-8: Latihan Praktikal Pasukan — Arab atau Inggeris, Di Lokasi atau Jarak Jauh',
+                'Hari 30-60-90: Pencapaian Penerimaan Dengan Ganjaran Produktiviti Terdokumentasi'
+            ],
+            costOfInaction: 'Setiap pekerja tidak terlatih merugikan anda 5-10 jam seminggu untuk kerja yang AI sudah boleh tangani — darabkan dengan jumlah pekerja dan 12 bulan, dan kerugian itu jauh melebihi mana-mana bajet latihan. Lebih teruk lagi, pasukan tidak terlatih tidak berada di tempat yang sama: mereka menyalahgunakan alat AI awam dengan data sulit anda, atau berkecil hati apabila pesaing celik AI semakin mendahului. Strategi AI paling mahal pada 2026 ialah berpura-pura bahawa pekerja anda akan belajar sendiri.',
+            psychologicalHook: 'AI tidak akan mengambil pekerjaan pasukan anda — tetapi pasukan terlatih pesaing anda akan mengambil pelanggan mereka.'
+        }
     }
 };
 
@@ -2495,7 +3236,10 @@ export const serviceTier: Record<string, 'now' | 'emerging' | 'visionary'> = {
     'mcp-ai-integrations': 'emerging',
     'multi-agent-ai-workforce': 'emerging',
     'ai-security-governance': 'emerging',
-    'agi-readiness-consulting': 'visionary'
+    'agi-readiness-consulting': 'visionary',
+    'private-llm-deployment': 'now',
+    'corporate-ai-training': 'now',
+    'ai-visibility-monitoring': 'now'
 };
 
 // ---------------------------------------------------------------------------

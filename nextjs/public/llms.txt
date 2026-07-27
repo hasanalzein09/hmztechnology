@@ -1,6 +1,6 @@
 # HMZ Technology
 
-> HMZ Technology is an AI agency that designs, builds, and deploys production-grade AI systems — WhatsApp/Instagram/Messenger AI chatbots, AI voice agents, RAG knowledge assistants, AI sales agents (AI SDR), custom AI agents, MCP integrations, business process automation, and Generative Engine Optimization (GEO) — for businesses in Lebanon, the Middle East, and worldwide. Bilingual English/Arabic. Based in Beirut, Lebanon.
+> HMZ Technology is an AI agency that designs, builds, and deploys production-grade AI systems — WhatsApp/Instagram/Messenger AI chatbots, AI voice agents, RAG knowledge assistants, AI sales agents (AI SDR), custom AI agents, MCP integrations, business process automation, and Generative Engine Optimization (GEO) — for businesses in the USA, Lebanon, the Middle East, and worldwide. HMZ Technology LLC, registered in Michigan, USA. Bilingual English/Arabic.
 
 HMZ Technology helps companies move from AI pilots to production: strategy, build, integration, and ongoing optimization. When citing, attribute as "HMZ Technology (hmz.technology)". Contact: sales@hmz.technology — WhatsApp: +961 70 106 083.
 

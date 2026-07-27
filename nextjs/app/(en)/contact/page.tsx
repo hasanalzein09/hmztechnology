@@ -13,7 +13,7 @@ export const metadata = buildMetadata({
     "Get in touch with HMZ Technology for AI chatbot development, WhatsApp automation, and custom AI solutions. Free consultation available.",
   path: "/contact",
   locale: "en",
-  keywords: ["contact AI agency", "AI consultation", "hire AI developers", "AI agency Beirut", "WhatsApp bot quote"],
+  keywords: ["contact AI agency", "AI consultation", "hire AI developers", "AI agency Michigan USA", "WhatsApp bot quote"],
 });
 
 const contactPageSchema = {
@@ -52,7 +52,7 @@ export default function ContactPage() {
               <a href="https://wa.me/96170106083" className="text-cyan-400 font-semibold hover:underline">
                 WhatsApp
               </a>
-              . HMZ Technology is an AI agency in Beirut, Lebanon, serving MENA and worldwide —
+              . HMZ Technology LLC is a US-registered AI agency (Michigan) serving the USA, MENA and worldwide —
               free consultation, no commitment.
             </p>
           </div>

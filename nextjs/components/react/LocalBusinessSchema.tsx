@@ -14,10 +14,7 @@ const LocalBusinessSchema = ({ locale }: { locale?: string }) => {
             email: 'sales@hmz.technology',
             address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'Beirut Digital District',
                 addressLocality: 'Beirut',
-                addressRegion: 'Beirut Governorate',
-                postalCode: '1103',
                 addressCountry: 'LB'
             },
             geo: {

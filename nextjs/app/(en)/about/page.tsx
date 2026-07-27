@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
     "Learn about HMZ Technology, the leading AI chatbot development company serving Middle East, USA, and Europe. Expert WhatsApp, Instagram, and Messenger automation solutions.",
   path: "/about",
   locale: "en",
-  keywords: ["about HMZ Technology", "AI company Lebanon", "AI agency Beirut", "Hasan El Zein"],
+  keywords: ["about HMZ Technology", "AI company Lebanon", "AI agency Michigan USA", "Hasan El Zein"],
 });
 
 export default function AboutPage() {

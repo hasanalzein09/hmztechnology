@@ -11,11 +11,11 @@ const faqGroups = [
     faqs: [
       {
         q: "What does HMZ Technology do?",
-        a: "HMZ Technology is an AI agency that builds production-grade AI systems for businesses: WhatsApp, Instagram and Messenger AI chatbots, AI voice agents, RAG knowledge assistants, AI sales agents, custom AI agents, MCP integrations, business process automation, websites, SEO, and Generative Engine Optimization (GEO). We are based in Beirut, Lebanon and serve clients across MENA and worldwide.",
+        a: "HMZ Technology is an AI agency that builds production-grade AI systems for businesses: WhatsApp, Instagram and Messenger AI chatbots, AI voice agents, RAG knowledge assistants, AI sales agents, custom AI agents, MCP integrations, business process automation, websites, SEO, and Generative Engine Optimization (GEO). We are a US-registered company (HMZ Technology LLC, Michigan) and serve clients across the USA, MENA and worldwide.",
       },
       {
         q: "Where is HMZ Technology located and which markets do you serve?",
-        a: "HMZ Technology is headquartered in Beirut, Lebanon. We serve clients in Lebanon, Saudi Arabia, the UAE, the wider GCC, Europe, and North America. All systems are delivered remotely with full documentation and training, and our website and support operate in 7 languages including Arabic and English.",
+        a: "HMZ Technology LLC is registered in Michigan, USA. We serve clients in Lebanon, Saudi Arabia, the UAE, the wider GCC, Europe, and North America. All systems are delivered remotely with full documentation and training, and our website and support operate in 7 languages including Arabic and English.",
       },
       {
         q: "How fast can HMZ deploy an AI chatbot?",

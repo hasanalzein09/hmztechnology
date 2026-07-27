@@ -1,6 +1,6 @@
 # HMZ Technology — Full LLM Reference
 
-> HMZ Technology is an AI agency headquartered in Beirut, Lebanon, serving MENA and worldwide. It designs, builds, and deploys production-grade AI systems: AI chatbots (WhatsApp, Instagram, Messenger), AI voice agents, RAG knowledge assistants, AI sales agents (AI SDR), custom AI agents, MCP integrations, business process automation, conversion-focused websites, advanced SEO, and Generative Engine Optimization (GEO). Content is available in 7 languages including full Arabic (RTL) support. Contact: sales@hmz.technology — WhatsApp: +961 70 106 083.
+> HMZ Technology LLC is a US-registered AI agency (Michigan, USA) serving the USA, Lebanon, MENA, and worldwide. It designs, builds, and deploys production-grade AI systems: AI chatbots (WhatsApp, Instagram, Messenger), AI voice agents, RAG knowledge assistants, AI sales agents (AI SDR), custom AI agents, MCP integrations, business process automation, conversion-focused websites, advanced SEO, and Generative Engine Optimization (GEO). Content is available in 7 languages including full Arabic (RTL) support. Contact: sales@hmz.technology — WhatsApp: +961 70 106 083.
 
 Founded 2023 by Hasan El Zein. Positioning: "Production AI systems, not demos." HMZ specializes in moving businesses from AI pilots to production — the gap where 88% of AI proof-of-concepts fail (IDC).
 
@@ -8,7 +8,7 @@ Founded 2023 by Hasan El Zein. Positioning: "Production AI systems, not demos." 
 
 - Name: HMZ Technology (also: HMZ AI Agency)
 - URL: https://www.hmz.technology (canonical: www.hmz.technology on Cloudflare Pages)
-- Location: Beirut, Lebanon. Serving Lebanon, Saudi Arabia, UAE, GCC, Europe, USA, worldwide.
+- Legal entity: HMZ Technology LLC, registered in Michigan, USA. Serving USA, Lebanon, Saudi Arabia, UAE, GCC, Europe, worldwide.
 - Languages: English, Arabic, German, French, Italian, Hindi, Malay (website); service delivery in Arabic, English, French.
 - Contact: sales@hmz.technology | WhatsApp +961 70 106 083
 - Response-time promise: AI systems that reply in under 3 seconds, 24/7/365.

@@ -87,14 +87,15 @@ export const organizationGraph = {
       "@id": `${BASE_URL}/#organization`,
       alternateName: "HMZ AI Agency",
       name: SITE_NAME,
+      legalName: "HMZ Technology LLC",
       url: BASE_URL,
       logo: { "@type": "ImageObject", url: `${BASE_URL}/og-image.png`, width: 1200, height: 630 },
       image: `${BASE_URL}/og-image.png`,
       description:
-        "AI agency building production-grade AI systems: WhatsApp/Instagram AI chatbots, AI voice agents, RAG knowledge assistants, AI sales agents, custom AI agents, MCP integrations, business process automation, and Generative Engine Optimization (GEO). Serving Lebanon, the Middle East, and worldwide in 7 languages.",
+        "HMZ Technology LLC is a US-registered AI agency (Michigan) building production-grade AI systems: WhatsApp/Instagram AI chatbots, AI voice agents, RAG knowledge assistants, AI sales agents, custom AI agents, MCP integrations, business process automation, and Generative Engine Optimization (GEO). Serving the USA, Lebanon, the Middle East, and worldwide in 7 languages.",
       foundingDate: "2023",
       founder: { "@id": `${BASE_URL}/#founder` },
-      address: { "@type": "PostalAddress", addressLocality: "Beirut", addressCountry: "LB" },
+      address: { "@type": "PostalAddress", addressRegion: "Michigan", addressCountry: "US" },
       contactPoint: [
         { "@type": "ContactPoint", telephone: WHATSAPP_NUMBER, contactType: "sales", email: EMAIL, availableLanguage: ["English", "Arabic", "French", "German", "Italian", "Hindi", "Malay"] },
         { "@type": "ContactPoint", telephone: WHATSAPP_NUMBER, contactType: "technical support", availableLanguage: ["English", "Arabic"] },

@@ -129,11 +129,11 @@ const content: Record<string, FaqContent> = {
         faqs: [
           {
             q: "Was macht HMZ Technology?",
-            a: "HMZ Technology ist eine KI-Agentur, die produktionsreife KI-Systeme für Unternehmen entwickelt: KI-Chatbots für WhatsApp, Instagram und Messenger, KI-Sprachagenten, RAG-Wissensassistenten, KI-Vertriebsagenten, individuelle KI-Agenten, MCP-Integrationen, Automatisierung von Geschäftsprozessen, Websites, SEO und Generative Engine Optimization (GEO). Wir haben unseren Sitz in Beirut, Libanon, und betreuen Kunden in der gesamten MENA-Region und weltweit.",
+            a: "HMZ Technology ist eine KI-Agentur, die produktionsreife KI-Systeme für Unternehmen entwickelt: KI-Chatbots für WhatsApp, Instagram und Messenger, KI-Sprachagenten, RAG-Wissensassistenten, KI-Vertriebsagenten, individuelle KI-Agenten, MCP-Integrationen, Automatisierung von Geschäftsprozessen, Websites, SEO und Generative Engine Optimization (GEO). Wir sind ein in den USA registriertes Unternehmen (HMZ Technology LLC, Michigan) und betreuen Kunden in den USA, der MENA-Region und weltweit.",
           },
           {
             q: "Wo befindet sich HMZ Technology und welche Märkte betreuen Sie?",
-            a: "Der Hauptsitz von HMZ Technology ist Beirut, Libanon. Wir betreuen Kunden im Libanon, in Saudi-Arabien, den Vereinigten Arabischen Emiraten, der gesamten Golfregion, Europa und Nordamerika. Alle Systeme werden remote mit vollständiger Dokumentation und Schulung geliefert; unsere Website und unser Support arbeiten in 7 Sprachen, darunter Arabisch und Englisch.",
+            a: "HMZ Technology LLC ist in Michigan, USA, registriert. Wir betreuen Kunden im Libanon, in Saudi-Arabien, den Vereinigten Arabischen Emiraten, der gesamten Golfregion, Europa und Nordamerika. Alle Systeme werden remote mit vollständiger Dokumentation und Schulung geliefert; unsere Website und unser Support arbeiten in 7 Sprachen, darunter Arabisch und Englisch.",
           },
           {
             q: "Wie schnell kann HMZ einen KI-Chatbot bereitstellen?",
@@ -313,11 +313,11 @@ const content: Record<string, FaqContent> = {
         faqs: [
           {
             q: "Cosa fa HMZ Technology?",
-            a: "HMZ Technology è un'agenzia di intelligenza artificiale che costruisce sistemi IA pronti per la produzione per le aziende: chatbot IA per WhatsApp, Instagram e Messenger, agenti vocali IA, assistenti di conoscenza RAG, agenti di vendita IA, agenti IA personalizzati, integrazioni MCP, automazione dei processi aziendali, siti web, SEO e Generative Engine Optimization (GEO). Abbiamo sede a Beirut, in Libano, e serviamo clienti in tutta la regione MENA e nel mondo.",
+            a: "HMZ Technology è un'agenzia di intelligenza artificiale che costruisce sistemi IA pronti per la produzione per le aziende: chatbot IA per WhatsApp, Instagram e Messenger, agenti vocali IA, assistenti di conoscenza RAG, agenti di vendita IA, agenti IA personalizzati, integrazioni MCP, automazione dei processi aziendali, siti web, SEO e Generative Engine Optimization (GEO). Siamo una società registrata negli USA (HMZ Technology LLC, Michigan) e serviamo clienti negli Stati Uniti, nella regione MENA e nel mondo.",
           },
           {
             q: "Dove si trova HMZ Technology e quali mercati servite?",
-            a: "La sede principale di HMZ Technology è a Beirut, in Libano. Serviamo clienti in Libano, Arabia Saudita, Emirati Arabi Uniti, nell'intero GCC, in Europa e in Nord America. Tutti i sistemi vengono consegnati da remoto con documentazione e formazione complete, e il nostro sito e supporto operano in 7 lingue, tra cui arabo e inglese.",
+            a: "HMZ Technology LLC è registrata in Michigan, USA. Serviamo clienti in Libano, Arabia Saudita, Emirati Arabi Uniti, nell'intero GCC, in Europa e in Nord America. Tutti i sistemi vengono consegnati da remoto con documentazione e formazione complete, e il nostro sito e supporto operano in 7 lingue, tra cui arabo e inglese.",
           },
           {
             q: "In quanto tempo HMZ può implementare un chatbot IA?",
@@ -497,11 +497,11 @@ const content: Record<string, FaqContent> = {
         faqs: [
           {
             q: "Apa yang HMZ Technology lakukan?",
-            a: "HMZ Technology ialah agensi AI yang membina sistem AI gred pengeluaran untuk perniagaan: chatbot AI WhatsApp, Instagram dan Messenger, ejen suara AI, pembantu pengetahuan RAG, ejen jualan AI, ejen AI tersuai, integrasi MCP, automasi proses perniagaan, laman web, SEO dan Generative Engine Optimization (GEO). Kami berpangkalan di Beirut, Lubnan dan melayani pelanggan di seluruh MENA dan di seluruh dunia.",
+            a: "HMZ Technology ialah agensi AI yang membina sistem AI gred pengeluaran untuk perniagaan: chatbot AI WhatsApp, Instagram dan Messenger, ejen suara AI, pembantu pengetahuan RAG, ejen jualan AI, ejen AI tersuai, integrasi MCP, automasi proses perniagaan, laman web, SEO dan Generative Engine Optimization (GEO). Kami ialah syarikat berdaftar di AS (HMZ Technology LLC, Michigan) dan melayani pelanggan di AS, seluruh MENA dan di seluruh dunia.",
           },
           {
             q: "Di manakah lokasi HMZ Technology dan pasaran mana yang anda layani?",
-            a: "Ibu pejabat HMZ Technology terletak di Beirut, Lubnan. Kami melayani pelanggan di Lubnan, Arab Saudi, UAE, seluruh GCC, Eropah dan Amerika Utara. Semua sistem disampaikan dari jauh dengan dokumentasi dan latihan penuh, dan laman web serta sokongan kami beroperasi dalam 7 bahasa termasuk Bahasa Arab dan Inggeris.",
+            a: "HMZ Technology LLC berdaftar di Michigan, AS. Kami melayani pelanggan di Lubnan, Arab Saudi, UAE, seluruh GCC, Eropah dan Amerika Utara. Semua sistem disampaikan dari jauh dengan dokumentasi dan latihan penuh, dan laman web serta sokongan kami beroperasi dalam 7 bahasa termasuk Bahasa Arab dan Inggeris.",
           },
           {
             q: "Berapa pantas HMZ boleh melancarkan chatbot AI?",

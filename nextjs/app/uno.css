@@ -20,6 +20,7 @@
 /* layer: default */
 .pointer-events-none{pointer-events:none;}
 .visible{visibility:visible;}
+.invisible{visibility:hidden;}
 .\[\&\>li\]\:relative>li,
 .relative,
 [relative=""]{position:relative;}
